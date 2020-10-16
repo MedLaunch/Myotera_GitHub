@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
+plt.style.use('ggplot')
 '''Notes
 With more datasets, will eventually will want to address arrays/looping.
 --essentially reducing code duplication.
