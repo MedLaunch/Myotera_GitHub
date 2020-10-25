@@ -1,28 +1,22 @@
-from Visualization import newVis
 import pandas as pd
 import numpy as np
 
-from scipy.spatial.distance import directed_hausdorff
+from scipy.spatial import euclidean
+from fastdtw import fastdtw
 
 
+''' 
+Takes in 2 np.arrays representing the two curves to be scored. Uses 
+Procrustes Analysis to orient the curves, then finds the similarity 
+of the two curves using fastdtw
 '''
-General code structure:
-Class for receiving data and adjusting if necessary.
-Additional files in directory corresponding to methods required 
-for data visualization and curve-fitting. 
-
-In general, try to maximize and maintain modularity, as this 
-could eventually become an open-source project. Use a unit-testing
-suite such as pytest, and configure a pre-commit linter to improve
-readability. 
-
-Include a better description of the requirements and an overview
-of the functionality and motivation of the code in the README file.
-'''
-
 
 def score_curves(curve1, curve2, basis='percent') -> float:
-    # aligned = align(curve1, curve2)
-    # TODO: implement everything
+    reference1 = fastdtw(curve1, np.zeros(curve1.shape), dist=euclidean)
+    reference2 = fastdtw(curve2, np.zeros(curve2.shape), dist=euclidean)
 
-    return curve1/curve2
+    distance = fastdtw(curve1, curve2, dist=euclidean)
+
+    # visualization?
+    
+    return distance/min(reference1, reference2)
