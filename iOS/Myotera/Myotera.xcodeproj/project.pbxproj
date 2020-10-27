@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F12547B57F0053921E /* AppDelegate.swift */; };
+		D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F32547B57F0053921E /* SceneDelegate.swift */; };
+		D859C4F62547B57F0053921E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F52547B57F0053921E /* ViewController.swift */; };
+		D859C4F92547B57F0053921E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D859C4F72547B57F0053921E /* Main.storyboard */; };
+		D859C4FB2547B5800053921E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D859C4FA2547B5800053921E /* Assets.xcassets */; };
+		D859C4FE2547B5800053921E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D859C4FC2547B5800053921E /* LaunchScreen.storyboard */; };
+		D859C5092547B5810053921E /* MyoteraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C5082547B5810053921E /* MyoteraTests.swift */; };
+		D859C5142547B5810053921E /* MyoteraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C5132547B5810053921E /* MyoteraUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D859C5052547B5810053921E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D859C4E62547B57F0053921E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D859C4ED2547B57F0053921E;
+			remoteInfo = Myotera;
+		};
+		D859C5102547B5810053921E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D859C4E62547B57F0053921E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D859C4ED2547B57F0053921E;
+			remoteInfo = Myotera;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D859C4EE2547B57F0053921E /* Myotera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myotera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D859C4F12547B57F0053921E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D859C4F32547B57F0053921E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D859C4F52547B57F0053921E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D859C4F82547B57F0053921E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D859C4FA2547B5800053921E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D859C4FD2547B5800053921E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D859C4FF2547B5800053921E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D859C5042547B5810053921E /* MyoteraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoteraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D859C5082547B5810053921E /* MyoteraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyoteraTests.swift; sourceTree = "<group>"; };
+		D859C50A2547B5810053921E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D859C50F2547B5810053921E /* MyoteraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoteraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D859C5132547B5810053921E /* MyoteraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyoteraUITests.swift; sourceTree = "<group>"; };
+		D859C5152547B5810053921E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D859C4EB2547B57F0053921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D859C5012547B5810053921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D859C50C2547B5810053921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D859C4E52547B57F0053921E = {
+			isa = PBXGroup;
+			children = (
+				D859C4F02547B57F0053921E /* Myotera */,
+				D859C5072547B5810053921E /* MyoteraTests */,
+				D859C5122547B5810053921E /* MyoteraUITests */,
+				D859C4EF2547B57F0053921E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D859C4EF2547B57F0053921E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D859C4EE2547B57F0053921E /* Myotera.app */,
+				D859C5042547B5810053921E /* MyoteraTests.xctest */,
+				D859C50F2547B5810053921E /* MyoteraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D859C4F02547B57F0053921E /* Myotera */ = {
+			isa = PBXGroup;
+			children = (
+				D859C4F12547B57F0053921E /* AppDelegate.swift */,
+				D859C4F32547B57F0053921E /* SceneDelegate.swift */,
+				D859C4F52547B57F0053921E /* ViewController.swift */,
+				D859C4F72547B57F0053921E /* Main.storyboard */,
+				D859C4FA2547B5800053921E /* Assets.xcassets */,
+				D859C4FC2547B5800053921E /* LaunchScreen.storyboard */,
+				D859C4FF2547B5800053921E /* Info.plist */,
+			);
+			path = Myotera;
+			sourceTree = "<group>";
+		};
+		D859C5072547B5810053921E /* MyoteraTests */ = {
+			isa = PBXGroup;
+			children = (
+				D859C5082547B5810053921E /* MyoteraTests.swift */,
+				D859C50A2547B5810053921E /* Info.plist */,
+			);
+			path = MyoteraTests;
+			sourceTree = "<group>";
+		};
+		D859C5122547B5810053921E /* MyoteraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D859C5132547B5810053921E /* MyoteraUITests.swift */,
+				D859C5152547B5810053921E /* Info.plist */,
+			);
+			path = MyoteraUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D859C4ED2547B57F0053921E /* Myotera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D859C5182547B5810053921E /* Build configuration list for PBXNativeTarget "Myotera" */;
+			buildPhases = (
+				D859C4EA2547B57F0053921E /* Sources */,
+				D859C4EB2547B57F0053921E /* Frameworks */,
+				D859C4EC2547B57F0053921E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Myotera;
+			productName = Myotera;
+			productReference = D859C4EE2547B57F0053921E /* Myotera.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D859C5032547B5810053921E /* MyoteraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D859C51B2547B5810053921E /* Build configuration list for PBXNativeTarget "MyoteraTests" */;
+			buildPhases = (
+				D859C5002547B5810053921E /* Sources */,
+				D859C5012547B5810053921E /* Frameworks */,
+				D859C5022547B5810053921E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D859C5062547B5810053921E /* PBXTargetDependency */,
+			);
+			name = MyoteraTests;
+			productName = MyoteraTests;
+			productReference = D859C5042547B5810053921E /* MyoteraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D859C50E2547B5810053921E /* MyoteraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D859C51E2547B5810053921E /* Build configuration list for PBXNativeTarget "MyoteraUITests" */;
+			buildPhases = (
+				D859C50B2547B5810053921E /* Sources */,
+				D859C50C2547B5810053921E /* Frameworks */,
+				D859C50D2547B5810053921E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D859C5112547B5810053921E /* PBXTargetDependency */,
+			);
+			name = MyoteraUITests;
+			productName = MyoteraUITests;
+			productReference = D859C50F2547B5810053921E /* MyoteraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D859C4E62547B57F0053921E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					D859C4ED2547B57F0053921E = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					D859C5032547B5810053921E = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = D859C4ED2547B57F0053921E;
+					};
+					D859C50E2547B5810053921E = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = D859C4ED2547B57F0053921E;
+					};
+				};
+			};
+			buildConfigurationList = D859C4E92547B57F0053921E /* Build configuration list for PBXProject "Myotera" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D859C4E52547B57F0053921E;
+			productRefGroup = D859C4EF2547B57F0053921E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D859C4ED2547B57F0053921E /* Myotera */,
+				D859C5032547B5810053921E /* MyoteraTests */,
+				D859C50E2547B5810053921E /* MyoteraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D859C4EC2547B57F0053921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D859C4FE2547B5800053921E /* LaunchScreen.storyboard in Resources */,
+				D859C4FB2547B5800053921E /* Assets.xcassets in Resources */,
+				D859C4F92547B57F0053921E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D859C5022547B5810053921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D859C50D2547B5810053921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D859C4EA2547B57F0053921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D859C4F62547B57F0053921E /* ViewController.swift in Sources */,
+				D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */,
+				D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D859C5002547B5810053921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D859C5092547B5810053921E /* MyoteraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D859C50B2547B5810053921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D859C5142547B5810053921E /* MyoteraUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D859C5062547B5810053921E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D859C4ED2547B57F0053921E /* Myotera */;
+			targetProxy = D859C5052547B5810053921E /* PBXContainerItemProxy */;
+		};
+		D859C5112547B5810053921E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D859C4ED2547B57F0053921E /* Myotera */;
+			targetProxy = D859C5102547B5810053921E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D859C4F72547B57F0053921E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D859C4F82547B57F0053921E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D859C4FC2547B5800053921E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D859C4FD2547B5800053921E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D859C5162547B5810053921E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D859C5172547B5810053921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D859C5192547B5810053921E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MMU587L59;
+				INFOPLIST_FILE = Myotera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich-sahilgu.Myotera";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D859C51A2547B5810053921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MMU587L59;
+				INFOPLIST_FILE = Myotera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich-sahilgu.Myotera";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D859C51C2547B5810053921E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MMU587L59;
+				INFOPLIST_FILE = MyoteraTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich-sahilgu.MyoteraTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Myotera.app/Myotera";
+			};
+			name = Debug;
+		};
+		D859C51D2547B5810053921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MMU587L59;
+				INFOPLIST_FILE = MyoteraTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich-sahilgu.MyoteraTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Myotera.app/Myotera";
+			};
+			name = Release;
+		};
+		D859C51F2547B5810053921E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MMU587L59;
+				INFOPLIST_FILE = MyoteraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich-sahilgu.MyoteraUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Myotera;
+			};
+			name = Debug;
+		};
+		D859C5202547B5810053921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MMU587L59;
+				INFOPLIST_FILE = MyoteraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich-sahilgu.MyoteraUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Myotera;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D859C4E92547B57F0053921E /* Build configuration list for PBXProject "Myotera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D859C5162547B5810053921E /* Debug */,
+				D859C5172547B5810053921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D859C5182547B5810053921E /* Build configuration list for PBXNativeTarget "Myotera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D859C5192547B5810053921E /* Debug */,
+				D859C51A2547B5810053921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D859C51B2547B5810053921E /* Build configuration list for PBXNativeTarget "MyoteraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D859C51C2547B5810053921E /* Debug */,
+				D859C51D2547B5810053921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D859C51E2547B5810053921E /* Build configuration list for PBXNativeTarget "MyoteraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D859C51F2547B5810053921E /* Debug */,
+				D859C5202547B5810053921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D859C4E62547B57F0053921E /* Project object */;
+}
