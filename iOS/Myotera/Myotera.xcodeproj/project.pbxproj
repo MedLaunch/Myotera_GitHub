@@ -99,13 +99,10 @@
 		D859C4F02547B57F0053921E /* Myotera */ = {
 			isa = PBXGroup;
 			children = (
-				D859C4F12547B57F0053921E /* AppDelegate.swift */,
-				D859C4F32547B57F0053921E /* SceneDelegate.swift */,
-				D859C4F52547B57F0053921E /* ViewController.swift */,
-				D859C4F72547B57F0053921E /* Main.storyboard */,
-				D859C4FA2547B5800053921E /* Assets.xcassets */,
-				D859C4FC2547B5800053921E /* LaunchScreen.storyboard */,
-				D859C4FF2547B5800053921E /* Info.plist */,
+				D85BC8C9254F38AB00DB9DAD /* Model */,
+				D85BC8C4254F381000DB9DAD /* Controller */,
+				D85BC8C3254F37D300DB9DAD /* View */,
+				D85BC8C8254F386200DB9DAD /* Supporting Files */,
 			);
 			path = Myotera;
 			sourceTree = "<group>";
@@ -126,6 +123,41 @@
 				D859C5152547B5810053921E /* Info.plist */,
 			);
 			path = MyoteraUITests;
+			sourceTree = "<group>";
+		};
+		D85BC8C3254F37D300DB9DAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D859C4F72547B57F0053921E /* Main.storyboard */,
+				D859C4FC2547B5800053921E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D85BC8C4254F381000DB9DAD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D859C4F52547B57F0053921E /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D85BC8C8254F386200DB9DAD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D859C4F12547B57F0053921E /* AppDelegate.swift */,
+				D859C4F32547B57F0053921E /* SceneDelegate.swift */,
+				D859C4FF2547B5800053921E /* Info.plist */,
+				D859C4FA2547B5800053921E /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D85BC8C9254F38AB00DB9DAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
