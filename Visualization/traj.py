@@ -99,6 +99,7 @@ def accel_to_pos(data):
     # Double integrate accelerations to find positions
     x =cumtrapz(cumtrapz(data.iloc[:,0],dx=dt),dx=dt)
     y =cumtrapz(cumtrapz(data.iloc[:,1],dx=dt),dx=dt)
+    data.iloc[:,2] = data.iloc[:,2] - 9.81
     z =cumtrapz(cumtrapz(data.iloc[:,2],dx=dt),dx=dt)
 
     return x, y, z
@@ -109,7 +110,7 @@ x,y,z = accel_to_pos(data)
 fig,ax = plt.subplots()
 fig.suptitle(['3D Trajectory for ',filename],fontsize=20)
 ax = plt.axes(projection='3d')
-ax.plot3D(x,y,z,c='red',lw=5,label='phone trajectory')
+ax.plot3D(x,y,z,c='red',lw=2,label='phone trajectory')
 ax.set_xlabel('X position (m)')
 ax.set_ylabel('Y position (m)')
 ax.set_zlabel('Z position (m)')
