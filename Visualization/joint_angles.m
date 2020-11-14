@@ -5,9 +5,13 @@
 
 %% Init variables
 % 
-% % Take accelerations for 2 frames of time as a vector
+% % Take accelerations for the 2 sensors at 1 timestamp as vectors
 % a1 = ?;
 % a2 = ?;
+%
+% %Record timestamp and chosen time increment
+% timestamp = ?;
+% delta_t = ?;
 %
 %MAYBE
 % a1_func = @(s)a1.*s;
@@ -21,8 +25,6 @@
 % g1 = cumtrapz(a1);
 % g2 = cumtrapz(a2);
 % 
-% % Input time increment
-% delta_t = ?;
 % 
 % MAYBE
 % % Initialize orientation vectors for given times
@@ -58,7 +60,7 @@
 %% Solve for joint angles
 %
 % eqn = dot(g1,j1) - dot(g2,j2)
-% extension_angle = integral(@(t) eqn, 0, t);
+% extension_angle = integral(@(t) eqn, 0, timestamp);
 %
 %% May not be needed
 %%Make new value Eta for radial and tangential acceleration
