@@ -1,7 +1,9 @@
 import pandas as pd
 import numpy as np
 from scipy.integrate import cumtrapz
-from numpy import sin,cos,pi
+from scipy.signal import butter,filtfilt
+from scipy.spatial.transform import Rotation as R
+#from numpy import sin,cos,pi
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 import json
@@ -85,6 +87,40 @@ def process_data(filename, mode):
 time, data = process_data(filename, mode)                
 
 # Should also include the filter here.
+def Low_pass_filt(data):
+    # Filter requirements.
+    T = 5.0         # Sample Period
+    fs = 30.0       # sample rate, Hz
+    cutoff = 2      # desired cutoff frequency of the filter, Hz ,      slightly higher than actual 1.2 Hz
+    nyq = 0.5 * fs  # Nyquist Frequency
+    order = 2       # sin wave can be approx represented as quadratic
+    n = int(T * fs) # total number of samples
+
+    normal_cutoff = cutoff / nyq
+    # Get the filter coefficients 
+    b, a = butter(order, normal_cutoff, btype='low', analog=False)
+    data_filt = filtfilt(b, a, data)
+    return data_filt
+
+data.iloc = Low_pass_filt(data.iloc)
+
+def remove_gravity(acc, orientation):
+    '''
+    Rotates the gravity vector by the IMU orientation and removes gravity component from accelerometer data at each measurement
+
+    Input: Acceleration 3xn array (XYZ)
+            Orientation 3xn array (ZYX euler angles)
+
+    Output: Numpy arrays for each acceleration component x, y, and z.
+    '''
+    gravity = np.array([0, 0, -9.81])
+    for i in orientation:
+        r = R.from_euler('zyx', orientation, degrees=True)
+        r.apply(gravity)
+        acc[i, :] = acc[i, :] - gravity
+    return acc
+
+data.iloc = remove_gravity(data.iloc)
 
 def accel_to_pos(data):
     '''
@@ -99,7 +135,7 @@ def accel_to_pos(data):
     # Double integrate accelerations to find positions
     x =cumtrapz(cumtrapz(data.iloc[:,0],dx=dt),dx=dt)
     y =cumtrapz(cumtrapz(data.iloc[:,1],dx=dt),dx=dt)
-    data.iloc[:,2] = data.iloc[:,2] - 9.81
+    # data.iloc[:,2] = data.iloc[:,2] - 9.81
     z =cumtrapz(cumtrapz(data.iloc[:,2],dx=dt),dx=dt)
 
     return x, y, z
@@ -115,4 +151,3 @@ ax.set_xlabel('X position (m)')
 ax.set_ylabel('Y position (m)')
 ax.set_zlabel('Z position (m)')
 plt.show()
-
