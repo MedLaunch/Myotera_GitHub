@@ -24,6 +24,7 @@
 % % Input time increment
 % delta_t = ?;
 % 
+% MAYBE
 % % Initialize orientation vectors for given times
 % o1 = ?;
 % o2 = ?;
@@ -56,6 +57,10 @@
 % 
 %% Solve for joint angles
 %
+% eqn = dot(g1,j1) - dot(g2,j2)
+% extension_angle = integral(@(t) eqn, 0, t);
+%
+%% May not be needed
 %%Make new value Eta for radial and tangential acceleration
 % norm(a1-Eta_g1) - norm(a2-Eta_g2) = 0;
 % 
