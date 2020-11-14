@@ -1,8 +1,18 @@
 
 
-%% Joint angles pseudocode
+%% Joint angles
 %%Myotera
 
+%% Read in data
+%
+% accel_filename = 'accel.csv';
+% accel_data = csvread(filename);
+% MIGHT WANT TO DIRECTLY READ IN PROCESSED ORIENTATION DATA
+% gyro_filename = 'gyro.csv';
+% gyro_data = csvread(filename);
+% magnet_filename = 'magnet.csv';
+% magnet_data = csvread(filename);
+%
 %% Init variables
 % 
 % % Take accelerations for the 2 sensors at 1 timestamp as vectors
