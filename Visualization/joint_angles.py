@@ -25,6 +25,12 @@
 ##Set stuff
 #No idea
 
+##Get angles prob from orientation or set stuff
+#phi_1 = ?
+#phi_2 = ?
+#theta_1 = ?
+#theta_2 = ?
+
 ##Calculate unit-length direction vectors
 #j1 = (cos(phi_1)*cos(theta_1),cos(phi_1)*sin(theta_1),sin(phi_1))^transpose
 #j2 = (cos(phi_2)*cos(theta_2),cos(phi_2)*sin(theta_2),sin(phi_2))^transpose
