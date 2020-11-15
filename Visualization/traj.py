@@ -102,7 +102,7 @@ def Low_pass_filt(data):
     data_filt = filtfilt(b, a, data)
     return data_filt
 
-data.iloc = Low_pass_filt(data.iloc)
+#data.iloc = Low_pass_filt(data.iloc)
 
 def remove_gravity(acc, orientation):
     '''
@@ -115,12 +115,13 @@ def remove_gravity(acc, orientation):
     '''
     gravity = np.array([0, 0, -9.81])
     for i in orientation:
-        r = R.from_euler('zyx', orientation, degrees=True)
+        r = R.from_euler('zyx', orientation[i,:], degrees=True)
         r.apply(gravity)
         acc[i, :] = acc[i, :] - gravity
     return acc
 
-data.iloc = remove_gravity(data.iloc)
+orientation = np.array((len(data),3))
+data.iloc = remove_gravity(data, orientation)
 
 def accel_to_pos(data):
     '''
@@ -140,14 +141,18 @@ def accel_to_pos(data):
 
     return x, y, z
 
-x,y,z = accel_to_pos(data)
+#main():
+ #   x,y,z = accel_to_pos(data)
 
-# Plot 3D Trajectory
-fig,ax = plt.subplots()
-fig.suptitle(['3D Trajectory for ',filename],fontsize=20)
-ax = plt.axes(projection='3d')
-ax.plot3D(x,y,z,c='red',lw=2,label='phone trajectory')
-ax.set_xlabel('X position (m)')
-ax.set_ylabel('Y position (m)')
-ax.set_zlabel('Z position (m)')
-plt.show()
+    # Plot 3D Trajectory
+    fig,ax = plt.subplots()
+    fig.suptitle(['3D Trajectory for ',filename],fontsize=20)
+    ax = plt.axes(projection='3d')
+    ax.plot3D(x,y,z,c='red',lw=2,label='phone trajectory')
+    ax.set_xlabel('X position (m)')
+    ax.set_ylabel('Y position (m)')
+    ax.set_zlabel('Z position (m)')
+    plt.show()
+
+#if __name__ == '__main__':
+ #   main()
