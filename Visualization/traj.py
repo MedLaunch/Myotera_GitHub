@@ -141,7 +141,7 @@ def accel_to_pos(data):
 
     return x, y, z
 
-#main():
+main():
  #   x,y,z = accel_to_pos(data)
 
     # Plot 3D Trajectory
@@ -154,5 +154,5 @@ def accel_to_pos(data):
     ax.set_zlabel('Z position (m)')
     plt.show()
 
-#if __name__ == '__main__':
- #   main()
+if __name__ == '__main__':
+   main()
