@@ -155,6 +155,7 @@ def accel_to_pos(data):
 
     return x, y, z
 
+<<<<<<< HEAD
 def main():
     
     filename = input('''Please enter the name of the file for trajectory construction. \n 
@@ -171,6 +172,10 @@ def main():
     ready_data = remove_gravity(data_filt, orientation)
 
     x,y,z = accel_to_pos(ready_data)
+=======
+main():
+ #   x,y,z = accel_to_pos(data)
+>>>>>>> e124d988daa0e7f10b1910c1d629658ca5f87b5f
 
     test = remove_gravity(ready_data, orientation)
     print(test)
@@ -186,4 +191,8 @@ def main():
     plt.show()
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     main()
+=======
+   main()
+>>>>>>> e124d988daa0e7f10b1910c1d629658ca5f87b5f
