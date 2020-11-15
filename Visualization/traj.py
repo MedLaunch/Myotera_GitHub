@@ -7,10 +7,10 @@ from scipy.spatial.transform import Rotation as R
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 import json
+import pdb
 plt.style.use('seaborn')
 
-filename = input('''Please enter the name of the file for trajectory construction. \n 
-Accepted file types are .JSON and .CSV: ''')
+
 
 def find_mode(filename):
     '''
@@ -34,7 +34,6 @@ def find_mode(filename):
 
     return mode
 
-mode = find_mode(filename)
 
 def process_data(filename, mode):
     '''
@@ -83,30 +82,46 @@ def process_data(filename, mode):
             df = pd.DataFrame(fused_signals.T,columns = ['x','y','z'])
 
             return timestamps, df
-
-time, data = process_data(filename, mode)                
+               
 
 # Should also include the filter here.
-def Low_pass_filt(data):
-    # Filter requirements.
-    T = 5.0         # Sample Period
-    fs = 30.0       # sample rate, Hz
-    cutoff = 2      # desired cutoff frequency of the filter, Hz ,      slightly higher than actual 1.2 Hz
-    nyq = 0.5 * fs  # Nyquist Frequency
-    order = 2       # sin wave can be approx represented as quadratic
-    n = int(T * fs) # total number of samples
+def band_pass_filt(data):
+    '''
+    Applies a band pass filter to the accelerometer data to attentuate noise.
+    
+    Input: Pandas dataframe of accelerometer data in x, y, and z.
 
-    normal_cutoff = cutoff / nyq
-    # Get the filter coefficients 
-    b, a = butter(order, normal_cutoff, btype='low', analog=False)
-    data_filt = filtfilt(b, a, data)
+    Output: Pandas dataframe of accelerometer data with reduced noise in x, y, and z.
+    '''
+    dt = 0.01
+    # Try to remove noise via Fourier analysis
+    # Discrete Fourier Transform sample frequencies
+    freq = np.fft.rfftfreq(data.iloc[1].size,d=dt)
+    # Compute the Fast Fourier Transform (FFT) of acceleration signals
+    fft_x = np.fft.rfft(data.iloc[1,:]) 
+    fft_y = np.fft.rfft(data.iloc[2,:]) 
+    fft_z = np.fft.rfft(data.iloc[3,:])
+
+    atten_x_fft = np.where(freq < 10,fft_x * 0.1, fft_x) 
+    atten_y_fft = np.where(freq < 10,fft_y * 0.1, fft_y) 
+    atten_z_fft = np.where((freq > 5) & (freq < 10),fft_z * 0.1, fft_z) 
+
+    data_filt = data.copy(deep = True)
+
+    # Compute inverse of discrete Fourier Transform 
+    pdb.set_trace()
+    data_filt.iloc[:,1] = np.fft.irfft(atten_x_fft,n=data_filt.shape[0])
+    data_filt.iloc[:,2] = np.fft.irfft(atten_y_fft,n=data_filt.shape[0])
+    data_filt.iloc[:,3] = np.fft.irfft(atten_z_fft,n=data_filt.shape[0])
+
+
     return data_filt
 
-#data.iloc = Low_pass_filt(data.iloc)
 
 def remove_gravity(acc, orientation):
     '''
-    Rotates the gravity vector by the IMU orientation and removes gravity component from accelerometer data at each measurement
+    Rotates the gravity vector by the IMU orientation and removes gravity component from 
+    accelerometer data at each measurement.
 
     Input: Acceleration 3xn array (XYZ)
             Orientation 3xn array (ZYX euler angles)
@@ -114,14 +129,13 @@ def remove_gravity(acc, orientation):
     Output: Numpy arrays for each acceleration component x, y, and z.
     '''
     gravity = np.array([0, 0, -9.81])
-    for i in orientation:
-        r = R.from_euler('zyx', orientation[i,:], degrees=True)
-        r.apply(gravity)
-        acc[i, :] = acc[i, :] - gravity
+    
+    for i in range(len(acc)): 
+        r = R.from_euler('zyx', orientation[i], degrees=True)
+        gravity = r.apply(gravity)
+        acc.loc[i] = acc.loc[i] - gravity
     return acc
 
-orientation = np.array((len(data),3))
-data.iloc = remove_gravity(data, orientation)
 
 def accel_to_pos(data):
     '''
@@ -141,9 +155,26 @@ def accel_to_pos(data):
 
     return x, y, z
 
-#main():
- #   x,y,z = accel_to_pos(data)
+def main():
+    
+    filename = input('''Please enter the name of the file for trajectory construction. \n 
+    Accepted file types are .JSON and .CSV: ''')
 
+    mode = find_mode(filename)
+    
+    time, data = process_data(filename, mode)
+
+    data_filt = band_pass_filt(data)
+
+    orientation = np.ones((len(data_filt),3))
+    
+    ready_data = remove_gravity(data_filt, orientation)
+
+    x,y,z = accel_to_pos(ready_data)
+
+    test = remove_gravity(ready_data, orientation)
+    print(test)
+    
     # Plot 3D Trajectory
     fig,ax = plt.subplots()
     fig.suptitle(['3D Trajectory for ',filename],fontsize=20)
@@ -154,5 +185,5 @@ def accel_to_pos(data):
     ax.set_zlabel('Z position (m)')
     plt.show()
 
-#if __name__ == '__main__':
- #   main()
+if __name__ == '__main__':
+    main()
