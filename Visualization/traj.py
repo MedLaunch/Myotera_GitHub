@@ -109,12 +109,19 @@ def band_pass_filt(data):
     data_filt = data.copy(deep = True)
 
     # Compute inverse of discrete Fourier Transform 
-    pdb.set_trace()
-    data_filt.iloc[:,1] = np.fft.irfft(atten_x_fft,n=data_filt.shape[0])
-    data_filt.iloc[:,2] = np.fft.irfft(atten_y_fft,n=data_filt.shape[0])
-    data_filt.iloc[:,3] = np.fft.irfft(atten_z_fft,n=data_filt.shape[0])
+    #pdb.set_trace()
+    filt_x = pd.Series(np.fft.irfft(atten_x_fft,n=data_filt.shape[0]), dtype = 'float64', name = 'Filtered X')
+    filt_y = pd.Series(np.fft.irfft(atten_y_fft,n=data_filt.shape[0]), dtype = 'float64', name = 'Filtered Y')
+    filt_z = pd.Series(np.fft.irfft(atten_z_fft,n=data_filt.shape[0]), dtype = 'float64', name = 'Filtered Z')
 
+    data_filt['Filtered X'] = filt_x 
+    data_filt['Filtered Y'] = filt_y
+    data_filt['Filtered Z'] = filt_z
+    del data_filt['x']
+    del data_filt['y']
+    del data_filt['z']
 
+    print(data_filt.head())
     return data_filt
 
 
@@ -171,9 +178,6 @@ def main():
     ready_data = remove_gravity(data_filt, orientation)
 
     x,y,z = accel_to_pos(ready_data)
-
-    test = remove_gravity(ready_data, orientation)
-    print(test)
     
     # Plot 3D Trajectory
     fig,ax = plt.subplots()
