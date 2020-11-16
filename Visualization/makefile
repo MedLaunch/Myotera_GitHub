@@ -1,7 +1,6 @@
 # Default Python File
 FILE := "medium_article_vis.py"
 
-
 # Typing `make` will auto select defaults^
 # To specify => make FILE="script.py" DATA="acc_ud1.json" <- note: command line paramters need to implement in script file for this work.
 # FILE and DATA are optional arguments.
