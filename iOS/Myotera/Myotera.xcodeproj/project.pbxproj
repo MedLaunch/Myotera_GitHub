@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D820DDE72564D208006A00BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D820DDE62564D208006A00BE /* Assets.xcassets */; };
 		D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F12547B57F0053921E /* AppDelegate.swift */; };
 		D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F32547B57F0053921E /* SceneDelegate.swift */; };
-		D859C4F62547B57F0053921E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F52547B57F0053921E /* ViewController.swift */; };
+		D859C4F62547B57F0053921E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F52547B57F0053921E /* DashboardViewController.swift */; };
 		D859C4F92547B57F0053921E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D859C4F72547B57F0053921E /* Main.storyboard */; };
-		D859C4FB2547B5800053921E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D859C4FA2547B5800053921E /* Assets.xcassets */; };
 		D859C4FE2547B5800053921E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D859C4FC2547B5800053921E /* LaunchScreen.storyboard */; };
 		D859C5092547B5810053921E /* MyoteraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C5082547B5810053921E /* MyoteraTests.swift */; };
 		D859C5142547B5810053921E /* MyoteraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C5132547B5810053921E /* MyoteraUITests.swift */; };
@@ -35,12 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D820DDE62564D208006A00BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D859C4EE2547B57F0053921E /* Myotera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myotera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D859C4F12547B57F0053921E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D859C4F32547B57F0053921E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D859C4F52547B57F0053921E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D859C4F52547B57F0053921E /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		D859C4F82547B57F0053921E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D859C4FA2547B5800053921E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D859C4FD2547B5800053921E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D859C4FF2547B5800053921E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D859C5042547B5810053921E /* MyoteraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoteraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +137,7 @@
 		D85BC8C4254F381000DB9DAD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D859C4F52547B57F0053921E /* ViewController.swift */,
+				D859C4F52547B57F0053921E /* DashboardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,10 +145,10 @@
 		D85BC8C8254F386200DB9DAD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D820DDE62564D208006A00BE /* Assets.xcassets */,
 				D859C4F12547B57F0053921E /* AppDelegate.swift */,
 				D859C4F32547B57F0053921E /* SceneDelegate.swift */,
 				D859C4FF2547B5800053921E /* Info.plist */,
-				D859C4FA2547B5800053921E /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -264,7 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D859C4FE2547B5800053921E /* LaunchScreen.storyboard in Resources */,
-				D859C4FB2547B5800053921E /* Assets.xcassets in Resources */,
+				D820DDE72564D208006A00BE /* Assets.xcassets in Resources */,
 				D859C4F92547B57F0053921E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D859C4F62547B57F0053921E /* ViewController.swift in Sources */,
+				D859C4F62547B57F0053921E /* DashboardViewController.swift in Sources */,
 				D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */,
 				D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */,
 			);
