@@ -10,8 +10,6 @@ import json
 import pdb
 plt.style.use('seaborn')
 
-
-
 def find_mode(filename):
     '''
     Determines processing mode.
@@ -173,7 +171,7 @@ def main():
 
     data_filt = band_pass_filt(data)
 
-    orientation = np.ones((len(data_filt),3))
+    orientation = pd.read_csv('orientation.csv')
     
     ready_data = remove_gravity(data_filt, orientation)
 

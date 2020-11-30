@@ -1,28 +1,37 @@
-function orient_box(acc, gyro, mag, sample_rate) 
-%Takes input for accelerometer, gyroscope, magnometer (XYZ columns) matrix
-%Outputs plot of orientation over time
+clear;
+clc;
+sample_rate = 52;
+%Read in 9-DOF data
+accfile = '../datasets/reagan_magn_data/rotate_forward/test_acc.csv';
+opts = detectImportOptions(accfile);
+opts.SelectedVariableNames = [2:4]; 
+acc = readmatrix(accfile, opts);
 
-%Test sample set: 
-%Uncomment and run with "orient_box([1 1 1],[1 1 1],[1 1 1],200)"
-% ld = load('rpy_9axis.mat');
-% acc = ld.sensorData.Acceleration;
-% gyro = ld.sensorData.AngularVelocity;
-% mag = ld.sensorData.MagneticField;
+gyrofile = '../datasets/reagan_magn_data/rotate_forward/test_gyro.csv';
+opts = detectImportOptions(gyrofile);
+opts.SelectedVariableNames = [2:4]; 
+gyro = readmatrix(gyrofile, opts);
+
+magnfile = '../datasets/reagan_magn_data/rotate_forward/test_magn.csv';
+opts = detectImportOptions(magnfile);
+opts.SelectedVariableNames = [2:4]; 
+magn = readmatrix(magnfile, opts);
 
 viewer = HelperOrientationViewer;
 
 %Edittable Parameters
-ahrsFilter.GyroscopeNoise          = 0.0002;
-ahrsFilter.AccelerometerNoise      = 0.0003;
-ahrsFilter.LinearAccelerationNoise = 0.0025;
-ahrsFilter.MagnetometerNoise       = 0.1;
-ahrsFilter.MagneticDisturbanceNoise = 0.5;
-ahrsFilter.MagneticDisturbanceDecayFactor = 0.5;
+% ahrsFilter.GyroscopeNoise          = 0.0002;
+% ahrsFilter.AccelerometerNoise      = 0.0003;
+% ahrsFilter.LinearAccelerationNoise = 0.0025;
+% ahrsFilter.MagnetometerNoise       = 0.1;
+% ahrsFilter.MagneticDisturbanceNoise = 0.5;
+% ahrsFilter.MagneticDisturbanceDecayFactor = 0.5;
 
 ifilt = ahrsfilter('SampleRate', sample_rate);
 
-for ii=1:size(acc,1)
-    qahrs = ifilt(acc(ii,:), gyro(ii,:), mag(ii,:));
+num_meas = min([size(acc,1), size(gyro,1), size(magn,1)]); %Shortest set of data between acc, gyro, mag
+for ii=1:num_meas %Shortest set of data between acc, gyro, mag
+    qahrs = ifilt(acc(ii,:), gyro(ii,:), magn(ii,:));
     viewer(qahrs);
     pause(0.01);
     
@@ -30,11 +39,17 @@ for ii=1:size(acc,1)
     eulfilt(ii,:)= euler(qahrs,'ZYX','frame');
 end
 
+% qahrs = ifilt(acc(1:num_meas,:), gyro(1:num_meas,:), magn(1:num_meas,:));
+% eulfilt = euler(qahrs,'ZYX','frame');
+% viewer(qahrs);
+
+writematrix(eulfilt,'orientation.csv')
+
 % Release the system object
 release(ifilt)
 
 %Plotting roll, pitch, yaw over time:
-t = 1:size(acc,1);
+t = 1:num_meas;
 figure() %Fused Roll Pitch Yaw
 subplot(3,1,1)
     plot(t, eulfilt(:,3))
