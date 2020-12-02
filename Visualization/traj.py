@@ -55,6 +55,7 @@ def process_data(filename, mode):
         timestamps = np.array(df.iloc[:,0])
         df = df.iloc[:,1:]
 
+        print(filename,'processed.')
         return timestamps, df
 
     elif mode == 2: # JSON
@@ -78,7 +79,7 @@ def process_data(filename, mode):
             fused_signals = np.array([xF, yF, zF])
             timestamps = np.array(timestamps).T
             df = pd.DataFrame(fused_signals.T,columns = ['x','y','z'])
-
+            print(filename,'processed.')
             return timestamps, df
                
 
@@ -119,7 +120,7 @@ def band_pass_filt(data):
     del data_filt['y']
     del data_filt['z']
 
-    print(data_filt.head())
+    #print(data_filt.head())
     return data_filt
 
 
@@ -134,11 +135,12 @@ def remove_gravity(acc, orientation):
     Output: Numpy arrays for each acceleration component x, y, and z.
     '''
     gravity = np.array([0, 0, -9.81])
-    
+
     for i in range(len(acc)): 
-        r = R.from_euler('zyx', orientation[i], degrees=True)
+        r = R.from_euler('zyx', orientation.loc[i], degrees=True)
         gravity = r.apply(gravity)
         acc.loc[i] = acc.loc[i] - gravity
+    
     return acc
 
 
@@ -168,7 +170,7 @@ def main():
     mode = find_mode(filename)
     
     time, data = process_data(filename, mode)
-
+    
     data_filt = band_pass_filt(data)
 
     orientation = pd.read_csv('orientation.csv')
