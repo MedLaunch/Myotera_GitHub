@@ -1,18 +1,19 @@
 clear;
 clc;
+
 sample_rate = 52;
 %Read in 9-DOF data
-accfile = '../datasets/reagan_magn_data/rotate_forward/test_acc.csv';
+accfile = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-acc-stream.csv';
 opts = detectImportOptions(accfile);
 opts.SelectedVariableNames = [2:4]; 
 acc = readmatrix(accfile, opts);
 
-gyrofile = '../datasets/reagan_magn_data/rotate_forward/test_gyro.csv';
+gyrofile = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-gyro-stream.csv';
 opts = detectImportOptions(gyrofile);
 opts.SelectedVariableNames = [2:4]; 
 gyro = readmatrix(gyrofile, opts);
 
-magnfile = '../datasets/reagan_magn_data/rotate_forward/test_magn.csv';
+magnfile = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-magn-stream.csv';
 opts = detectImportOptions(magnfile);
 opts.SelectedVariableNames = [2:4]; 
 magn = readmatrix(magnfile, opts);
@@ -44,25 +45,25 @@ end
 % viewer(qahrs);
 
 writematrix(eulfilt,'orientation.csv')
-
-% Release the system object
-release(ifilt)
-
-%Plotting roll, pitch, yaw over time:
-t = 1:num_meas;
-figure() %Fused Roll Pitch Yaw
-subplot(3,1,1)
-    plot(t, eulfilt(:,3))
-    title('Fused ROLL Data')
-    ylabel('Rotation (degrees)')
-    xlabel('Time (s)')
-    subplot(3,1,2)
-    plot(t, eulfilt(:,2))
-    title('Fused PITCH Data')
-    ylabel('Rotation (degrees)')
-    xlabel('Time (s)')
-    subplot(3,1,3)
-    plot(t, eulfilt(:,1))
-    title('Fused YAW Data')
-    ylabel('Rotation (degrees)')
-    xlabel('Time (s)')
+% 
+% % Release the system object
+% release(ifilt)
+% 
+% %Plotting roll, pitch, yaw over time:
+% t = 1:num_meas;
+% figure() %Fused Roll Pitch Yaw
+% subplot(3,1,1)
+%     plot(t, eulfilt(:,3))
+%     title('Fused ROLL Data')
+%     ylabel('Rotation (degrees)')
+%     xlabel('Time (s)')
+%     subplot(3,1,2)
+%     plot(t, eulfilt(:,2))
+%     title('Fused PITCH Data')
+%     ylabel('Rotation (degrees)')
+%     xlabel('Time (s)')
+%     subplot(3,1,3)
+%     plot(t, eulfilt(:,1))
+%     title('Fused YAW Data')
+%     ylabel('Rotation (degrees)')
+%     xlabel('Time (s)')
