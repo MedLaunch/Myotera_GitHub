@@ -143,6 +143,13 @@ def remove_gravity(acc, orientation):
     
     return acc
 
+'''
+calibrate magnetometer data - rotate each axis
+take ^ and input to Madgick QUF
+output is Quarternion
+Convert ^ into 3x3 rotation matrix and invert this matrix
+Apply the inverted rotation matrix to linear acceleration data
+'''
 
 def accel_to_pos(data):
     '''
@@ -157,7 +164,7 @@ def accel_to_pos(data):
     # Double integrate accelerations to find positions
     x =cumtrapz(cumtrapz(data.iloc[:,0],dx=dt),dx=dt)
     y =cumtrapz(cumtrapz(data.iloc[:,1],dx=dt),dx=dt)
-    # data.iloc[:,2] = data.iloc[:,2] - 9.81
+    #data.iloc[:,2] = data.iloc[:,2] - 9.81
     z =cumtrapz(cumtrapz(data.iloc[:,2],dx=dt),dx=dt)
 
     return x, y, z
