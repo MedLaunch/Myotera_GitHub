@@ -4,7 +4,7 @@
 %%%%% NEED TO DECIDE HOW OFTEN WE WANT TO AVERAGE DATA (OR MEDIAN)
 
 %% Read in data
-
+%function []=(wristCSV, upperArmCSV,)
 % Sensor 1 data (wrist)
 gyro_filename_1 = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-gyro-stream.csv';
 gyro_data_1 = readmatrix(gyro_filename_1);
@@ -16,6 +16,7 @@ gyro_data_2 = readmatrix(gyro_filename_2);
 gyro_data_2 = gyro_data_2(1:4:end,:); % Filter out nan values.
 
 % FIGURE OUT HOW TO RUN orient_box TWICE (MIGHT WANT TO MAKE 2 FILES)
+% yaw pitch roll (orientation.csv)
 % Sensor 1 data (wrist)
 orientation_filename_1 = 'orientation.csv';
 orientation_data_1 = readmatrix(orientation_filename_1);
@@ -26,42 +27,61 @@ orientation_data_2 = readmatrix(orientation_filename_2);
 
 
 %% Initialize variables
+syms t;
 
-% Record  time increment% This depends on the sampling rate
-% https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjDk6_4habtAhX3SjABHXkLBLAQFjACegQIAhAC&url=https%3A%2F%2Fwww.movesense.com%2Fproduct%2Fmovesense-sensor%2F&usg=AOvVaw1wvv-0iG_7F0q8W4fa_uVd
-delta_t = 1/52; % Assumed sample period (could be something else below -- will need to check later): 
-
-% Take accelerations as vectors, already as vectors in accel_data?
-%a1 = ?; % wrist
-%a2 = ?; % upper arm
+% Sampling Rate
+delta_t = 1/52;
 
 % Angular rate vectors for the 2 sensors at 1 timestamp in terms of time
-g1 = [gyro_data_1(1,2) gyro_data_1(1,3) gyro_data_1(1,4)] .* t;
-g2 = [gyro_data_2(1,2) gyro_data_1(1,3) gyro_data_1(1,4)] .* t;
+g1_test = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* t;
+%g2 = [gyro_data_2(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* t;
+
+g1_minus2 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t-2*delta_t);
+g1_plus2 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t+2*delta_t);
+g1_minus1 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t-delta_t);
+g1_plus1 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t+delta_t);
+
+g2_minus2 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t-2*delta_t);
+g2_plus2 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t+2*delta_t);
+g2_minus1 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t-delta_t);
+g2_plus1 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t+delta_t);
+
 
 %% Process Data
+% Time Derivative Angular Rates
+g1 = (g1_minus2-8.*g1_minus1+8.*g1_plus1-g1_plus2)./(12.*delta_t);
+g2 = (g2_minus2-8.*g2_minus1+8.*g2_plus1-g2_plus2)./(12.*delta_t);
+%g1 = (g1(t-2*delta_t) - 8*g1(t-delta_t) + 8*g1(t+delta_t) - g1(t+2*delta_t)) / (12*delta_t);
+%g2 = (g2(t-2*delta_t) - 8*g2(t-delta_t) + 8*g2(t+delta_t) - g2(t+2*delta_t)) / (12*delta_t);
 
-% Calculate time derivative angular rates
-g1_prime_num = g1(t-2*delta_t) - 8*g1(t-delta_t) + 8*g1(t+delta_t) - g1(t+2*delta_t);
-g1_prime_denom = 12*delta_t;
-g1 = g1_prime_num / g1_prime_denom;
+% use MATLAB Taylor or PolyFit functions perhaps?
+% https://www.mathworks.com/help/matlab/ref/polyfit.html
+% https://www.mathworks.com/matlabcentral/answers/418776-by-using-syntax-taylor-in-matlab-find-the-third-order-approximation-of-log-x-using-base-point-at
 
-g2_prime_num = g2(t-2*delta_t) - 8*g2(t-delta_t) + 8*g2(t+delta_t) - g2(t+2*delta_t);
-g2_prime_denom = 12*delta_t;
-g2 = g2_prime_num / g2_prime_denom;
-
-% Find row and pitch angles corresponding to phi and theta respectively
+% Find roll and pitch angles corresponding to phi and theta respectively
 % from orientation data and convert to degrees (MIGHT WANT TO KEEP RADIANS FOR BOTH)
-phi_1 = orientation_data_1(?) * 180 / pi;
-phi_2 = orientation_data_2(?) * 180 / pi;
-theta_1 = orientation_data_1(?) * 180 / pi;
-theta_2 = orientation_data_2(?) * 180 / pi;
+phi_1 = orientation_data_1(:,3) * 180 / pi;
+phi_2 = orientation_data_2(:,3) * 180 / pi;
+theta_1 = orientation_data_1(:,2) * 180 / pi;
+theta_2 = orientation_data_2(:,2) * 180/ pi;
 
 % Calculate unit-length direction vectors
-j1 = [cos(phi_1)*cos(theta_1); cos(phi_1)*sin(theta_1); sin(phi_1)];
-j2 = [cos(phi_2)*cos(theta_2); cos(phi_2)*sin(theta_2); sin(phi_2)];
+j1 = [cos(phi_1).*cos(theta_1) cos(phi_1).*sin(theta_1) sin(phi_1)]; % made into horizontal vectors
+j2 = [cos(phi_2).*cos(theta_2) cos(phi_2).*sin(theta_2) sin(phi_2)]; % here as well.
 
 % Solve for joint angles
-eqn = dot(g1,j1) - dot(g2,j2);
-extension_angle = integral(@(t) eqn, 0, dt);
+%eqn = dot(g1,j1) - dot(g2,j2);
+%size(j1) => 248 3
+%size(g1) => 62 3
+% ^ same for j2, g2
+% Therefore...
+j1 = j1(1:size(g1),:);
+j2 = j2(1:size(g2),:);
+%eqn = dot(g1,j1)-dot(g2,j2); This also didn't work... since matrices?
+eqn = sum(g1.*j1, 2)-sum(g2.*j2,2); % alternative method, does same thing as above line.
+
+% Attempting calculation row by row
+%extension_angle = integral(@(t) eqn, 0, delta_t);
+% https://www.mathworks.com/help/matlab/math/integration-of-numeric-data.html
+% is this what we're trying to do? ^
 
