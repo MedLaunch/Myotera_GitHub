@@ -3,8 +3,8 @@
 % Myotera
 %%%%% NEED TO DECIDE HOW OFTEN WE WANT TO AVERAGE DATA (OR MEDIAN)
 
-%% Read in data
 function [] = joint_angles(who,wristFolder,upperArmFolder,take)
+    %% Read in data
     %function []=(wristCSV, upperArmCSV,)
     % Sensor 1 data (wrist)
     %gyro_filename_1 = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-gyro-stream.csv';
@@ -36,7 +36,7 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
     delta_t = 1/52;
 
     % Angular rate vectors for the 2 sensors at 1 timestamp in terms of time
-    g1_test = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* t;
+    % g1_test = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* t;
     %g2 = [gyro_data_2(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* t;
 
     g1_minus2 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t-2*delta_t);
@@ -52,7 +52,7 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
 
     %% Process Data
     % Time Derivative Angular Rates
-    g1 = (g1_minus2-8.*g1_minus1+8.*g1_plus1-g1_plus2)./(12.*delta_t)
+    g1 = (g1_minus2-8.*g1_minus1+8.*g1_plus1-g1_plus2)./(12.*delta_t);
     g2 = (g2_minus2-8.*g2_minus1+8.*g2_plus1-g2_plus2)./(12.*delta_t);
     %g1 = (g1(t-2*delta_t) - 8*g1(t-delta_t) + 8*g1(t+delta_t) - g1(t+2*delta_t)) / (12*delta_t);
     %g2 = (g2(t-2*delta_t) - 8*g2(t-delta_t) + 8*g2(t+delta_t) - g2(t+2*delta_t)) / (12*delta_t);
@@ -87,4 +87,6 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
     %extension_angle = integral(@(t) eqn, 0, delta_t);
     % https://www.mathworks.com/help/matlab/math/integration-of-numeric-data.html
     % is this what we're trying to do? ^
+    
 end
+
