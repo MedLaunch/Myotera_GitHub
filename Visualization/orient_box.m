@@ -1,3 +1,5 @@
+
+
 function []=orient_box(who,folder,take,plot)
     sample_rate = 52;
     %Read in 9-DOF data
@@ -50,26 +52,31 @@ function []=orient_box(who,folder,take,plot)
     % viewer(qahrs);
     storePath = "orientation"+"_"+folder+"_take" + take + ".csv";
     writematrix(eulfilt,storePath)
+    
+    if(plot)
+        % Release the system object
+        release(ifilt)
+
+        %Plotting roll, pitch, yaw over time:
+        t = 1:num_meas;
+        figure() %Fused Roll Pitch Yaw
+        subplot(3,1,1)
+        plot(t, eulfilt(:,3))
+        title('Fused ROLL Data')
+        ylabel('Rotation (degrees)')
+        xlabel('Time (s)')
+        subplot(3,1,2)
+        plot(t, eulfilt(:,2))
+        title('Fused PITCH Data')
+        ylabel('Rotation (degrees)')
+        xlabel('Time (s)')
+        subplot(3,1,3)
+        plot(t, eulfilt(:,1))
+        title('Fused YAW Data')
+        ylabel('Rotation (degrees)')
+        xlabel('Time (s)')
+    end
+    
 end
-    % 
-    % % Release the system object
-    % release(ifilt)
-    % 
-    % %Plotting roll, pitch, yaw over time:
-    % t = 1:num_meas;
-    % figure() %Fused Roll Pitch Yaw
-    % subplot(3,1,1)
-    %     plot(t, eulfilt(:,3))
-    %     title('Fused ROLL Data')
-    %     ylabel('Rotation (degrees)')
-    %     xlabel('Time (s)')
-    %     subplot(3,1,2)
-    %     plot(t, eulfilt(:,2))
-    %     title('Fused PITCH Data')
-    %     ylabel('Rotation (degrees)')
-    %     xlabel('Time (s)')
-    %     subplot(3,1,3)
-    %     plot(t, eulfilt(:,1))
-    %     title('Fused YAW Data')
-    %     ylabel('Rotation (degrees)')
-    %     xlabel('Time (s)')
+    
+    
