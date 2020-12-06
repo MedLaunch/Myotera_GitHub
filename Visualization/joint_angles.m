@@ -5,7 +5,6 @@
 
 function [] = joint_angles(who,wristFolder,upperArmFolder,take)
     %% Read in data
-    %function []=(wristCSV, upperArmCSV,)
     % Sensor 1 data (wrist)
     %gyro_filename_1 = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-gyro-stream.csv';
     gyro_filename_1 = "../datasets/" + who +"/" + wristFolder + "/" + "take" +take+ "_gyro.csv";
@@ -21,12 +20,14 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
     % FIGURE OUT HOW TO RUN orient_box TWICE (MIGHT WANT TO MAKE 2 FILES)
     % yaw pitch roll (orientation.csv)
     % Sensor 1 data (wrist)
-    orientation_filename_1 = "orientation"+"_"+wristFolder+"_take" + take + ".csv";
-    orientation_data_1 = readmatrix(orientation_filename_1);
+    orient_box(who,wristFolder,5,false)
+    %orientation_filename_1 = "orientation"+"_"+wristFolder+"_take" + take + ".csv";
+    orientation_data_1 = readmatrix(orientation.csv);
 
     % Sensor 2 data (upper arm)
-    orientation_filename_2 = "orientation"+"_"+upperArmFolder+"_take" + take + ".csv";
-    orientation_data_2 = readmatrix(orientation_filename_2);
+    orient_box(who,upperArmFolder,5,false)
+    %orientation_filename_2 = "orientation"+"_"+upperArmFolder+"_take" + take + ".csv";
+    orientation_data_2 = readmatrix(orientation.csv);
 
 
     %% Initialize variables
@@ -44,10 +45,10 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
     g1_minus1 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t-delta_t);
     g1_plus1 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t+delta_t);
 
-    g2_minus2 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t-2*delta_t);
-    g2_plus2 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t+2*delta_t);
-    g2_minus1 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t-delta_t);
-    g2_plus1 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t+delta_t);
+    g2_minus2 = [gyro_data_2(:,2) gyro_data_2(:,3) gyro_data_2(:,4)] .* (t-2*delta_t);
+    g2_plus2 = [gyro_data_2(:,2) gyro_data_2(:,3) gyro_data_2(:,4)] .* (t+2*delta_t);
+    g2_minus1 = [gyro_data_2(:,2) gyro_data_2(:,3) gyro_data_2(:,4)] .* (t-delta_t);
+    g2_plus1 = [gyro_data_2(:,2) gyro_data_2(:,3) gyro_data_2(:,4)] .* (t+delta_t);
 
 
     %% Process Data
@@ -63,6 +64,7 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
 
     % Find roll and pitch angles corresponding to phi and theta respectively
     % from orientation data and convert to degrees (MIGHT WANT TO KEEP RADIANS FOR BOTH)
+    %might need to make phi (:,1)
     phi_1 = orientation_data_1(:,3) * 180 / pi;
     phi_2 = orientation_data_2(:,3) * 180 / pi;
     theta_1 = orientation_data_1(:,2) * 180 / pi;
