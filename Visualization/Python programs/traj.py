@@ -169,6 +169,11 @@ def accel_to_pos(data):
 
     return x, y, z
 
+'''
+FILE EXTENSION FOR TESTING:
+.\Visualization\Python programs\Initial sample data\acc_ud1.json
+'''
+
 def main():
     #hi
     filename = input('''Please enter the name of the file for trajectory construction. \n 
@@ -180,15 +185,17 @@ def main():
     
     data_filt = band_pass_filt(data)
 
-    orientation = pd.read_csv('orientation.csv')
+    orientation = pd.read_csv('.\Visualization\Python programs\Initial sample data\orientation.csv')
     
     ready_data = remove_gravity(data_filt, orientation)
 
     x,y,z = accel_to_pos(ready_data)
     
+    key = filename.split("\\")[-1]
+
     # Plot 3D Trajectory
     fig,ax = plt.subplots()
-    fig.suptitle(['3D Trajectory for ',filename],fontsize=20)
+    fig.suptitle(['3D Trajectory for ',key],fontsize=20)
     ax = plt.axes(projection='3d')
     ax.plot3D(x,y,z,c='red',lw=2,label='phone trajectory')
     ax.set_xlabel('X position (m)')
