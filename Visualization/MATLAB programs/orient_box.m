@@ -1,22 +1,23 @@
 
+% MAKE SURE IN 'MATLAB programs' FOLDER
 
 function []=orient_box(who,folder,take,plot)
     sample_rate = 52;
     %Read in 9-DOF data
-    %accfile = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-acc-stream.csv';
-    accfile = "../datasets/" + who +"/" + folder + "/" + "take" + take + "_acc.csv";
+    %accfile = '../../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-acc-stream.csv';
+    accfile = "../../datasets/" + who +"/" + folder + "/" + "take" + take + "_acc.csv";
     opts = detectImportOptions(accfile);
     opts.SelectedVariableNames = [2:4]; 
     acc = readmatrix(accfile, opts);
 
-    %gyrofile = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-gyro-stream.csv';
-    gyrofile = "../datasets/" + who +"/" + folder + "/" + "take" +take+ "_gyro.csv";
+    %gyrofile = '../../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-gyro-stream.csv';
+    gyrofile = "../../datasets/" + who +"/" + folder + "/" + "take" +take+ "_gyro.csv";
     opts = detectImportOptions(gyrofile);
     opts.SelectedVariableNames = [2:4]; 
     gyro = readmatrix(gyrofile, opts);
 
-    %magnfile = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-magn-stream.csv';
-    magnfile = "../datasets/"+ who +"/" + folder + "/" + "take" +take+ "_magn.csv";
+    %magnfile = '../../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-magn-stream.csv';
+    magnfile = "../../datasets/"+ who +"/" + folder + "/" + "take" +take+ "_magn.csv";
     opts = detectImportOptions(magnfile);
     opts.SelectedVariableNames = [2:4]; 
     magn = readmatrix(magnfile, opts);

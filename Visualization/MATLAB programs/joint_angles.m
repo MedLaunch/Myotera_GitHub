@@ -3,31 +3,31 @@
 % Myotera
 %%%%% NEED TO DECIDE HOW OFTEN WE WANT TO AVERAGE DATA (OR MEDIAN)
 
+% Run joint_angles("reagan_magn_data","curl_hand","curl_elbow","5")
+% Make sure in 'MATLAB programs' folder
+
 function [] = joint_angles(who,wristFolder,upperArmFolder,take)
     %% Read in data
     % Sensor 1 data (wrist)
-    %gyro_filename_1 = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-gyro-stream.csv';
-    gyro_filename_1 = "../datasets/" + who +"/" + wristFolder + "/" + "take" +take+ "_gyro.csv";
+    gyro_filename_1 = "../../datasets/" + who + "/" + wristFolder + "/" + "take" + take + "_gyro.csv";
     gyro_data_1 = readmatrix(gyro_filename_1);
     gyro_data_1 = gyro_data_1(1:4:end,:); % Filter out nan values.
 
     % Sensor 2 data (upper arm)
-    %gyro_filename_2 = '../datasets/reagan_magn_data/curl_motion/20201115T220555Z-180230000179-gyro-stream.csv';
-    gyro_filename_2 = "../datasets/" + who +"/" + upperArmFolder + "/" + "take" +take+ "_gyro.csv";
+    gyro_filename_2 = "../../datasets/" + who + "/" + upperArmFolder + "/" + "take" + take + "_gyro.csv";
     gyro_data_2 = readmatrix(gyro_filename_2);
     gyro_data_2 = gyro_data_2(1:4:end,:); % Filter out nan values.
 
-    % FIGURE OUT HOW TO RUN orient_box TWICE (MIGHT WANT TO MAKE 2 FILES)
     % yaw pitch roll (orientation.csv)
     % Sensor 1 data (wrist)
-    orient_box(who,wristFolder,5,false)
-    %orientation_filename_1 = "orientation"+"_"+wristFolder+"_take" + take + ".csv";
-    orientation_data_1 = readmatrix(orientation.csv);
+    orient_box(who,wristFolder,take,false)
+    orientation_wrist_csv = "orientation" + "_" + wristFolder + "_take" + take + ".csv";
+    orientation_wrist_data = readmatrix(orientation_wrist_csv);
 
     % Sensor 2 data (upper arm)
-    orient_box(who,upperArmFolder,5,false)
-    %orientation_filename_2 = "orientation"+"_"+upperArmFolder+"_take" + take + ".csv";
-    orientation_data_2 = readmatrix(orientation.csv);
+    orient_box(who,upperArmFolder,take,false)
+    orientation_arm_csv = "orientation" + "_" + upperArmFolder + "_take" + take + ".csv";
+    orientation_arm_data = readmatrix(orientation_arm_csv);
 
 
     %% Initialize variables
@@ -64,15 +64,15 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
 
     % Find roll and pitch angles corresponding to phi and theta respectively
     % from orientation data and convert to degrees (MIGHT WANT TO KEEP RADIANS FOR BOTH)
-    %might need to make phi (:,1)
-    phi_1 = orientation_data_1(:,3) * 180 / pi;
-    phi_2 = orientation_data_2(:,3) * 180 / pi;
-    theta_1 = orientation_data_1(:,2) * 180 / pi;
-    theta_2 = orientation_data_2(:,2) * 180/ pi;
+    %%%%%%%%%%might need to make phi (:,1)
+    phi_1 = orientation_wrist_data(:,3) * 180 / pi;
+    phi_2 = orientation_arm_data(:,3) * 180 / pi;
+    theta_1 = orientation_wrist_data(:,2) * 180 / pi;
+    theta_2 = orientation_arm_data(:,2) * 180/ pi;
 
-    % Calculate unit-length direction vectors
-    j1 = [cos(phi_1).*cos(theta_1) cos(phi_1).*sin(theta_1) sin(phi_1)]; % made into horizontal vectors
-    j2 = [cos(phi_2).*cos(theta_2) cos(phi_2).*sin(theta_2) sin(phi_2)]; % here as well.
+    % Calculate horizontal unit-length direction vectors
+    j1 = [cos(phi_1).*cos(theta_1) cos(phi_1).*sin(theta_1) sin(phi_1)];
+    j2 = [cos(phi_2).*cos(theta_2) cos(phi_2).*sin(theta_2) sin(phi_2)];
 
     % Solve for joint angles
     %eqn = dot(g1,j1) - dot(g2,j2);
@@ -82,8 +82,8 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
     % Therefore...
     j1 = j1(1:size(g1),:);
     j2 = j2(1:size(g2),:);
-    %eqn = dot(g1,j1)-dot(g2,j2); This also didn't work... since matrices?
-    eqn = sum(g1.*j1, 2)-sum(g2.*j2,2); % alternative method, does same thing as above line.
+    eqn = dot(g1,j1)-dot(g2,j2); %This also didn't work... since matrices?
+    %eqn = sum(g1.*j1, 2)-sum(g2.*j2,2); % alternative method, does same thing as above line.
 
     % Attempting calculation row by row
     %extension_angle = integral(@(t) eqn, 0, delta_t);
