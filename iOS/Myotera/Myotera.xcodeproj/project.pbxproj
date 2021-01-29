@@ -15,6 +15,9 @@
 		D859C4FE2547B5800053921E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D859C4FC2547B5800053921E /* LaunchScreen.storyboard */; };
 		D859C5092547B5810053921E /* MyoteraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C5082547B5810053921E /* MyoteraTests.swift */; };
 		D859C5142547B5810053921E /* MyoteraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C5132547B5810053921E /* MyoteraUITests.swift */; };
+		D85B8926257A156800B710E3 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B8925257A156800B710E3 /* ProgressViewController.swift */; };
+		D868AD2F257B723F00DBA0F5 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D868AD2E257B723F00DBA0F5 /* AchievementsViewController.swift */; };
+		D868AD34257B773000DBA0F5 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D868AD33257B773000DBA0F5 /* ExercisesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		D859C50F2547B5810053921E /* MyoteraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoteraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D859C5132547B5810053921E /* MyoteraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyoteraUITests.swift; sourceTree = "<group>"; };
 		D859C5152547B5810053921E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D85B8925257A156800B710E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		D868AD2E257B723F00DBA0F5 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		D868AD33257B773000DBA0F5 /* ExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				D859C4F52547B57F0053921E /* DashboardViewController.swift */,
+				D85B8925257A156800B710E3 /* ProgressViewController.swift */,
+				D868AD2E257B723F00DBA0F5 /* AchievementsViewController.swift */,
+				D868AD33257B773000DBA0F5 /* ExercisesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -292,7 +301,10 @@
 			files = (
 				D859C4F62547B57F0053921E /* DashboardViewController.swift in Sources */,
 				D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */,
+				D868AD34257B773000DBA0F5 /* ExercisesViewController.swift in Sources */,
 				D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */,
+				D85B8926257A156800B710E3 /* ProgressViewController.swift in Sources */,
+				D868AD2F257B723F00DBA0F5 /* AchievementsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
