@@ -1,0 +1,6 @@
+framework module Pods_MyoteraTests {
+  umbrella header "Pods-MyoteraTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

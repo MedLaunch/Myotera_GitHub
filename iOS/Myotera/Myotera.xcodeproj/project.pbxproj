@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		158FF588BEAA3EC53BE8DDDD /* Pods_Myotera_MyoteraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814A73D5222B86D1D0A604AF /* Pods_Myotera_MyoteraUITests.framework */; };
+		168A44E7BE1C0DE310F3BB2A /* Pods_MyoteraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A6927DADD7820AEFD869D9 /* Pods_MyoteraTests.framework */; };
 		D820DDE72564D208006A00BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D820DDE62564D208006A00BE /* Assets.xcassets */; };
+		D8580D9625C7421300059DC3 /* HomescreenTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8580D9525C7421300059DC3 /* HomescreenTabController.swift */; };
 		D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F12547B57F0053921E /* AppDelegate.swift */; };
 		D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F32547B57F0053921E /* SceneDelegate.swift */; };
 		D859C4F62547B57F0053921E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F52547B57F0053921E /* DashboardViewController.swift */; };
@@ -18,6 +21,7 @@
 		D85B8926257A156800B710E3 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B8925257A156800B710E3 /* ProgressViewController.swift */; };
 		D868AD2F257B723F00DBA0F5 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D868AD2E257B723F00DBA0F5 /* AchievementsViewController.swift */; };
 		D868AD34257B773000DBA0F5 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D868AD33257B773000DBA0F5 /* ExercisesViewController.swift */; };
+		F04713C143220DA4DE8D02E1 /* Pods_Myotera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297104E1371AF53553811B6B /* Pods_Myotera.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D38C29DC9D1BE789C8B3E6B /* Pods-MyoteraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoteraTests.debug.xcconfig"; path = "Target Support Files/Pods-MyoteraTests/Pods-MyoteraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1DA1A534EBD6BA9F8DC99BAA /* Pods-Myotera-MyoteraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myotera-MyoteraUITests.release.xcconfig"; path = "Target Support Files/Pods-Myotera-MyoteraUITests/Pods-Myotera-MyoteraUITests.release.xcconfig"; sourceTree = "<group>"; };
+		297104E1371AF53553811B6B /* Pods_Myotera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myotera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4094B078B390F1EA427E5F0B /* Pods-MyoteraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoteraTests.release.xcconfig"; path = "Target Support Files/Pods-MyoteraTests/Pods-MyoteraTests.release.xcconfig"; sourceTree = "<group>"; };
+		4CFE7A002073F3663500BC70 /* Pods-Myotera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myotera.release.xcconfig"; path = "Target Support Files/Pods-Myotera/Pods-Myotera.release.xcconfig"; sourceTree = "<group>"; };
+		80A612EDB189DA5F1388DDD6 /* Pods-Myotera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myotera.debug.xcconfig"; path = "Target Support Files/Pods-Myotera/Pods-Myotera.debug.xcconfig"; sourceTree = "<group>"; };
+		814A73D5222B86D1D0A604AF /* Pods_Myotera_MyoteraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myotera_MyoteraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5D3421E834BB4B401E74C1D /* Pods-Myotera-MyoteraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myotera-MyoteraUITests.debug.xcconfig"; path = "Target Support Files/Pods-Myotera-MyoteraUITests/Pods-Myotera-MyoteraUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D820DDE62564D208006A00BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8580D9525C7421300059DC3 /* HomescreenTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenTabController.swift; sourceTree = "<group>"; };
 		D859C4EE2547B57F0053921E /* Myotera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myotera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D859C4F12547B57F0053921E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D859C4F32547B57F0053921E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +68,7 @@
 		D85B8925257A156800B710E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		D868AD2E257B723F00DBA0F5 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		D868AD33257B773000DBA0F5 /* ExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		F0A6927DADD7820AEFD869D9 /* Pods_MyoteraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyoteraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04713C143220DA4DE8D02E1 /* Pods_Myotera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168A44E7BE1C0DE310F3BB2A /* Pods_MyoteraTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +92,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158FF588BEAA3EC53BE8DDDD /* Pods_Myotera_MyoteraUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71ECBA29AB395889FB942DC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80A612EDB189DA5F1388DDD6 /* Pods-Myotera.debug.xcconfig */,
+				4CFE7A002073F3663500BC70 /* Pods-Myotera.release.xcconfig */,
+				D5D3421E834BB4B401E74C1D /* Pods-Myotera-MyoteraUITests.debug.xcconfig */,
+				1DA1A534EBD6BA9F8DC99BAA /* Pods-Myotera-MyoteraUITests.release.xcconfig */,
+				1D38C29DC9D1BE789C8B3E6B /* Pods-MyoteraTests.debug.xcconfig */,
+				4094B078B390F1EA427E5F0B /* Pods-MyoteraTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D3AF78571A898CE3DBF685B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				297104E1371AF53553811B6B /* Pods_Myotera.framework */,
+				814A73D5222B86D1D0A604AF /* Pods_Myotera_MyoteraUITests.framework */,
+				F0A6927DADD7820AEFD869D9 /* Pods_MyoteraTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D859C4E52547B57F0053921E = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +130,8 @@
 				D859C5072547B5810053921E /* MyoteraTests */,
 				D859C5122547B5810053921E /* MyoteraUITests */,
 				D859C4EF2547B57F0053921E /* Products */,
+				71ECBA29AB395889FB942DC4 /* Pods */,
+				D3AF78571A898CE3DBF685B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +190,7 @@
 				D85B8925257A156800B710E3 /* ProgressViewController.swift */,
 				D868AD2E257B723F00DBA0F5 /* AchievementsViewController.swift */,
 				D868AD33257B773000DBA0F5 /* ExercisesViewController.swift */,
+				D8580D9525C7421300059DC3 /* HomescreenTabController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D859C5182547B5810053921E /* Build configuration list for PBXNativeTarget "Myotera" */;
 			buildPhases = (
+				D33A21DEEC9C31DB344E74E9 /* [CP] Check Pods Manifest.lock */,
 				D859C4EA2547B57F0053921E /* Sources */,
 				D859C4EB2547B57F0053921E /* Frameworks */,
 				D859C4EC2547B57F0053921E /* Resources */,
+				8E357CD87ED02B242BE07B04 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +239,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D859C51B2547B5810053921E /* Build configuration list for PBXNativeTarget "MyoteraTests" */;
 			buildPhases = (
+				A59319965CA567EABE115DCD /* [CP] Check Pods Manifest.lock */,
 				D859C5002547B5810053921E /* Sources */,
 				D859C5012547B5810053921E /* Frameworks */,
 				D859C5022547B5810053921E /* Resources */,
@@ -211,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D859C51E2547B5810053921E /* Build configuration list for PBXNativeTarget "MyoteraUITests" */;
 			buildPhases = (
+				0A3817BD7C054A8AF99E2D2C /* [CP] Check Pods Manifest.lock */,
 				D859C50B2547B5810053921E /* Sources */,
 				D859C50C2547B5810053921E /* Frameworks */,
 				D859C50D2547B5810053921E /* Resources */,
+				EA7EE0E372492EADC95ABED2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +343,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A3817BD7C054A8AF99E2D2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Myotera-MyoteraUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E357CD87ED02B242BE07B04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Myotera/Pods-Myotera-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Myotera/Pods-Myotera-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Myotera/Pods-Myotera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A59319965CA567EABE115DCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyoteraTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D33A21DEEC9C31DB344E74E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Myotera-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA7EE0E372492EADC95ABED2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Myotera-MyoteraUITests/Pods-Myotera-MyoteraUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Myotera-MyoteraUITests/Pods-Myotera-MyoteraUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Myotera-MyoteraUITests/Pods-Myotera-MyoteraUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D859C4EA2547B57F0053921E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -302,6 +454,7 @@
 				D859C4F62547B57F0053921E /* DashboardViewController.swift in Sources */,
 				D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */,
 				D868AD34257B773000DBA0F5 /* ExercisesViewController.swift in Sources */,
+				D8580D9625C7421300059DC3 /* HomescreenTabController.swift in Sources */,
 				D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */,
 				D85B8926257A156800B710E3 /* ProgressViewController.swift in Sources */,
 				D868AD2F257B723F00DBA0F5 /* AchievementsViewController.swift in Sources */,
@@ -477,6 +630,7 @@
 		};
 		D859C5192547B5810053921E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80A612EDB189DA5F1388DDD6 /* Pods-Myotera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -496,6 +650,7 @@
 		};
 		D859C51A2547B5810053921E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CFE7A002073F3663500BC70 /* Pods-Myotera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -515,6 +670,7 @@
 		};
 		D859C51C2547B5810053921E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D38C29DC9D1BE789C8B3E6B /* Pods-MyoteraTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -537,6 +693,7 @@
 		};
 		D859C51D2547B5810053921E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4094B078B390F1EA427E5F0B /* Pods-MyoteraTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -559,6 +716,7 @@
 		};
 		D859C51F2547B5810053921E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5D3421E834BB4B401E74C1D /* Pods-Myotera-MyoteraUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -579,6 +737,7 @@
 		};
 		D859C5202547B5810053921E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DA1A534EBD6BA9F8DC99BAA /* Pods-Myotera-MyoteraUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
