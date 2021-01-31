@@ -51,7 +51,7 @@ function []=orient_box(where,what,trial,which,plot)
     % qahrs = ifilt(acc(1:num_meas,:), gyro(1:num_meas,:), magn(1:num_meas,:));
     % eulfilt = euler(qahrs,'ZYX','frame');
     % viewer(qahrs);
-    storePath = "orientation"+"_"+what+"_take" + trial + ".csv";
+    storePath = "orientation" + "_" + what + "_" + which + "_trial" + trial + ".csv";
     writematrix(eulfilt,storePath)
     
     if(plot)
