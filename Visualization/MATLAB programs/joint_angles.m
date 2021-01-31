@@ -1,13 +1,15 @@
 
 %% Joint angles
 % Myotera
-%%%%% Avg 5 timestamps up to current
+%%%%
 
-% Run joint_angles("reagan_magn_data","curl_hand","curl_elbow","5")
+% Run xyz_joint_angle = joint_angles("reagan_magn_data","curl_hand","curl_elbow","5")
 % Make sure in 'MATLAB programs' folder
 
-% xyz probably flexion/extension-abduction/adduction-axial rotation
+% TODO: 
 % timestamp parameter
+% Avg 5 timestamps up to current
+
 function [xyz_joint_angle] = joint_angles(who,wristFolder,upperArmFolder,take)
     %% Read in data
     
@@ -57,24 +59,25 @@ function [xyz_joint_angle] = joint_angles(who,wristFolder,upperArmFolder,take)
     
     % Find roll and pitch angles corresponding to phi and theta respectively
     % from orientation data and convert to degrees
-    phi_1 = orientation_wrist_data(:,3) * 180 / pi;
-    phi_2 = orientation_arm_data(:,3) * 180 / pi;
-    theta_1 = orientation_wrist_data(:,2) * 180 / pi;
-    theta_2 = orientation_arm_data(:,2) * 180/ pi;
+    phi_1 = orientation_wrist_data(:,3);
+    phi_2 = orientation_arm_data(:,3);
+    theta_1 = orientation_wrist_data(:,2);
+    theta_2 = orientation_arm_data(:,2);
 
     % Calculate horizontal unit-length direction vectors
     j1 = [cos(phi_1).*cos(theta_1) cos(phi_1).*sin(theta_1) sin(phi_1)];
     j2 = [cos(phi_2).*cos(theta_2) cos(phi_2).*sin(theta_2) sin(phi_2)];
-
+    
+    % Adjust vectors to be the same length
+    vec_lengths = [size(g1,1), size(g2,1),size(j1,1),size(j2,1)];
+    min_len = min(vec_lengths);
+    j1 = j1(1:min_len,:);
+    j2 = j2(1:min_len,:);
+    g1 = g1(1:min_len,:);
+    g2 = g2(1:min_len,:);
+    
     % Solve for joint angles
-    %eqn = dot(g1,j1) - dot(g2,j2);
-    %size(j1) => 248 3
-    %size(g1) => 62 3
-    % ^ same for j2, g2
-    % Therefore...
-    j1 = j1(1:size(g1),:);
-    j2 = j2(1:size(g2),:);
-    xyz_joint_angle = dot(g1,j1)-dot(g2,j2);
+    xyz_joint_angle = dot(g1,j1,2)-dot(g2,j2,2);
     
     
 end
