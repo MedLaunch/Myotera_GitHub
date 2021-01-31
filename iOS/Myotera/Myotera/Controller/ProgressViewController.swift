@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ScrollableGraphView
 
 class ProgressViewController: UIViewController {
 
