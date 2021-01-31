@@ -1,24 +1,27 @@
 
 %% Joint angles
 % Myotera
-%%%%% NEED TO DECIDE HOW OFTEN WE WANT TO AVERAGE DATA (OR MEDIAN)
+%%%%% Avg 5 timestamps up to current
 
 % Run joint_angles("reagan_magn_data","curl_hand","curl_elbow","5")
 % Make sure in 'MATLAB programs' folder
 
-function [] = joint_angles(who,wristFolder,upperArmFolder,take)
+% xyz probably flexion/extension-abduction/adduction-axial rotation
+% timestamp parameter
+function [xyz_joint_angle] = joint_angles(who,wristFolder,upperArmFolder,take)
     %% Read in data
+    
     % Sensor 1 data (wrist)
     gyro_filename_1 = "../../datasets/" + who + "/" + wristFolder + "/" + "take" + take + "_gyro.csv";
     gyro_data_1 = readmatrix(gyro_filename_1);
-    gyro_data_1 = gyro_data_1(1:4:end,:); % Filter out nan values.
+    gyro_data_1 = gyro_data_1(1:4:end,:);
 
     % Sensor 2 data (upper arm)
     gyro_filename_2 = "../../datasets/" + who + "/" + upperArmFolder + "/" + "take" + take + "_gyro.csv";
     gyro_data_2 = readmatrix(gyro_filename_2);
-    gyro_data_2 = gyro_data_2(1:4:end,:); % Filter out nan values.
+    gyro_data_2 = gyro_data_2(1:4:end,:);
 
-    % yaw pitch roll (orientation.csv)
+    % yaw pitch roll (from orientation csv file that orient_box.m creates)
     % Sensor 1 data (wrist)
     orient_box(who,wristFolder,take,false)
     orientation_wrist_csv = "orientation" + "_" + wristFolder + "_take" + take + ".csv";
@@ -36,10 +39,6 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
     % Sampling Rate
     delta_t = 1/52;
 
-    % Angular rate vectors for the 2 sensors at 1 timestamp in terms of time
-    % g1_test = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* t;
-    %g2 = [gyro_data_2(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* t;
-
     g1_minus2 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t-2*delta_t);
     g1_plus2 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t+2*delta_t);
     g1_minus1 = [gyro_data_1(:,2) gyro_data_1(:,3) gyro_data_1(:,4)] .* (t-delta_t);
@@ -55,16 +54,9 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
     % Time Derivative Angular Rates
     g1 = (g1_minus2-8.*g1_minus1+8.*g1_plus1-g1_plus2)./(12.*delta_t);
     g2 = (g2_minus2-8.*g2_minus1+8.*g2_plus1-g2_plus2)./(12.*delta_t);
-    %g1 = (g1(t-2*delta_t) - 8*g1(t-delta_t) + 8*g1(t+delta_t) - g1(t+2*delta_t)) / (12*delta_t);
-    %g2 = (g2(t-2*delta_t) - 8*g2(t-delta_t) + 8*g2(t+delta_t) - g2(t+2*delta_t)) / (12*delta_t);
-
-    % use MATLAB Taylor or PolyFit functions perhaps?
-    % https://www.mathworks.com/help/matlab/ref/polyfit.html
-    % https://www.mathworks.com/matlabcentral/answers/418776-by-using-syntax-taylor-in-matlab-find-the-third-order-approximation-of-log-x-using-base-point-at
-
+    
     % Find roll and pitch angles corresponding to phi and theta respectively
-    % from orientation data and convert to degrees (MIGHT WANT TO KEEP RADIANS FOR BOTH)
-    %%%%%%%%%%might need to make phi (:,1)
+    % from orientation data and convert to degrees
     phi_1 = orientation_wrist_data(:,3) * 180 / pi;
     phi_2 = orientation_arm_data(:,3) * 180 / pi;
     theta_1 = orientation_wrist_data(:,2) * 180 / pi;
@@ -82,13 +74,8 @@ function [] = joint_angles(who,wristFolder,upperArmFolder,take)
     % Therefore...
     j1 = j1(1:size(g1),:);
     j2 = j2(1:size(g2),:);
-    eqn = dot(g1,j1)-dot(g2,j2); %This also didn't work... since matrices?
-    %eqn = sum(g1.*j1, 2)-sum(g2.*j2,2); % alternative method, does same thing as above line.
-
-    % Attempting calculation row by row
-    %extension_angle = integral(@(t) eqn, 0, delta_t);
-    % https://www.mathworks.com/help/matlab/math/integration-of-numeric-data.html
-    % is this what we're trying to do? ^
+    xyz_joint_angle = dot(g1,j1)-dot(g2,j2);
+    
     
 end
 
