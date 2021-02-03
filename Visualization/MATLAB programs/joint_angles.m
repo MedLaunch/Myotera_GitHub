@@ -3,16 +3,17 @@
 % Myotera
 %%%%
 
-% Run extension_angle = joint_angles("reagan_magn_data","curl_hand","curl_elbow","5")
+% Ex. extension_angle = joint_angles("banded_data","up2_90","3")
 % Make sure in 'MATLAB programs' folder
 
 % TODO: 
 % timestamp parameter
 % Avg 5 timestamps up to current
 
-% where is the initial folder
-% what is the dataset
-% trial is the trial number
+% ARGUMENTS
+% 'where' is the initial folder
+% 'what' is the dataset
+% 'trial' is the trial number
 function [extension_angle] = joint_angles(where,what,trial)
     %% Read in data
     
@@ -26,16 +27,17 @@ function [extension_angle] = joint_angles(where,what,trial)
     gyro_data_bicep = readmatrix(gyro_filename_bicep);
     gyro_data_bicep = gyro_data_bicep(1:4:end,:);
 
+    %%%%%%%%%%%%%% ORDER MIGHT BE WRONG
     % yaw pitch roll (from orientation csv file that orient_box.m creates)
     % Sensor 1 data (wrist)
     orient_box(where,what,trial,"wrist",false)
-    orientation_wrist_csv = "orientation" + "_" + what + "_take" + trial + ".csv";
+    orientation_wrist_csv = "orientation" + "_" + what + "_wrist_trial" + trial + ".csv";
     orientation_wrist_data = readmatrix(orientation_wrist_csv);
 
     % Sensor 2 data (bicep)
     orient_box(where,what,trial,"bicep",false)
-    orientation_arm_csv = "orientation" + "_" + what + "_take" + trial + ".csv";
-    orientation_arm_data = readmatrix(orientation_arm_csv);
+    orientation_bicep_csv = "orientation" + "_" + what + "_bicep_trial" + trial + ".csv";
+    orientation_bicep_data = readmatrix(orientation_bicep_csv);
 
 
     %% Initialize variables
@@ -61,11 +63,11 @@ function [extension_angle] = joint_angles(where,what,trial)
     g2 = (g2_minus2-8.*g2_minus1+8.*g2_plus1-g2_plus2)./(12.*delta_t);
     
     % Find roll and pitch angles corresponding to phi and theta respectively
-    % from orientation data and convert to degrees
+    % from orientation data
     phi_1 = orientation_wrist_data(:,3);
-    phi_2 = orientation_arm_data(:,3);
+    phi_2 = orientation_bicep_data(:,3);
     theta_1 = orientation_wrist_data(:,2);
-    theta_2 = orientation_arm_data(:,2);
+    theta_2 = orientation_bicep_data(:,2);
 
     % Calculate horizontal unit-length direction vectors
     j1 = [cos(phi_1).*cos(theta_1) cos(phi_1).*sin(theta_1) sin(phi_1)];
@@ -80,7 +82,9 @@ function [extension_angle] = joint_angles(where,what,trial)
     g2 = g2(1:min_len,:);
     
     % Solve for joint angles
+    %%%%%%%%%% Dot might be wrong
     extension_angle = dot(g1,j1,2)-dot(g2,j2,2);
+    %extension_angle = extension_angle * pi / 180;
     
     
 end
