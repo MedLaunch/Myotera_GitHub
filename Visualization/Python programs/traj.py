@@ -123,6 +123,30 @@ def band_pass_filt(data):
     #print(data_filt.head())
     return data_filt
 
+def calibrate_magn(df):
+
+    # hard iron effects
+    off_x = max(df.iloc[:,0]) - min(df.iloc[:,0])
+    off_y = max(df.iloc[:,1]) - min(df.iloc[:,1])
+    off_z = max(df.iloc[:,2]) - min(df.iloc[:,2])
+
+    #soft iron effects
+    avg_delt_x = (max(df.iloc[:,0]) - min(df.iloc[:,0])) / 2
+    avg_delt_y = (max(df.iloc[:,1]) - min(df.iloc[:,1])) / 2
+    avg_delt_z = (max(df.iloc[:,2]) - min(df.iloc[:,2])) / 2
+    avg_delt = (avg_delt_x + avg_delt_y + avg_delt_z) / 3
+
+    scale_x = avg_delt / avg_delt_x
+    scale_y = avg_delt / avg_delt_y
+    scale_z = avg_delt / avg_delt_z
+
+    #correction of both 
+    df.iloc[:,0] = (df.iloc[:,0] - off_x) * scale_x
+    df.iloc[:,1] = (df.iloc[:,1] - off_y) * scale_y
+    df.iloc[:,2] = (df.iloc[:,2] - off_z) * scale_z
+
+    return df
+
 
 def remove_gravity(acc, orientation):
     '''
@@ -175,7 +199,7 @@ FILE EXTENSION FOR TESTING:
 '''
 
 def main():
-    #hi
+    
     filename = input('''Please enter the name of the file for trajectory construction. \n 
     Accepted file types are .JSON and .CSV: ''')
 
@@ -185,8 +209,20 @@ def main():
     
     data_filt = band_pass_filt(data)
 
-    orientation = pd.read_csv('.\Visualization\Python programs\Initial sample data\orientation.csv')
+    orientation_filename = input('''Please enter the name of the file with the associated orientation data. \n
+    Accepted file types are .JSON and .CSV: ''')
     
+    orientation = pd.read_csv(orientation_filename)
+    del orientation['timestamp']
+
+    magn_filename = input('''Please enter the name of the file with the associated magnetometer data. \n
+    Accepted file types are .JSON and .CSV: ''')
+
+    magn = pd.read_csv(magn_filename)
+    del magn['timestamp']
+
+    cal_magn = calibrate_magn(magn)
+
     ready_data = remove_gravity(data_filt, orientation)
 
     x,y,z = accel_to_pos(ready_data)
@@ -198,6 +234,8 @@ def main():
     fig.suptitle(['3D Trajectory for ',key],fontsize=20)
     ax = plt.axes(projection='3d')
     ax.plot3D(x,y,z,c='red',lw=2,label='phone trajectory')
+    ax.plot(x[0],y[0],z[0], markerfacecolor='k', markeredgecolor='k', marker='o', markersize=10)
+    ax.plot(x[-1],y[-1],z[-1], markerfacecolor='b', markeredgecolor='k', marker='o', markersize=10)
     ax.set_xlabel('X position (m)')
     ax.set_ylabel('Y position (m)')
     ax.set_zlabel('Z position (m)')
