@@ -1,7 +1,6 @@
 
 %% Joint angles
 % Myotera
-%%%%
 
 % Ex. extension_angle = joint_angles("banded_data","up2_90","3")
 % Make sure in 'MATLAB programs' folder
@@ -27,7 +26,6 @@ function [extension_angle] = joint_angles(where,what,trial)
     gyro_data_bicep = readmatrix(gyro_filename_bicep);
     gyro_data_bicep = gyro_data_bicep(1:4:end,:);
 
-    %%%%%%%%%%%%%% ORDER MIGHT BE WRONG
     % yaw pitch roll (from orientation csv file that orient_box.m creates)
     % Sensor 1 data (wrist)
     orient_box(where,what,trial,"wrist",false)
@@ -82,9 +80,7 @@ function [extension_angle] = joint_angles(where,what,trial)
     g2 = g2(1:min_len,:);
     
     % Solve for joint angles
-    %%%%%%%%%% Dot might be wrong
     extension_angle = dot(g1,j1,2)-dot(g2,j2,2);
-    %extension_angle = extension_angle * pi / 180;
     
     
 end
