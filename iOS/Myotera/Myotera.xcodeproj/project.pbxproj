@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -109,7 +109,6 @@
 				1D38C29DC9D1BE789C8B3E6B /* Pods-MyoteraTests.debug.xcconfig */,
 				4094B078B390F1EA427E5F0B /* Pods-MyoteraTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -151,6 +150,7 @@
 				D85BC8C9254F38AB00DB9DAD /* Model */,
 				D85BC8C4254F381000DB9DAD /* Controller */,
 				D85BC8C3254F37D300DB9DAD /* View */,
+				D859C4FF2547B5800053921E /* Info.plist */,
 				D85BC8C8254F386200DB9DAD /* Supporting Files */,
 			);
 			path = Myotera;
@@ -201,7 +201,6 @@
 				D820DDE62564D208006A00BE /* Assets.xcassets */,
 				D859C4F12547B57F0053921E /* AppDelegate.swift */,
 				D859C4F32547B57F0053921E /* SceneDelegate.swift */,
-				D859C4FF2547B5800053921E /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

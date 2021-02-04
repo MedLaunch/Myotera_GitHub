@@ -259,7 +259,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qp5-d1-LCw">
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qp5-d1-LCw">
                                 <rect key="frame" x="0.0" y="761" width="390" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
@@ -269,12 +269,14 @@
                                     <tabBarItem title="Exercises" image="book" catalog="system" id="Qcb-r4-6Ww"/>
                                 </items>
                             </tabBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="exerciseCatalogExample" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-0t-CAG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="exerciseCatalogExample" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-0t-CAG">
                                 <rect key="frame" x="0.0" y="83" width="390" height="678"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vx6-5Q-63a">
-                                <rect key="frame" x="16" y="44" width="205" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vx6-5Q-63a">
+                                <rect key="frame" x="164" y="44" width="205" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="AsY-DE-pQF"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Exercises">
                                         <attributes>
@@ -286,7 +288,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Wj-TC-pj0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Wj-TC-pj0">
                                 <rect key="frame" x="324" y="41" width="50" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="GXC-q1-9Bv"/>
@@ -297,9 +299,8 @@
                                     <color key="titleColor" red="0.48170215059999999" green="0.51638763330000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P5A-gM-PPv">
-                                <rect key="frame" x="0.0" y="88" width="390" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="P5A-gM-PPv">
+                                <rect key="frame" x="0.0" y="88" width="390" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" background="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="ufp-SP-jKL">
@@ -322,10 +323,22 @@
                         <viewLayoutGuide key="safeArea" id="RkY-hk-vdJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vx6-5Q-63a" firstAttribute="leading" secondItem="ufp-SP-jKL" secondAttribute="leading" id="3zI-zK-dzB"/>
+                            <constraint firstItem="3Wj-TC-pj0" firstAttribute="bottom" secondItem="vx6-5Q-63a" secondAttribute="bottom" id="6jW-yt-ofe"/>
                             <constraint firstItem="ufp-SP-jKL" firstAttribute="bottom" secondItem="Qp5-d1-LCw" secondAttribute="top" id="C15-iG-55y"/>
+                            <constraint firstItem="3Wj-TC-pj0" firstAttribute="trailing" secondItem="hQb-Ad-lri" secondAttribute="trailingMargin" id="CCk-TM-qbc"/>
+                            <constraint firstItem="Qp5-d1-LCw" firstAttribute="leading" secondItem="dJp-0t-CAG" secondAttribute="leading" id="Cp8-7U-Cw2"/>
+                            <constraint firstItem="Qp5-d1-LCw" firstAttribute="centerX" secondItem="hQb-Ad-lri" secondAttribute="centerX" id="JvK-Y9-m1H"/>
+                            <constraint firstItem="Qp5-d1-LCw" firstAttribute="bottom" secondItem="RkY-hk-vdJ" secondAttribute="bottom" id="MBO-vh-QWJ"/>
+                            <constraint firstItem="Qp5-d1-LCw" firstAttribute="leading" secondItem="P5A-gM-PPv" secondAttribute="leading" id="PJN-UU-oD5"/>
+                            <constraint firstItem="P5A-gM-PPv" firstAttribute="top" secondItem="3Wj-TC-pj0" secondAttribute="bottom" id="Ugb-L7-QDx"/>
+                            <constraint firstItem="Qp5-d1-LCw" firstAttribute="trailing" secondItem="P5A-gM-PPv" secondAttribute="trailing" id="ZfX-G7-a9P"/>
                             <constraint firstItem="ufp-SP-jKL" firstAttribute="leading" secondItem="RkY-hk-vdJ" secondAttribute="leading" constant="164" id="dNt-Eo-v4w"/>
                             <constraint firstAttribute="bottom" secondItem="ufp-SP-jKL" secondAttribute="bottom" constant="83" id="jUV-mQ-HHe"/>
                             <constraint firstItem="ufp-SP-jKL" firstAttribute="bottom" secondItem="dJp-0t-CAG" secondAttribute="bottom" id="jhh-mF-2mv"/>
+                            <constraint firstItem="Qp5-d1-LCw" firstAttribute="trailing" secondItem="dJp-0t-CAG" secondAttribute="trailing" id="onI-Nk-Lnk"/>
+                            <constraint firstItem="Qp5-d1-LCw" firstAttribute="leading" secondItem="RkY-hk-vdJ" secondAttribute="leading" id="pjI-zK-f2h"/>
+                            <constraint firstItem="3Wj-TC-pj0" firstAttribute="top" secondItem="hQb-Ad-lri" secondAttribute="topMargin" constant="-6" id="vBN-K6-qSJ"/>
                         </constraints>
                     </view>
                 </viewController>

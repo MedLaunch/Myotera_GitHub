@@ -16,6 +16,15 @@ class ProgressViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Compose the graph view by creating a graph, then adding any plots
+    // and reference lines before adding the graph to the view hierarchy.
+    let graphView = ScrollableGraphView(frame: self(), dataSource: self)
+
+    let linePlot = LinePlot(identifier: "line") // Identifier should be unique for each plot.
+    let referenceLines = ReferenceLines()
+
+    graphView.addPlot(plot: linePlot)
+    graphView.addReferenceLines(referenceLines: referenceLines)
 
     /*
     // MARK: - Navigation
@@ -27,4 +36,22 @@ class ProgressViewController: UIViewController {
     }
     */
 
+}
+
+
+//MARK: - ScrollableGraphViewDelegate
+extension ProgressViewController: ScrollableGraphViewDataSource {
+    func value(forPlot plot: Plot, atIndex pointIndex: Int) -> Double {
+        <#code#>
+    }
+    
+    func label(atIndex pointIndex: Int) -> String {
+        <#code#>
+    }
+    
+    func numberOfPoints() -> Int {
+        <#code#>
+    }
+    
+    
 }
