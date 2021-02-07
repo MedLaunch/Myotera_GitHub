@@ -10,6 +10,7 @@
 		158FF588BEAA3EC53BE8DDDD /* Pods_Myotera_MyoteraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814A73D5222B86D1D0A604AF /* Pods_Myotera_MyoteraUITests.framework */; };
 		168A44E7BE1C0DE310F3BB2A /* Pods_MyoteraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A6927DADD7820AEFD869D9 /* Pods_MyoteraTests.framework */; };
 		D820DDE72564D208006A00BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D820DDE62564D208006A00BE /* Assets.xcassets */; };
+		D84CD46C25D085B800EFEA81 /* Scrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84CD46B25D085B800EFEA81 /* Scrollable.swift */; };
 		D8580D9625C7421300059DC3 /* HomescreenTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8580D9525C7421300059DC3 /* HomescreenTabController.swift */; };
 		D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F12547B57F0053921E /* AppDelegate.swift */; };
 		D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F32547B57F0053921E /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 		814A73D5222B86D1D0A604AF /* Pods_Myotera_MyoteraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myotera_MyoteraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D3421E834BB4B401E74C1D /* Pods-Myotera-MyoteraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myotera-MyoteraUITests.debug.xcconfig"; path = "Target Support Files/Pods-Myotera-MyoteraUITests/Pods-Myotera-MyoteraUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D820DDE62564D208006A00BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D84CD46B25D085B800EFEA81 /* Scrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable.swift; sourceTree = "<group>"; };
 		D8580D9525C7421300059DC3 /* HomescreenTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenTabController.swift; sourceTree = "<group>"; };
 		D859C4EE2547B57F0053921E /* Myotera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myotera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D859C4F12547B57F0053921E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				D859C4F52547B57F0053921E /* DashboardViewController.swift */,
 				D85B8925257A156800B710E3 /* ProgressViewController.swift */,
+				D84CD46B25D085B800EFEA81 /* Scrollable.swift */,
 				D868AD2E257B723F00DBA0F5 /* AchievementsViewController.swift */,
 				D868AD33257B773000DBA0F5 /* ExercisesViewController.swift */,
 				D8580D9525C7421300059DC3 /* HomescreenTabController.swift */,
@@ -456,6 +459,7 @@
 				D8580D9625C7421300059DC3 /* HomescreenTabController.swift in Sources */,
 				D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */,
 				D85B8926257A156800B710E3 /* ProgressViewController.swift in Sources */,
+				D84CD46C25D085B800EFEA81 /* Scrollable.swift in Sources */,
 				D868AD2F257B723F00DBA0F5 /* AchievementsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

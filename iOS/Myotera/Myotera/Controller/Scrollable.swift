@@ -1,25 +1,18 @@
-//
-//  ProgressViewController.swift
-//  Myotera
-//
-//  Created by Sahil Gupta on 12/3/20.
-//
-
 import UIKit
 import ScrollableGraphView
 
-class ProgressViewController: UIViewController, ScrollableGraphViewDataSource {
+class Scrollable: ScrollableGraphView, ScrollableGraphViewDataSource {
     
     var linePlotData: [Double] = [0, 1, 2, 3, 4, 5, 3, 5, 3, 5]
     let graphView = ScrollableGraphView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     let linePlot = LinePlot(identifier: "line") // Identifier should be unique for each plot.
     let referenceLines = ReferenceLines()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        graphView.dataSource = self
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        // Do any additional setup after loading the view.
+//        graphView.dataSource = self
+//    }
     
     // Compose the graph view by creating a graph, then adding any plots
     // and reference lines before adding the graph to the view hierarchy.
@@ -56,5 +49,3 @@ class ProgressViewController: UIViewController, ScrollableGraphViewDataSource {
     */
 
 }
-
-
