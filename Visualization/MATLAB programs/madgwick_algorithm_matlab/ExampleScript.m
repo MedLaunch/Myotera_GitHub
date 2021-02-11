@@ -22,12 +22,12 @@
 
 addpath('quaternion_library');      % include quaternion library
 close all;                          % close all figures
-clear;                              % clear all variables
-clc;                                % clear the command terminal
+%clear;                              % clear all variables
+%clc;                                % clear the command terminal
 
 %% Import and plot sensor data
 
-load('ExampleData.mat');
+%load('ExampleData.mat');
 
 figure('Name', 'Sensor Data');
 axis(1) = subplot(3,1,1);
