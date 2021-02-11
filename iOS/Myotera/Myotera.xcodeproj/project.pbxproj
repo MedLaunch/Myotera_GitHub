@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		885FA48E25D5CCE100E02483 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 885FA48D25D5CCE100E02483 /* lib */; };
+		885FA49525D5CD7A00E02483 /* AdditionWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 885FA49425D5CD7A00E02483 /* AdditionWrapper.mm */; };
 		D820DDE72564D208006A00BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D820DDE62564D208006A00BE /* Assets.xcassets */; };
 		D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F12547B57F0053921E /* AppDelegate.swift */; };
 		D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F32547B57F0053921E /* SceneDelegate.swift */; };
@@ -35,6 +37,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		885FA48D25D5CCE100E02483 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = "../../../Visualization/MATLAB programs/codegen/lib"; sourceTree = "<group>"; };
+		885FA49225D5CD1000E02483 /* AdditionWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdditionWrapper.h; sourceTree = "<group>"; };
+		885FA49325D5CD7900E02483 /* Myotera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Myotera-Bridging-Header.h"; sourceTree = "<group>"; };
+		885FA49425D5CD7A00E02483 /* AdditionWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AdditionWrapper.mm; sourceTree = "<group>"; };
+		885FA49C25D5CDB700E02483 /* addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addition.h; sourceTree = "<group>"; };
+		885FA4A125D5CF1000E02483 /* rtw_proj.tmw */ = {isa = PBXFileReference; lastKnownFileType = text; path = rtw_proj.tmw; sourceTree = "<group>"; };
+		885FA4A225D5CF1000E02483 /* addition_rtw_ref.rsp */ = {isa = PBXFileReference; lastKnownFileType = text; path = addition_rtw_ref.rsp; sourceTree = "<group>"; };
+		885FA4A325D5CF1000E02483 /* addition_ref.rsp */ = {isa = PBXFileReference; lastKnownFileType = text; path = addition_ref.rsp; sourceTree = "<group>"; };
+		885FA4A425D5CF1000E02483 /* compileInfo.mat */ = {isa = PBXFileReference; lastKnownFileType = file; path = compileInfo.mat; sourceTree = "<group>"; };
+		885FA4A525D5CF1000E02483 /* codeInfo.mat */ = {isa = PBXFileReference; lastKnownFileType = file; path = codeInfo.mat; sourceTree = "<group>"; };
+		885FA4A725D5CF1000E02483 /* _coder_addition_mex.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = _coder_addition_mex.c; sourceTree = "<group>"; };
+		885FA4A825D5CF1000E02483 /* _coder_addition_api.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = _coder_addition_api.c; sourceTree = "<group>"; };
+		885FA4A925D5CF1000E02483 /* _coder_addition_info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _coder_addition_info.h; sourceTree = "<group>"; };
+		885FA4AA25D5CF1000E02483 /* _coder_addition_mex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _coder_addition_mex.h; sourceTree = "<group>"; };
+		885FA4AB25D5CF1000E02483 /* _coder_addition_api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _coder_addition_api.h; sourceTree = "<group>"; };
+		885FA4AC25D5CF1000E02483 /* _coder_addition_info.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = _coder_addition_info.c; sourceTree = "<group>"; };
+		885FA4AD25D5CF1000E02483 /* addition_initialize.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = addition_initialize.c; sourceTree = "<group>"; };
+		885FA4AE25D5CF1000E02483 /* addition_terminate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addition_terminate.h; sourceTree = "<group>"; };
+		885FA4AF25D5CF1000E02483 /* addition.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = addition.c; sourceTree = "<group>"; };
+		885FA4B125D5CF1000E02483 /* report.mldatx */ = {isa = PBXFileReference; lastKnownFileType = file; path = report.mldatx; sourceTree = "<group>"; };
+		885FA4B225D5CF1000E02483 /* addition_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addition_types.h; sourceTree = "<group>"; };
+		885FA4B625D5CF1000E02483 /* addition_rtw.bat */ = {isa = PBXFileReference; lastKnownFileType = text; path = addition_rtw.bat; sourceTree = "<group>"; };
+		885FA4B725D5CF1000E02483 /* addition_terminate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = addition_terminate.c; sourceTree = "<group>"; };
+		885FA4B825D5CF1000E02483 /* addition_initialize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addition_initialize.h; sourceTree = "<group>"; };
+		885FA4B925D5CF1000E02483 /* addition_rtw.rsp */ = {isa = PBXFileReference; lastKnownFileType = text; path = addition_rtw.rsp; sourceTree = "<group>"; };
+		885FA4BA25D5CF1000E02483 /* buildInfo.mat */ = {isa = PBXFileReference; lastKnownFileType = file; path = buildInfo.mat; sourceTree = "<group>"; };
+		885FA4BB25D5CF1000E02483 /* addition_rtw.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = addition_rtw.mk; sourceTree = "<group>"; };
+		885FA4BC25D5CF1000E02483 /* rtwtypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rtwtypes.h; sourceTree = "<group>"; };
+		885FA4D425D5D39400E02483 /* tmwtypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tmwtypes.h; sourceTree = "<group>"; };
 		D820DDE62564D208006A00BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D859C4EE2547B57F0053921E /* Myotera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myotera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D859C4F12547B57F0053921E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,9 +107,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		885FA4A025D5CF1000E02483 /* addition */ = {
+			isa = PBXGroup;
+			children = (
+				885FA4A125D5CF1000E02483 /* rtw_proj.tmw */,
+				885FA4A225D5CF1000E02483 /* addition_rtw_ref.rsp */,
+				885FA4A325D5CF1000E02483 /* addition_ref.rsp */,
+				885FA4A425D5CF1000E02483 /* compileInfo.mat */,
+				885FA4A525D5CF1000E02483 /* codeInfo.mat */,
+				885FA4A625D5CF1000E02483 /* interface */,
+				885FA4AD25D5CF1000E02483 /* addition_initialize.c */,
+				885FA4AE25D5CF1000E02483 /* addition_terminate.h */,
+				885FA4AF25D5CF1000E02483 /* addition.c */,
+				885FA4B025D5CF1000E02483 /* html */,
+				885FA4B225D5CF1000E02483 /* addition_types.h */,
+				885FA4B625D5CF1000E02483 /* addition_rtw.bat */,
+				885FA4B725D5CF1000E02483 /* addition_terminate.c */,
+				885FA4B825D5CF1000E02483 /* addition_initialize.h */,
+				885FA4B925D5CF1000E02483 /* addition_rtw.rsp */,
+				885FA4BA25D5CF1000E02483 /* buildInfo.mat */,
+				885FA4BB25D5CF1000E02483 /* addition_rtw.mk */,
+			);
+			path = addition;
+			sourceTree = "<group>";
+		};
+		885FA4A625D5CF1000E02483 /* interface */ = {
+			isa = PBXGroup;
+			children = (
+				885FA4A725D5CF1000E02483 /* _coder_addition_mex.c */,
+				885FA4A825D5CF1000E02483 /* _coder_addition_api.c */,
+				885FA4A925D5CF1000E02483 /* _coder_addition_info.h */,
+				885FA4AA25D5CF1000E02483 /* _coder_addition_mex.h */,
+				885FA4AB25D5CF1000E02483 /* _coder_addition_api.h */,
+				885FA4AC25D5CF1000E02483 /* _coder_addition_info.c */,
+			);
+			path = interface;
+			sourceTree = "<group>";
+		};
+		885FA4B025D5CF1000E02483 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				885FA4B125D5CF1000E02483 /* report.mldatx */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
 		D859C4E52547B57F0053921E = {
 			isa = PBXGroup;
 			children = (
+				885FA49325D5CD7900E02483 /* Myotera-Bridging-Header.h */,
 				D859C4F02547B57F0053921E /* Myotera */,
 				D859C5072547B5810053921E /* MyoteraTests */,
 				D859C5122547B5810053921E /* MyoteraUITests */,
@@ -99,6 +176,7 @@
 		D859C4F02547B57F0053921E /* Myotera */ = {
 			isa = PBXGroup;
 			children = (
+				885FA48D25D5CCE100E02483 /* lib */,
 				D85BC8C9254F38AB00DB9DAD /* Model */,
 				D85BC8C4254F381000DB9DAD /* Controller */,
 				D85BC8C3254F37D300DB9DAD /* View */,
@@ -156,6 +234,12 @@
 		D85BC8C9254F38AB00DB9DAD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				885FA4A025D5CF1000E02483 /* addition */,
+				885FA49C25D5CDB700E02483 /* addition.h */,
+				885FA4BC25D5CF1000E02483 /* rtwtypes.h */,
+				885FA49225D5CD1000E02483 /* AdditionWrapper.h */,
+				885FA49425D5CD7A00E02483 /* AdditionWrapper.mm */,
+				885FA4D425D5D39400E02483 /* tmwtypes.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +311,7 @@
 				TargetAttributes = {
 					D859C4ED2547B57F0053921E = {
 						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1220;
 					};
 					D859C5032547B5810053921E = {
 						CreatedOnToolsVersion = 12.1;
@@ -265,6 +350,7 @@
 			files = (
 				D859C4FE2547B5800053921E /* LaunchScreen.storyboard in Resources */,
 				D820DDE72564D208006A00BE /* Assets.xcassets in Resources */,
+				885FA48E25D5CCE100E02483 /* lib in Resources */,
 				D859C4F92547B57F0053921E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D859C4F62547B57F0053921E /* DashboardViewController.swift in Sources */,
+				885FA49525D5CD7A00E02483 /* AdditionWrapper.mm in Sources */,
 				D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */,
 				D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */,
 			);
@@ -468,6 +555,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4MMU587L59;
 				INFOPLIST_FILE = Myotera/Info.plist;
@@ -475,8 +563,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich-sahilgu.Myotera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = Users/Reagan/Desktop/MedLaunch/Myotera_Github/iOS/Myotera/Myotera/Model/addition/;
+				SWIFT_OBJC_BRIDGING_HEADER = "Myotera-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -487,6 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4MMU587L59;
 				INFOPLIST_FILE = Myotera/Info.plist;
@@ -494,8 +587,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich-sahilgu.Myotera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = Users/Reagan/Desktop/MedLaunch/Myotera_Github/iOS/Myotera/Myotera/Model/addition/;
+				SWIFT_OBJC_BRIDGING_HEADER = "Myotera-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

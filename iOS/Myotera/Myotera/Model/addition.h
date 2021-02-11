@@ -15,11 +15,21 @@
 /* Include files */
 #include <stddef.h>
 #include <stdlib.h>
+#include <string>
 #include "rtwtypes.h"
 #include "addition_types.h"
 
-/* Function Declarations */
-extern double addition(double in1, double in2);
+class Addition {
+public:
+    Addition(double x_in, double y_in) : x(x_in), y(y_in) { }
+    
+    double doAdd() {
+        return x + y;
+    }
+private:
+    double x = 10;
+    double y = 10;
+};
 
 #endif
 
