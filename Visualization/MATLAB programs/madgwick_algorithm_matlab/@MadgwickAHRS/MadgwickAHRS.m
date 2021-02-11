@@ -9,7 +9,7 @@ classdef MadgwickAHRS < handle
 
     %% Public properties
     properties (Access = public)
-        SamplePeriod = 1/256;
+        SamplePeriod = 1/52;
         Quaternion = [1 0 0 0];     % output quaternion describing the Earth relative to the sensor
         Beta = 1;               	% algorithm gain
     end
