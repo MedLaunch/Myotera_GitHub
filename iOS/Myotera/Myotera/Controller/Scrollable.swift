@@ -16,8 +16,8 @@ class Scrollable: ScrollableGraphView, ScrollableGraphViewDataSource {
     
     // Compose the graph view by creating a graph, then adding any plots
     // and reference lines before adding the graph to the view hierarchy.
-    graphView.addPlot(plot: linePlot)
-    graphView.addReferenceLines(referenceLines: referenceLines)
+//    graphView.addPlot(plot: linePlot)
+//    graphView.addReferenceLines(referenceLines: referenceLines)
     
     
     //MARK: - ScrollableGraphViewDelegate

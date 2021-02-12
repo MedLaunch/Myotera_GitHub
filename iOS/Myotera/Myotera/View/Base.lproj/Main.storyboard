@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bcT-c5-Suy">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -346,10 +346,10 @@
             </objects>
             <point key="canvasLocation" x="2024.6153846153845" y="-97.393364928909946"/>
         </scene>
-        <!--Item 2-->
+        <!--ProgressViewController-->
         <scene sceneID="Sch-uI-JXz">
             <objects>
-                <viewController id="e7E-l3-CfO" customClass="ProgressViewController" customModule="Myotera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ProgressViewController" id="e7E-l3-CfO" customClass="ProgressViewController" customModule="Myotera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bWb-fc-Mmn">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

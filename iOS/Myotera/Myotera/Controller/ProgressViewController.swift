@@ -11,20 +11,24 @@ import ScrollableGraphView
 class ProgressViewController: UIViewController, ScrollableGraphViewDataSource {
     
     var linePlotData: [Double] = [0, 1, 2, 3, 4, 5, 3, 5, 3, 5]
-    let graphView = ScrollableGraphView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-    let linePlot = LinePlot(identifier: "line") // Identifier should be unique for each plot.
-    let referenceLines = ReferenceLines()
+    var graphView = ScrollableGraphView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    var linePlot = LinePlot(identifier: "line") // Identifier should be unique for each plot.
+    var referenceLines = ReferenceLines()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         graphView.dataSource = self
+        self.view.addSubview(graphView)
+
+        
     }
     
     // Compose the graph view by creating a graph, then adding any plots
     // and reference lines before adding the graph to the view hierarchy.
-    graphView.addPlot(plot: linePlot)
-    graphView.addReferenceLines(referenceLines: referenceLines)
+//    graphView.addPlot(plot: linePlot)
+//    graphView.addReferenceLines(referenceLines: referenceLines)
+    
     
     
     //MARK: - ScrollableGraphViewDelegate
