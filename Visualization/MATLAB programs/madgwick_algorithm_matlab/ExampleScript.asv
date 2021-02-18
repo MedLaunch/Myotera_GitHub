@@ -41,7 +41,7 @@ gyro = readtable('up2_90_wrist_gyro1.csv');
 gyro = gyro(:,2:4);
 Gyroscope = table2array(gyro);
 
-magn = readtable('up2_90_wrist_magn1.csv');
+magn = readtable('d2_180_wrist_magn1.csv');
 magn = magn(:,2:4);
 Magnetometer = table2array(magn);
 

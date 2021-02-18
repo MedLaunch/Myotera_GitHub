@@ -32,7 +32,7 @@ def find_mode(filename):
 
     return mode
 
-
+# IF USING DATA FROM MATLAB CHANGE > TO >= ON LINE 53
 def process_data(filename, mode):
     '''
     Extracts data from .csv or .json file based on the mode, and returns timepoints and a dataframe.
@@ -173,6 +173,8 @@ take ^ and input to Madgick QUF
 output is Quarternion
 Convert ^ into 3x3 rotation matrix and invert this matrix
 Apply the inverted rotation matrix to linear acceleration data
+Use euler angles from MATLAB to rotate gravity
+subtract gravity from linear acceleration data
 '''
 
 def accel_to_pos(data):
