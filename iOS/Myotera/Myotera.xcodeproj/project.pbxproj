@@ -19,6 +19,7 @@
 		D859C5092547B5810053921E /* MyoteraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C5082547B5810053921E /* MyoteraTests.swift */; };
 		D859C5142547B5810053921E /* MyoteraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C5132547B5810053921E /* MyoteraUITests.swift */; };
 		D85B8926257A156800B710E3 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B8925257A156800B710E3 /* ProgressViewController.swift */; };
+		D8692F1B25E0F96D009FF63C /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8692F1A25E0F96D009FF63C /* RecordingViewController.swift */; };
 		F04713C143220DA4DE8D02E1 /* Pods_Myotera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297104E1371AF53553811B6B /* Pods_Myotera.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		D859C5132547B5810053921E /* MyoteraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyoteraUITests.swift; sourceTree = "<group>"; };
 		D859C5152547B5810053921E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D85B8925257A156800B710E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		D8692F1A25E0F96D009FF63C /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		F0A6927DADD7820AEFD869D9 /* Pods_MyoteraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyoteraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 				D859C4F52547B57F0053921E /* DashboardViewController.swift */,
 				D85B8925257A156800B710E3 /* ProgressViewController.swift */,
 				D838256F25DE537900264EC2 /* TabBar.swift */,
+				D8692F1A25E0F96D009FF63C /* RecordingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */,
 				D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */,
 				D85B8926257A156800B710E3 /* ProgressViewController.swift in Sources */,
+				D8692F1B25E0F96D009FF63C /* RecordingViewController.swift in Sources */,
 				D838257025DE537900264EC2 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

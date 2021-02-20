@@ -7,6 +7,9 @@ target 'Myotera' do
 
   # Pods for Myotera
   pod 'ScrollableGraphView'
+  
+  # Pods for ChartsTutorial
+  pod 'Charts'
 
   target 'MyoteraTests' do
     inherit! :search_paths

@@ -1,16 +1,22 @@
 PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - ScrollableGraphView (4.0.6)
 
 DEPENDENCIES:
+  - Charts
   - ScrollableGraphView
 
 SPEC REPOS:
   trunk:
+    - Charts
     - ScrollableGraphView
 
 SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   ScrollableGraphView: 4af35d4ea9ecdec665d34a74da51da161ddff8ac
 
-PODFILE CHECKSUM: 3f2d24dbb09be4991fca55e08bbeed52a177c0e1
+PODFILE CHECKSUM: 5969db874de30b6132663d30cf3dda77a9fd1e1a
 
 COCOAPODS: 1.9.3

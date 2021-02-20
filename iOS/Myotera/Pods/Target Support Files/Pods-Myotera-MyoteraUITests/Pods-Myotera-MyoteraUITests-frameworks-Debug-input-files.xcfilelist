@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Myotera-MyoteraUITests/Pods-Myotera-MyoteraUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/ScrollableGraphView/ScrollableGraphView.framework
