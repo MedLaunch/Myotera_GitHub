@@ -50,7 +50,7 @@ def process_data(filename, mode):
     if mode == 1: # CSV
         # CSV
         initial = pd.read_csv(filename)
-        df = initial.loc[initial.iloc[:,0] > 0]
+        df = initial.loc[initial.iloc[:,0] >= 0] ###############
         df.reset_index(drop = True, inplace = True)
         timestamps = np.array(df.iloc[:,0])
         df = df.iloc[:,1:]
@@ -223,9 +223,15 @@ def main():
     magn = pd.read_csv(magn_filename)
     del magn['timestamp']
 
+    euler_filename = input('''Please enter the name of the file with the associated euler angle data. \n
+    Accepted file types are .JSON and .CSV: ''')
+
+    euler = pd.read_csv(euler_filename)
+    del euler['time']
+
     cal_magn = calibrate_magn(magn)
 
-    ready_data = remove_gravity(data_filt, orientation)
+    ready_data = remove_gravity(data_filt, euler) #data_filt #
 
     x,y,z = accel_to_pos(ready_data)
     
