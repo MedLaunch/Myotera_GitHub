@@ -382,7 +382,7 @@
             filters: [{
                 namePrefix: ['Movesense'] // 175130000985
             }],
-            optionalServices: ['34802252-7185-4d5d-b431-630e7050e8f0'], // sensordata-service
+            optionalServices: ['34802252-7185-4d5d-b431-630e7050e8f0','61353090-8231-49cc-b57a-886370740041'], // sensordata-service
         }).
             then(device => {
 		deviceNames.push(device.name);
@@ -423,7 +423,7 @@
             selectedDevice[name].gatt.connect()
 		.then(server => {
 		    console.log("server: ", server);
-		    return server.getPrimaryService('34802252-7185-4d5d-b431-630e7050e8f0');
+		    return server.getPrimaryService('61353090-8231-49cc-b57a-886370740041');
 		})
 		.then(service => {
 		    $('#connection_status').html("Getting Characteristics...");
