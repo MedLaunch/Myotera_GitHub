@@ -1,0 +1,4 @@
+framework module MovesenseApi {
+    header "MovesenseApi.h"
+    header "MDS.h"
+}
