@@ -27,8 +27,9 @@ extension DeviceConnectionState {
     }
 }
 
-struct DeviceViewModel: Codable {
-
+struct DeviceViewModel: Codable, Identifiable {
+    
+    let id: UUID // Custom
     let state: DeviceConnectionState
     let serial: String
     let name: String
@@ -37,6 +38,7 @@ struct DeviceViewModel: Codable {
     let hwVersion: String
 
     init(_ with: MovesenseDevice, newState: DeviceConnectionState? = nil) {
+        id = UUID()
         state = newState ?? DeviceConnectionState(with.deviceState)
         serial = with.serialNumber
         name = with.localName.components(separatedBy: " ")[0]
@@ -46,6 +48,7 @@ struct DeviceViewModel: Codable {
     }
 
     init(_ with: DeviceViewModel, newState: DeviceConnectionState? = nil) {
+        id = UUID()
         state = newState ?? with.state
         serial = with.serial
         name = with.name

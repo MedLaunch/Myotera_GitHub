@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A21B6B3E25E873690070339C /* ConnectTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21B6B3D25E873690070339C /* ConnectTableItem.swift */; };
+		A21B6B4425E8792C0070339C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21B6B4325E8792C0070339C /* SearchBar.swift */; };
 		A23A029625E76F9500C3D414 /* MovesenseApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23A029525E76F9500C3D414 /* MovesenseApi.framework */; };
 		A23A029725E76F9500C3D414 /* MovesenseApi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A23A029525E76F9500C3D414 /* MovesenseApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A23A02A425E7717900C3D414 /* Pods_myotera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23A02A325E7717900C3D414 /* Pods_myotera.framework */; };
 		A23A02C125E7776F00C3D414 /* MovesenseDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A02BF25E7776F00C3D414 /* MovesenseDevices.swift */; };
 		A23A02C225E7776F00C3D414 /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A02C025E7776F00C3D414 /* DeviceViewModel.swift */; };
+		A23A032925E856F300C3D414 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A032825E856F300C3D414 /* ProgressBar.swift */; };
 		A2F9255925E763AA007CADF2 /* myoteraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9255825E763AA007CADF2 /* myoteraApp.swift */; };
 		A2F9255B25E763AA007CADF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9255A25E763AA007CADF2 /* ContentView.swift */; };
 		A2F9255D25E763AB007CADF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F9255C25E763AB007CADF2 /* Assets.xcassets */; };
@@ -33,10 +36,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A21B6B3D25E873690070339C /* ConnectTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectTableItem.swift; sourceTree = "<group>"; };
+		A21B6B4325E8792C0070339C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		A23A029525E76F9500C3D414 /* MovesenseApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovesenseApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A23A02A325E7717900C3D414 /* Pods_myotera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_myotera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A23A02BF25E7776F00C3D414 /* MovesenseDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseDevices.swift; sourceTree = "<group>"; };
 		A23A02C025E7776F00C3D414 /* DeviceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
+		A23A032825E856F300C3D414 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		A2E04A4D25E76574004F45F2 /* MovesenseApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovesenseApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F9255525E763AA007CADF2 /* myotera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myotera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F9255825E763AA007CADF2 /* myoteraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myoteraApp.swift; sourceTree = "<group>"; };
@@ -108,6 +114,9 @@
 				A2F9256125E763AB007CADF2 /* Info.plist */,
 				A2F9255E25E763AB007CADF2 /* Preview Content */,
 				A23A02BE25E7776F00C3D414 /* MovesenseApiConnect */,
+				A23A032825E856F300C3D414 /* ProgressBar.swift */,
+				A21B6B3D25E873690070339C /* ConnectTableItem.swift */,
+				A21B6B4325E8792C0070339C /* SearchBar.swift */,
 			);
 			path = myotera;
 			sourceTree = "<group>";
@@ -245,9 +254,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21B6B4425E8792C0070339C /* SearchBar.swift in Sources */,
+				A21B6B3E25E873690070339C /* ConnectTableItem.swift in Sources */,
 				A23A02C125E7776F00C3D414 /* MovesenseDevices.swift in Sources */,
 				A2F9255B25E763AA007CADF2 /* ContentView.swift in Sources */,
 				A23A02C225E7776F00C3D414 /* DeviceViewModel.swift in Sources */,
+				A23A032925E856F300C3D414 /* ProgressBar.swift in Sources */,
 				A2F9255925E763AA007CADF2 /* myoteraApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
