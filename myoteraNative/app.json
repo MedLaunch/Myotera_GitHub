@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "_internal": {
+      "isDebug": false,
+      "projectRoot": "/Users/mkomaiha/Documents/MedLaunch/Myotera_GitHub/myoteraNative",
+      "dynamicConfigPath": null,
+      "staticConfigPath": null,
+      "packageJsonPath": "/Users/mkomaiha/Documents/MedLaunch/Myotera_GitHub/myoteraNative/package.json"
+    },
+    "name": "myoteraNative",
+    "slug": "myoteranative",
+    "version": "1.0.0",
+    "sdkVersion": "40.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "android": {
+      "package": "com.medlaunch.myotera"
+    },
+    "ios": {
+      "bundleIdentifier": "com.medlaunch.myotera"
+    }
+  }
+}
