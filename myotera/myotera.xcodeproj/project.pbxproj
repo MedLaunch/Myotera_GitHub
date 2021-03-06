@@ -391,7 +391,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"myotera/Preview Content\"";
-				DEVELOPMENT_TEAM = S98N3GM7VW;
+				DEVELOPMENT_TEAM = 7KPJ3Y5M5G;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = myotera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -399,7 +399,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MedLaunch.myotera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.medlaunch.jamjiang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -415,7 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"myotera/Preview Content\"";
-				DEVELOPMENT_TEAM = S98N3GM7VW;
+				DEVELOPMENT_TEAM = 7KPJ3Y5M5G;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = myotera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -423,7 +423,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MedLaunch.myotera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.medlaunch.jamjiang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
