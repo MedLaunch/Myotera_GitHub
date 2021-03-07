@@ -14,7 +14,7 @@ export default function ConnectScreen({navigation}) {
   useEffect(() => {
     const navigated = navigation.addListener('focus', () => {
       console.log('Navigated to Connect Page!');
-      movesenseDispatch(addBLE("Name", "Add"));
+      // movesenseDispatch(addBLE("Name", "Add"));
       try {
         MDS.scan((name, address) => {
           movesenseDispatch(addBLE(name, address));
