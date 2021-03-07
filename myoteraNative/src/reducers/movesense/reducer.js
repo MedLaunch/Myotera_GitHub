@@ -1,4 +1,4 @@
-import { ADD_BLE } from './constants';
+import { ADD_BLE, CONNECTED_DEVICE, DISCONNECTED_DEVICE, CHANGE_STATUS } from './constants';
 
 export const INITIAL_MOVESENSE_STATE = {
   devices: [],
@@ -24,20 +24,27 @@ export default function movesenseReducer(state, action) {
         ]
       }
     case CONNECTED_DEVICE:
-      if (state.connectedDevice.includes(action.payload.serial)) {
+      if (state.connectedDevices.includes(action.payload.serial)) {
         return state;
       }
       return {
         ...state,
+        status: 'connected',
         connectedDevices: [...state.connectedDevices, action.payload.serial]
       }
     case DISCONNECTED_DEVICE:
-      if (!state.connectedDevice.includes(action.payload.serial)) {
+      if (!state.connectedDevices.includes(action.payload.serial)) {
         return state;
       }
       return {
         ...state,
+        status: 'disconnected',
         connectedDevices: state.connectedDevices.filter(device => device !== action.payload.serial)
+      }
+    case CHANGE_STATUS:
+      return {
+        ...state,
+        status: action.payload.status
       }
     default:
       throw new Error();
