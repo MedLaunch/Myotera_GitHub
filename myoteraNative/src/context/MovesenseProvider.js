@@ -13,6 +13,8 @@ const MovesenseProvider = ({children}) => {
         (serial) => {
           // Dev Connected Handler
           movesenseDispatch(connectedDevice(serial));
+          console.log(serial);
+          MDS.get(serial, '/Info', {}, (response) => { console.log(response)}, (error) => { console.log('Error', error) })
         },
         (serial) => {
           // Dev Disconnected Handler
