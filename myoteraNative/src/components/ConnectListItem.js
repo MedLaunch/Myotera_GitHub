@@ -5,6 +5,7 @@ import MDS from 'react-native-mds';
 export default function ConnectListItem({item}) {
   const connect = () => {
     try {
+      console.log(item.address);
       MDS.connect(item.address);
     } catch (err) {
       if (err instanceof ReferenceError) {
@@ -37,10 +38,10 @@ const styles = StyleSheet.create({
 
   },
   listItem: {
-    padding: '0.5rem',
+    // padding: '10pt',
     backgroundColor: 'white'
   },
   pressableItem: {
-    cursor: 'pointer'
+    // cursor: 'pointer'
   }
 });
