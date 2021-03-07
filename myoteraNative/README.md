@@ -29,6 +29,10 @@
   - If you have a permissions issue: look it up on google
 - start the app by running expo start or npm run web
 
+- If you have an issue with the source and node modules
+- go to myoteraNative/node_modules/react-native-mds/src/RNMds.js
+- Replace `module.export = ...` with `export default NativeModules.ReactMds;`
+
 
 ## Setup for running iOS app
 - If you're on a mac and you want to setup the swift stuff
@@ -40,10 +44,6 @@
 
 - May need to change the signing for the team in the xcode project
 - Change the bundle identifier
-
-- If you have an issue with the source and node modules
-- go to myoteraNative/node_modules/react-native-mds/src/RNMds.js
-- Replace `module.export = ...` with `export default NativeModules.ReactMds;`
 
 - When trying to run the app, make sure the phone trusts the app
   - On iPhone
