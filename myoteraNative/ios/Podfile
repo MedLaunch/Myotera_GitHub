@@ -22,5 +22,6 @@ target 'myoteraNative' do
   #    flipper_post_install(installer)
   #  end
   # pod 'RNMds', :path => '../node_modules/react-native-mds'
-  pod 'Movesense', :git => 'ssh://git@altssh.bitbucket.org:443/suunto/movesense-mobile-lib.git'
+  # pod 'Movesense', :git => 'ssh://git@altssh.bitbucket.org:443/suunto/movesense-mobile-lib.git'
+  pod 'Movesense', :git => 'https://www.bitbucket.org/suunto/movesense-mobile-lib.git'
 end

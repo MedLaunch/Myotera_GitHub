@@ -337,7 +337,7 @@ DEPENDENCIES:
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
-  - "Movesense (from `ssh://git@altssh.bitbucket.org:443/suunto/movesense-mobile-lib.git`)"
+  - Movesense (from `https://www.bitbucket.org/suunto/movesense-mobile-lib.git`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -425,7 +425,7 @@ EXTERNAL SOURCES:
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   Movesense:
-    :git: "ssh://git@altssh.bitbucket.org:443/suunto/movesense-mobile-lib.git"
+    :git: https://www.bitbucket.org/suunto/movesense-mobile-lib.git
   RCTRequired:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
@@ -510,7 +510,7 @@ EXTERNAL SOURCES:
 CHECKOUT OPTIONS:
   Movesense:
     :commit: b36280335838d7a7db4ebf554bed6b8cd9f27cf6
-    :git: "ssh://git@altssh.bitbucket.org:443/suunto/movesense-mobile-lib.git"
+    :git: https://www.bitbucket.org/suunto/movesense-mobile-lib.git
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
@@ -575,6 +575,6 @@ SPEC CHECKSUMS:
   UMTaskManagerInterface: 4c60b43eaf3cb05a164bc9113258a171c18b7bf7
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: 70f248f7567416c4e90a9fd40fab04bd5691d1aa
+PODFILE CHECKSUM: 57a80b70dde844674eccb72a281742fcbc175cc3
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.9.3
