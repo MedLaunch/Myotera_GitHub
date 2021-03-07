@@ -29,6 +29,8 @@
   - If you have a permissions issue: look it up on google
 - start the app by running expo start or npm run web
 
+
+## Setup for running iOS app
 - If you're on a mac and you want to setup the swift stuff
 - react-native link
 - cd into the ios folder of myoteraNative and do a pod install
