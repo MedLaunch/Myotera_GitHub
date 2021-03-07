@@ -1,4 +1,4 @@
-import { ADD_BLE, CONNECTED_DEVICE, DISCONNECTED_DEVICE } from './constants';
+import { ADD_BLE, CONNECTED_DEVICE, DISCONNECTED_DEVICE, CHANGE_STATUS } from './constants';
 
 export const addBLE = (name, address) => ({
   type: ADD_BLE,
@@ -19,5 +19,12 @@ export const disconnectedDevice = (serial) => ({
   type: DISCONNECTED_DEVICE,
   payload: {
     serial
+  }
+});
+
+export const changeStatus = (status) => ({
+  type: CHANGE_STATUS,
+  payload: {
+    status
   }
 });
