@@ -3,33 +3,34 @@ close all;                          % close all figures
 clear;                              % clear all variables
 clc;                                % clear the command terminal
 
+%% Load in files to process (acc, gyro, magn)
 %load('ExampleData.mat');
 
-accfile = '../../../datasets/no_motion/no_motion_acc';
-gyrofile = '../../../datasets/no_motion/no_motion_gyro';
-magnfile = '../../../datasets/no_motion/no_motion_magn';
+sampleRate = 52; %Sample rate (Hz)
+
+accfile = '../../../datasets/banded_data/up2_90/trial 1/up2_90_wrist_acc1';
+gyrofile = '../../../datasets/banded_data/up2_90/trial 1/up2_90_wrist_gyro1';
+magnfile = '../../../datasets/banded_data/up2_90/trial 1/up2_90_wrist_magn1';
 
 acc = readtable(accfile + ".csv");
-acc = acc(:,2:4);
-Accelerometer = table2array(acc);
+acc = table2array(acc(:,2:4));
 
 gyro = readtable(gyrofile + ".csv");
-gyro = gyro(:,2:4);
-Gyroscope = table2array(gyro);
+gyro = table2array(gyro(:,2:4));
 
 magn = readtable(magnfile + ".csv");
-magn = magn(:,2:4);
-Magnetometer = 0.001 .* table2array(magn); %convert to G
+magn = table2array(magn(:,2:4)) .* 0.001; %convert to G
 
-max_time = max(size(Accelerometer));
+max_time = max(size(acc));
 time = (1:max_time)';
 
+%% Plot given inputs
 figure('Name', 'Sensor Data');
 axis(1) = subplot(3,1,1);
 hold on;
-plot(time, Gyroscope(:,1), 'r');
-plot(time, Gyroscope(:,2), 'g');
-plot(time, Gyroscope(:,3), 'b');
+plot(time, gyro(:,1), 'r');
+plot(time, gyro(:,2), 'g');
+plot(time, gyro(:,3), 'b');
 legend('X', 'Y', 'Z');
 xlabel('Time (s)');
 ylabel('Angular rate (deg/s)');
@@ -37,9 +38,9 @@ title('Gyroscope');
 hold off;
 axis(2) = subplot(3,1,2);
 hold on;
-plot(time, Accelerometer(:,1), 'r');
-plot(time, Accelerometer(:,2), 'g');
-plot(time, Accelerometer(:,3), 'b');
+plot(time, acc(:,1), 'r');
+plot(time, acc(:,2), 'g');
+plot(time, acc(:,3), 'b');
 legend('X', 'Y', 'Z');
 xlabel('Time (s)');
 ylabel('Acceleration (m/s^2)');
@@ -47,9 +48,9 @@ title('Accelerometer');
 hold off;
 axis(3) = subplot(3,1,3);
 hold on;
-plot(time, Magnetometer(:,1), 'r');
-plot(time, Magnetometer(:,2), 'g');
-plot(time, Magnetometer(:,3), 'b');
+plot(time, magn(:,1), 'r');
+plot(time, magn(:,2), 'g');
+plot(time, magn(:,3), 'b');
 legend('X', 'Y', 'Z');
 xlabel('Time (s)');
 ylabel('Flux (mG)');
@@ -57,14 +58,38 @@ title('Magnetometer');
 hold off;
 linkaxes(axis, 'x');
 
-AHRS = MadgwickAHRS('SamplePeriod', 1/256, 'Beta', 0.1);
+%% Band pass filter on acceleration
+%% Calibrate magnetometer
+%hard iron effects
+off_x = max(magn(:,1)) - min(magn(:,1));
+off_y = max(magn(:,2)) - min(magn(:,2));
+off_z = max(magn(:,3)) - min(magn(:,3));
+   
+%soft iron effects
+avg_delt_x = (max(df.iloc[:,0]) - min(df.iloc[:,0])) / 2
+avg_delt_y = (max(df.iloc[:,1]) - min(df.iloc[:,1])) / 2
+avg_delt_z = (max(df.iloc[:,2]) - min(df.iloc[:,2])) / 2
+%     avg_delt = (avg_delt_x + avg_delt_y + avg_delt_z) / 3
+% 
+%     scale_x = avg_delt / avg_delt_x
+%     scale_y = avg_delt / avg_delt_y
+%     scale_z = avg_delt / avg_delt_z
+% 
+%     %correction of both 
+%     df.iloc[:,0] = (df.iloc[:,0] - off_x) * scale_x
+%     df.iloc[:,1] = (df.iloc[:,1] - off_y) * scale_y
+%     df.iloc[:,2] = (df.iloc[:,2] - off_z) * scale_z
+
+%% Apply Madgwick filter to obtain orientation
+AHRS = MadgwickAHRS('SamplePeriod', 1/sampleRate, 'Beta', 0.1);
 
 quaternion = zeros(length(time), 4);
 for t = 1:length(time)
-    AHRS.Update(Gyroscope(t,:) * (pi/180), Accelerometer(t,:), Magnetometer(t,:));	% gyroscope units must be radians
+    AHRS.Update(gyro(t,:) * (pi/180), acc(t,:) ./ 9.81 , magn(t,:));	% gyroscope units must be radians
     quaternion(t, :) = AHRS.Quaternion;
 end
 
+%% Plot Euler Angles
 euler = quatern2euler(quaternConj(quaternion)) * (180/pi);	% use conjugate for sensor frame relative to Earth and convert to degrees.
 
 figure('Name', 'Euler Angles');
@@ -78,25 +103,28 @@ ylabel('Angle (deg)');
 legend('\phi', '\theta', '\psi');
 hold off;
 
-cal_acc = zeros(max(size(Accelerometer)),3);
+%% Remove gravity from acc
+cal_acc = zeros(max(size(acc)),3);
 
+g = 9.81;
 for i = 1:max(size((quaternion)))
     
     R = quatern2rotMat(quaternion(i,1:4));
 
-    pre = [Accelerometer(i,1),Accelerometer(i,2),Accelerometer(i,3)]';
-    trans = R*pre;
-    trans = trans';
+    pre = [acc(i,1),acc(i,2),acc(i,3)]';
+    %trans = R*pre;
+    %trans = trans';
+    trans = [pre(1)-g.*R(7), pre(2)-g.*R(8), pre(3)-g.*R(9)];
     
     cal_acc(i,1) = trans(1,1);
     cal_acc(i,2) = trans(1,2);
     cal_acc(i,3) = trans(1,3);
-    trans = [pre(0)-g.*R(7), pre(1)-g.*R(8), pre(2)-g.*R(9)];
 end
 
 calfile = accfile + "_cal.csv";
 writematrix(cal_acc, calfile);
 
+%% Plot calibrated vs uncalibrated acc
 figure('name','cal acc');
 hold on
 plot(time, cal_acc(:,1), 'r');
@@ -110,11 +138,24 @@ hold off
 
 figure('name','reg acc');
 hold on
-plot(time, Accelerometer(:,1), 'r');
-plot(time, Accelerometer(:,2), 'g');
-plot(time, Accelerometer(:,3), 'b');
+plot(time, acc(:,1), 'r');
+plot(time, acc(:,2), 'g');
+plot(time, acc(:,3), 'b');
 legend('X', 'Y', 'Z');
 xlabel('Time (s)');
 ylabel('Acceleration (m/s)');
 title('regular Accelerometer');
 hold off
+
+%% Plot processed vs unprocessed position
+figure('name','reg pos')
+pos_x = cumtrapz(cumtrapz(acc(:,1), time.*1/sampleRate),time.*1/sampleRate);
+pos_y = cumtrapz(cumtrapz(acc(:,2), time.*1/sampleRate),time.*1/sampleRate);
+pos_z = cumtrapz(cumtrapz(acc(:,3), time.*1/sampleRate),time.*1/sampleRate);
+plot3(pos_x,pos_y,pos_z)
+
+figure('name','cal pos')
+pos_x = cumtrapz(cumtrapz(cal_acc(:,1), time.*1/sampleRate),time.*1/sampleRate);
+pos_y = cumtrapz(cumtrapz(cal_acc(:,2), time.*1/sampleRate),time.*1/sampleRate);
+pos_z = cumtrapz(cumtrapz(cal_acc(:,3), time.*1/sampleRate),time.*1/sampleRate);
+plot3(pos_x,pos_y,pos_z)
