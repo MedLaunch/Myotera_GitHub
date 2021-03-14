@@ -10,6 +10,9 @@
 		158FF588BEAA3EC53BE8DDDD /* Pods_Myotera_MyoteraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814A73D5222B86D1D0A604AF /* Pods_Myotera_MyoteraUITests.framework */; };
 		168A44E7BE1C0DE310F3BB2A /* Pods_MyoteraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A6927DADD7820AEFD869D9 /* Pods_MyoteraTests.framework */; };
 		D820DDE72564D208006A00BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D820DDE62564D208006A00BE /* Assets.xcassets */; };
+		D8291AAE25F453D200C25CBA /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8291AAC25F453D200C25CBA /* OnboardingViewModel.swift */; };
+		D8291AAF25F453D200C25CBA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8291AAD25F453D200C25CBA /* OnboardingViewController.swift */; };
+		D8291AB325F4545600C25CBA /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8291AB225F4545600C25CBA /* DeviceViewModel.swift */; };
 		D838257025DE537900264EC2 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838256F25DE537900264EC2 /* TabBar.swift */; };
 		D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F12547B57F0053921E /* AppDelegate.swift */; };
 		D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C4F32547B57F0053921E /* SceneDelegate.swift */; };
@@ -20,6 +23,8 @@
 		D859C5142547B5810053921E /* MyoteraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859C5132547B5810053921E /* MyoteraUITests.swift */; };
 		D85B8926257A156800B710E3 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B8925257A156800B710E3 /* ProgressViewController.swift */; };
 		D8692F1B25E0F96D009FF63C /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8692F1A25E0F96D009FF63C /* RecordingViewController.swift */; };
+		D879FEEC25F44FCD00F69758 /* MovesenseApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879FEEB25F44FCD00F69758 /* MovesenseApi.framework */; };
+		D879FEED25F44FCD00F69758 /* MovesenseApi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D879FEEB25F44FCD00F69758 /* MovesenseApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F04713C143220DA4DE8D02E1 /* Pods_Myotera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297104E1371AF53553811B6B /* Pods_Myotera.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +45,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D879FEEE25F44FCD00F69758 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D879FEED25F44FCD00F69758 /* MovesenseApi.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1D38C29DC9D1BE789C8B3E6B /* Pods-MyoteraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoteraTests.debug.xcconfig"; path = "Target Support Files/Pods-MyoteraTests/Pods-MyoteraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1DA1A534EBD6BA9F8DC99BAA /* Pods-Myotera-MyoteraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myotera-MyoteraUITests.release.xcconfig"; path = "Target Support Files/Pods-Myotera-MyoteraUITests/Pods-Myotera-MyoteraUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -50,6 +69,9 @@
 		814A73D5222B86D1D0A604AF /* Pods_Myotera_MyoteraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myotera_MyoteraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D3421E834BB4B401E74C1D /* Pods-Myotera-MyoteraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myotera-MyoteraUITests.debug.xcconfig"; path = "Target Support Files/Pods-Myotera-MyoteraUITests/Pods-Myotera-MyoteraUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D820DDE62564D208006A00BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8291AAC25F453D200C25CBA /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		D8291AAD25F453D200C25CBA /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D8291AB225F4545600C25CBA /* DeviceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
 		D838256F25DE537900264EC2 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D859C4EE2547B57F0053921E /* Myotera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myotera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D859C4F12547B57F0053921E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +88,7 @@
 		D859C5152547B5810053921E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D85B8925257A156800B710E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		D8692F1A25E0F96D009FF63C /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
+		D879FEEB25F44FCD00F69758 /* MovesenseApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovesenseApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A6927DADD7820AEFD869D9 /* Pods_MyoteraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyoteraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -75,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04713C143220DA4DE8D02E1 /* Pods_Myotera.framework in Frameworks */,
+				D879FEEC25F44FCD00F69758 /* MovesenseApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +137,7 @@
 		D3AF78571A898CE3DBF685B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D879FEEB25F44FCD00F69758 /* MovesenseApi.framework */,
 				297104E1371AF53553811B6B /* Pods_Myotera.framework */,
 				814A73D5222B86D1D0A604AF /* Pods_Myotera_MyoteraUITests.framework */,
 				F0A6927DADD7820AEFD869D9 /* Pods_MyoteraTests.framework */,
@@ -184,6 +209,7 @@
 		D85BC8C4254F381000DB9DAD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D8291AAD25F453D200C25CBA /* OnboardingViewController.swift */,
 				D859C4F52547B57F0053921E /* DashboardViewController.swift */,
 				D85B8925257A156800B710E3 /* ProgressViewController.swift */,
 				D838256F25DE537900264EC2 /* TabBar.swift */,
@@ -205,6 +231,8 @@
 		D85BC8C9254F38AB00DB9DAD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D8291AB225F4545600C25CBA /* DeviceViewModel.swift */,
+				D8291AAC25F453D200C25CBA /* OnboardingViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +249,7 @@
 				D859C4EB2547B57F0053921E /* Frameworks */,
 				D859C4EC2547B57F0053921E /* Resources */,
 				8E357CD87ED02B242BE07B04 /* [CP] Embed Pods Frameworks */,
+				D879FEEE25F44FCD00F69758 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -450,8 +479,11 @@
 				D859C4F62547B57F0053921E /* DashboardViewController.swift in Sources */,
 				D859C4F22547B57F0053921E /* AppDelegate.swift in Sources */,
 				D859C4F42547B57F0053921E /* SceneDelegate.swift in Sources */,
+				D8291AAF25F453D200C25CBA /* OnboardingViewController.swift in Sources */,
 				D85B8926257A156800B710E3 /* ProgressViewController.swift in Sources */,
 				D8692F1B25E0F96D009FF63C /* RecordingViewController.swift in Sources */,
+				D8291AB325F4545600C25CBA /* DeviceViewModel.swift in Sources */,
+				D8291AAE25F453D200C25CBA /* OnboardingViewModel.swift in Sources */,
 				D838257025DE537900264EC2 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

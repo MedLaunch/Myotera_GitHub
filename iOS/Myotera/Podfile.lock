@@ -2,10 +2,12 @@ PODS:
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
+  - Movesense (1.44.0)
   - ScrollableGraphView (4.0.6)
 
 DEPENDENCIES:
   - Charts
+  - Movesense (from `https://www.bitbucket.org/suunto/movesense-mobile-lib.git`)
   - ScrollableGraphView
 
 SPEC REPOS:
@@ -13,10 +15,20 @@ SPEC REPOS:
     - Charts
     - ScrollableGraphView
 
+EXTERNAL SOURCES:
+  Movesense:
+    :git: https://www.bitbucket.org/suunto/movesense-mobile-lib.git
+
+CHECKOUT OPTIONS:
+  Movesense:
+    :commit: b36280335838d7a7db4ebf554bed6b8cd9f27cf6
+    :git: https://www.bitbucket.org/suunto/movesense-mobile-lib.git
+
 SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  Movesense: c52dcdfb24967ce034b2b71c871b54325bab2572
   ScrollableGraphView: 4af35d4ea9ecdec665d34a74da51da161ddff8ac
 
-PODFILE CHECKSUM: 5969db874de30b6132663d30cf3dda77a9fd1e1a
+PODFILE CHECKSUM: b0e4a5d60bfb27b34177646d0a67a98ba57e0d07
 
 COCOAPODS: 1.9.3

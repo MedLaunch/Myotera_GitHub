@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import MovesenseApi
+
 
 class RecordingViewController: UIViewController {
     
