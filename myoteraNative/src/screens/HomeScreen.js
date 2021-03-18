@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         left: 20
     },
     logoSize: {
-              width: 130,
+        width: 130,
         height: 130
-    }   
+    },
 });
