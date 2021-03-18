@@ -6,11 +6,11 @@ clc;                                % clear the command terminal
 %% Load in files to process (acc, gyro, magn)
 %load('ExampleData.mat');
 
-sampleRate = 256; %Sample rate (Hz)
+sampleRate = 52; %Sample rate (Hz)
 
-accfile = '../../../datasets/banded_data/up2_90/trial 1/up2_90_wrist_acc1';
-gyrofile = '../../../datasets/banded_data/up2_90/trial 1/up2_90_wrist_gyro1';
-magnfile = '../../../datasets/banded_data/up2_90/trial 1/up2_90_wrist_magn1';
+accfile = '../../../datasets/banded_data/up2_90/trial 2/up2_90_wrist_acc2';
+gyrofile = '../../../datasets/banded_data/up2_90/trial 2/up2_90_wrist_gyro2';
+magnfile = '../../../datasets/banded_data/up2_90/trial 2/up2_90_wrist_magn2';
 
 acc = readtable(accfile + ".csv");
 acc = table2array(acc(:,2:4));
@@ -21,17 +21,26 @@ gyro = table2array(gyro(:,2:4));
 magn = readtable(magnfile + ".csv");
 magn = table2array(magn(:,2:4)) .* 0.001; %convert to G
 
-max_time = max(size(acc));
+max_time = min([ max(size(acc)) max(size(gyro)) max(size(magn)) ]);
 time = (1:max_time)';
 dt = 1./sampleRate;
+if max(size(acc)) ~= max_time
+    acc = acc(1:max_time,:);
+end
+if max(size(gyro)) ~= max_time
+    gyro = gyro(1:max_time,:);
+end
+if max(size(magn)) ~= max_time
+    magn = magn(1:max_time,:);
+end
 
 %% Plot given inputs
 figure('Name', 'Sensor Data');
 axis(1) = subplot(3,1,1);
 hold on;
-plot(time, gyro(:,1), 'r');
-plot(time, gyro(:,2), 'g');
-plot(time, gyro(:,3), 'b');
+plot(time*dt, gyro(:,1), 'r');
+plot(time*dt, gyro(:,2), 'g');
+plot(time*dt, gyro(:,3), 'b');
 legend('X', 'Y', 'Z');
 xlabel('Time (s)');
 ylabel('Angular rate (deg/s)');
@@ -39,9 +48,9 @@ title('Gyroscope');
 hold off;
 axis(2) = subplot(3,1,2);
 hold on;
-plot(time, acc(:,1), 'r');
-plot(time, acc(:,2), 'g');
-plot(time, acc(:,3), 'b');
+plot(time*dt, acc(:,1), 'r');
+plot(time*dt, acc(:,2), 'g');
+plot(time*dt, acc(:,3), 'b');
 legend('X', 'Y', 'Z');
 xlabel('Time (s)');
 ylabel('Acceleration (m/s^2)');
@@ -49,9 +58,9 @@ title('Accelerometer');
 hold off;
 axis(3) = subplot(3,1,3);
 hold on;
-plot(time, magn(:,1), 'r');
-plot(time, magn(:,2), 'g');
-plot(time, magn(:,3), 'b');
+plot(time*dt, magn(:,1), 'r');
+plot(time*dt, magn(:,2), 'g');
+plot(time*dt, magn(:,3), 'b');
 legend('X', 'Y', 'Z');
 xlabel('Time (s)');
 ylabel('Flux (mG)');
@@ -64,23 +73,60 @@ freq_x = fft(acc(:,1));
 freq_y = fft(acc(:,2));
 freq_z = fft(acc(:,3));
 
-filt_x = bandpass(freq_x,[100 300],sampleRate);
-filt_y = bandpass(freq_y,[100 300],sampleRate);
-filt_z = bandpass(freq_z,[100 300],sampleRate);
+% figure('Name', 'Frequency Content');
+% hold on
+% plot(time, freq_x, 'r');
+% plot(time, freq_y, 'g');
+% plot(time, freq_z, 'b');
+% legend('X', 'Y', 'Z');
+% xlabel('Freq (Hz)');
+% ylabel('Magnitude (dB)');
+% title('Freq Response');
+% 
+% %High pass filter
+% % freq_x = highpass(freq_x, 10, sampleRate);
+% % freq_y = highpass(freq_y, 10, sampleRate);
+% % freq_z = highpass(freq_z, 10, sampleRate);
+% 
+% %Bandpass Filter
+% % freq_x = bandpass(freq_x, [10 40], sampleRate);
+% % freq_y = bandpass(freq_y, [10 40], sampleRate);
+% % freq_z = bandpass(freq_z, [10 40], sampleRate);
+% 
+%Attenuate frequencies over a certain magnitude
+atten_x = find(abs(freq_x) > 10);
+freq_x(atten_x) = freq_x(atten_x).*0.1;
 
-acc(:,1) = ifft(filt_x);
-acc(:,2) = ifft(filt_y);
-acc(:,3) = ifft(filt_z);
+atten_y = find(abs(freq_y) > 10);
+freq_y(atten_y) = freq_y(atten_y).*0.1;
 
-figure('Name', 'Bandpass');
-hold on
-plot(time, acc(:,1), 'r');
-plot(time, acc(:,2), 'g');
-plot(time, acc(:,3), 'b');
-legend('X', 'Y', 'Z');
-xlabel('Time (s)');
-ylabel('Acceleration (m/s^2)');
-title('Filtered Accelerometer');
+atten_z = find(abs(freq_z) > 10);
+freq_z(atten_z) = freq_z(atten_z).*0.1;
+% 
+% figure('Name', 'Frequency Content');
+% hold on
+% plot(time, freq_x, 'r');
+% plot(time, freq_y, 'g');
+% plot(time, freq_z, 'b');
+% legend('X', 'Y', 'Z');
+% xlabel('Freq (Hz)');
+% ylabel('Magnitude (dB)');
+% title('Attenuated Freq Response');
+% 
+% acc(:,1) = ifft(freq_x);
+% acc(:,2) = ifft(freq_y);
+% acc(:,3) = ifft(freq_z);
+% 
+% figure('Name', 'Bandpassed Data');
+% hold on
+% plot(time*dt, acc(:,1), 'r');
+% plot(time*dt, acc(:,2), 'g');
+% plot(time*dt, acc(:,3), 'b');
+% legend('X', 'Y', 'Z');
+% xlabel('Time (s)');
+% ylabel('Acceleration (m/s^2)');
+% title('Filtered Accelerometer');
+
 %% Calibrate magnetometer
 %hard iron effects
 off_x = max(magn(:,1)) - min(magn(:,1));
@@ -111,18 +157,20 @@ for t = 1:length(time)
     quaternion(t, :) = AHRS.Quaternion;
 end
 
+orientfile = accfile + "_orient.csv";
+writematrix(quaternion, orientfile);
+
 %% Remove gravity from acc
 cal_acc = zeros(max(size(acc)),3);
 
-g = 9.81;
+g = [0 0 9.81]';
 for i = 1:max(size((quaternion)))
     
-    R = quatern2rotMat(quaternion(i,1:4));
+    R = quatern2rotMat(quaternion(i,1:4)); %Rotation matrix
 
-    pre = [acc(i,1),acc(i,2),acc(i,3)]';
-    trans = R*pre;
-    trans = trans';
-    %trans = [pre(1)-g.*R(7), pre(2)-g.*R(8), pre(3)-g.*R(9)];
+    pre = [acc(i,1) acc(i,2) acc(i,3)]'; %frame to be rotated
+    trans = R*pre - g; %apply rotation and substract gravity
+    trans = trans'*inv(R); %apply inverse rotation matrix to return to normal frame
     
     cal_acc(i,1) = trans(1,1);
     cal_acc(i,2) = trans(1,2);
@@ -132,18 +180,7 @@ end
 % calfile = accfile + "_cal.csv";
 % writematrix(cal_acc, calfile);
 
-%% Plot calibrated vs uncalibrated acc
-figure('name','cal acc');
-hold on
-plot(time, cal_acc(:,1), 'r');
-plot(time, cal_acc(:,2), 'g');
-plot(time, cal_acc(:,3), 'b');
-legend('X', 'Y', 'Z');
-xlabel('Time (s)');
-ylabel('Acceleration (m/s)');
-title('Calibrated Accelerometer');
-hold off
-
+%% Plot zeroed (and filtered) vs unzeroed acc
 figure('name','reg acc');
 hold on
 plot(time, acc(:,1), 'r');
@@ -155,15 +192,38 @@ ylabel('Acceleration (m/s)');
 title('regular Accelerometer');
 hold off
 
+figure('name','cal acc');
+hold on
+plot(time, cal_acc(:,1), 'r');
+plot(time, cal_acc(:,2), 'g');
+plot(time, cal_acc(:,3), 'b');
+legend('X', 'Y', 'Z');
+xlabel('Time (s)');
+ylabel('Acceleration (m/s)');
+title('Calibrated Accelerometer');
+hold off
+
 %% Plot processed vs unprocessed position
 figure('name','reg pos')
-pos_x = cumtrapz(cumtrapz(acc(:,1), time.*1/sampleRate),time.*1/sampleRate);
-pos_y = cumtrapz(cumtrapz(acc(:,2), time.*1/sampleRate),time.*1/sampleRate);
-pos_z = cumtrapz(cumtrapz(acc(:,3), time.*1/sampleRate),time.*1/sampleRate);
+pos_x = cumtrapz(cumtrapz(acc(:,1), time.*dt),time.*dt);
+pos_y = cumtrapz(cumtrapz(acc(:,2), time.*dt),time.*dt);
+pos_z = cumtrapz(cumtrapz(acc(:,3), time.*dt),time.*dt);
 plot3(pos_x,pos_y,pos_z)
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+hold on
+plot3(pos_x(1),pos_y(1),pos_z(1),'.')
+hold off
 
 figure('name','cal pos')
-pos_x = cumtrapz(cumtrapz(cal_acc(:,1), time.*1/sampleRate),time.*1/sampleRate);
-pos_y = cumtrapz(cumtrapz(cal_acc(:,2), time.*1/sampleRate),time.*1/sampleRate);
-pos_z = cumtrapz(cumtrapz(cal_acc(:,3), time.*1/sampleRate),time.*1/sampleRate);
+pos_x = cumtrapz(cumtrapz(cal_acc(:,1), time.*dt),time.*dt);
+pos_y = cumtrapz(cumtrapz(cal_acc(:,2), time.*dt),time.*dt);
+pos_z = cumtrapz(cumtrapz(cal_acc(:,3), time.*dt),time.*dt);
 plot3(pos_x,pos_y,pos_z)
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+hold on
+plot3(pos_x(1),pos_y(1),pos_z(1),'.')
+hold off
