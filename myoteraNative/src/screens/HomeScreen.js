@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Pressable, Alert } from 'react-native';
 
+// resizeMode fixes our issue kinda: https://reactnative.dev/docs/image
+
 export default function HomeScreen() {
   return (
       <View style={styles.container}>
@@ -8,10 +10,10 @@ export default function HomeScreen() {
               Hi Patrick!
           </Text>
 
-          <View style={styles.myoteraLogoContainer}>
-              <Image source={require("../../myotera_logo.png")}>
-              </Image>
-          </View>
+          <Image
+              style={styles.myoteraLogoContainer}
+              source={require("../../myotera_logo.png")}
+          />
 
           <Text style={styles.grayText}>
               Looks like you're making great progress!
@@ -183,9 +185,9 @@ const styles = StyleSheet.create({
     },
     myoteraLogoContainer: {
         position: "absolute",
-        width: "68px",
-        height: "60px",
-        left: "27px",
+        width: "88px",
+        height: "80px",
+        left: "17px",
         top: "39px",
     },
     topBoxStyle: {
