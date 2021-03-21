@@ -4,23 +4,25 @@ import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-n
 export default function SensorError() {
     return (
         <View style={styles.container}>
-            <View style={styles.error}></View>
-
-            <View style={styles.rect1}></View>
-
-            <View style={styles.group3}></View>
-
-            <View style={styles.back}></View>
-
-            <View style={styles.vec1}></View>
+            <Text style={styles.back}>
+                Back
+            </Text>
 
             <View style={styles.vec2}></View>
 
-            <View style={styles.notEnoughSensors}></View>
+            <Text style={styles.notEnoughSensors}>
+                No sensor connected
+            </Text>
 
-            <View style={styles.noSensors}></View>
+            <Image
+                style={styles.back_arrow}
+                source={require("../../back_arrow.PNG")}
+            />
 
-            <View style={styles.errorArt}></View>
+            <Image
+                style={styles.triangle_error}
+                source={require("../../error_triangle.PNG")}
+            />
 
         </View>
         
@@ -30,30 +32,21 @@ export default function SensorError() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#1f1b27',
-        justifyContent: 'center',
-        alignItems: 'center'
+        backgroundColor: '#1f1b27'
     },
-    error: {
-        position: "relative",
-        width: "375px",
-        height: "812px",
-        background: "#FFFFFF"
-    },
-    rect1: {
+    back_arrow: {
         position: "absolute",
-        width: "375px",
-        height: "812px",
-        left: "0px",
-        top: "0px",
-        background: "#201F24"
+        width: "30px",
+        height: "60px",
+        top: "38px",
+        left: "20px"
     },
-    group3: {
+    triangle_error: {
         position: "absolute",
-        width: "307px",
-        height: "42px",
-        left: "34px",
-        top: "54px"
+        width: "119px",
+        height: "119px",
+        top: "345px",
+        left: "125px"
     },
     back: {
         position: "absolute",
@@ -66,15 +59,9 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: "18px",
         lineHeight: "21px",
-        color: "#9394FC"
-    },
-    vec1: {
-        position: "absolute",
-        width: "12px",
-        height: "22.5px",
-        left: "34px",
-        top: "54px",
-        border: "2px solid #9394FC"
+        color: "#9394FC",
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     vec2: {
         position: "absolute",
@@ -98,34 +85,8 @@ const styles = StyleSheet.create({
         fontSize: "28px",
         lineHeight: "32px",
         textAlign: "center",
-        color: "#FFFFFF"
-    },
-    noSensors: {
-        position: "absolute",
-        width: "320px",
-        height: "83px",
-        left: "28px",
-        top: "539px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
-        fontWeight: "normal",
-        fontSize: "21px",
-        lineHeight: "24px",
-        textAlign: "center",
-        color: "#B5B3B3"
-    },
-    errorArt: {
-        position: "absolute",
-        width: "77px",
-        height: "62px",
-        left: "148px",
-        top: "393px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
-        fontWeight: "bold",
-        fontSize: "50px",
-        lineHeight: "57px",
-        textAlign: "center",
-        color: "#FFFFFF"
+        color: "#FFFFFF",
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });

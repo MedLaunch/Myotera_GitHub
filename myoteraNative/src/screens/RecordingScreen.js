@@ -4,11 +4,9 @@ import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-n
 export default function RecordingScreen() {
     return (
         <View style={styles.container}>
-            <View style={styles.recording}></View>
-
-            <View style={styles.rect1}></View>
-
-            <View style={styles.recordingText}></View>
+            <Text style={styles.recordingText}>
+                Recording...
+            </Text>
 
             <View style={styles.ellipse7}></View>
 
@@ -18,14 +16,15 @@ export default function RecordingScreen() {
         
     );
 }
-
-const styles = StyleSheet.create({
-    recording: {
-        position: "relative",
+/*
+  <View style={styles.recording}></View>
+  
+recording: {
+    position: "absolute",
         width: "375px",
-        height: "812px",
-        background: "#FFFFFF"
-    },
+            height: "812px",
+                background: "#FFFFFF"
+},
     rect1: {
         position: "absolute",
         width: "375px",
@@ -33,6 +32,14 @@ const styles = StyleSheet.create({
         left: "0px",
         top: "0px",
         background: "#201F24"
+    },
+
+            <View style={styles.rect1}></View>
+*/
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#1f1b27'
     },
     recordingText: {
         position: "absolute",
@@ -54,8 +61,10 @@ const styles = StyleSheet.create({
         height: "56px",
         left: "158.5px",
         top: "700px",
-        background: "#9394FC",
-        boxShadow: "0px 4px 10px 5px rgba(147, 148, 252, 0.4)"
+        backgroundColor: "#9394FC",
+        boxSizing: "border-box",
+        boxShadow: "0px 4px 10px 5px rgba(147, 148, 252, 0.4)",
+        borderRadius: "28px"
     },
     ellipse8: {
         position: "absolute",
@@ -63,7 +72,8 @@ const styles = StyleSheet.create({
         height: "46px",
         left: "164px",
         top: "705px",
-        background: "#8A1B1B"
+        backgroundColor: "#8A1B1B",
+        borderRadius: "23px"
     }
       
 });

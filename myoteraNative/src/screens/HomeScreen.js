@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Pressable, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native';
 
 // resizeMode fixes our issue kinda: https://reactnative.dev/docs/image
 
@@ -38,8 +38,10 @@ export default function HomeScreen() {
 
 
           
-          <Pressable onPress={() => Alert.alert('Works')}
-            style={styles.lavenderButton3}
+          <Button
+              onPress={Alert.alert('Works')}
+              style={styles.lavenderButton3}
+              title = "Test"
           />
 
 
