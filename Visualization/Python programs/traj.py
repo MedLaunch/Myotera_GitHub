@@ -160,11 +160,42 @@ def remove_gravity(acc, orientation):
     '''
     gravity = np.array([0, 0, -9.81])
 
-    for i in range(len(acc)): 
-        r = R.from_euler('zyx', orientation.loc[i], degrees=True)
-        gravity = r.apply(gravity)
-        acc.loc[i] = acc.loc[i] - gravity
-    
+#    for i in range(len(acc)): 
+#        r = R.from_euler('zyx', orientation.loc[i], degrees=True)
+#        gravity = r.apply(gravity)
+#        acc.loc[i] = acc.loc[i] - gravity
+
+    rotated = pd.DataFrame(columns = ['x','y','z'])
+
+    for i in range(len(orientation)):
+        alpha = orientation.iloc[i,0] * np.pi/180
+        beta = orientation.iloc[i,1] * np.pi/180
+        gamma = orientation.iloc[i,2] * np.pi/180
+
+        # First row of the rotation matrix
+        r00 = np.cos(gamma) * np.cos(beta)
+        r01 = np.cos(gamma) * np.sin(beta) * np.sin(alpha) - np.sin(gamma) * np.cos(alpha)
+        r02 = np.cos(gamma) * np.sin(beta) * np.cos(alpha) + np.sin(gamma) * np.sin(alpha)
+        
+        # Second row of the rotation matrix
+        r10 = np.sin(gamma) * np.cos(beta)
+        r11 = np.sin(gamma) * np.sin(beta) * np.sin(alpha) + np.cos(gamma) * np.cos(alpha)
+        r12 = np.sin(gamma) * np.sin(beta) * np.cos(alpha) - np.cos(gamma) * np.sin(alpha)
+        
+        # Third row of the rotation matrix
+        r20 = -np.sin(beta)
+        r21 = np.cos(beta) * np.sin(alpha)
+        r22 = np.cos(beta) * np.cos(alpha)
+        
+        # 3x3 rotation matrix
+        rot_matrix = np.array([[r00, r01, r02],
+                            [r10, r11, r12],
+                            [r20, r21, r22]])
+
+        acc.iloc[i] = rot_matrix @ acc.iloc[i]
+
+        acc.loc[i] -= gravity
+
     return acc
 
 '''
@@ -231,7 +262,7 @@ def main():
 
     cal_magn = calibrate_magn(magn)
 
-    ready_data = remove_gravity(data_filt, euler) #data_filt #
+    ready_data = remove_gravity(data_filt, euler) 
 
     x,y,z = accel_to_pos(ready_data)
     
