@@ -1,20 +1,20 @@
 import React, {createContext, useEffect, useReducer} from 'react';
 import movesenseReducer, {INITIAL_MOVESENSE_STATE} from '../reducers/movesense/reducer';
-import {connectedDevice} from '../reducers/movesense/actions';
+import recordersReducer, {INITIAL_RECORDING_STATE} from '../reducers/recorders/reducer';
+import {connectedDevice, disconnectedDevice} from '../reducers/movesense/actions';
 import MDS from 'react-native-mds';
 
 export const MovesenseContext = createContext();
 
 const MovesenseProvider = ({children}) => {
   const [movesense, movesenseDispatch] = useReducer(movesenseReducer, INITIAL_MOVESENSE_STATE);
+  const [recorders, recordersDispatch] = useReducer(recordersReducer, INITIAL_RECORDING_STATE);
   useEffect(() => {
     try {
       MDS.setHandlers(
-        (serial) => {
+        (serial, name, address) => {
           // Dev Connected Handler
-          movesenseDispatch(connectedDevice(serial));
-          console.log(serial);
-          MDS.get(serial, '/Info', {}, (response) => { console.log(response)}, (error) => { console.log('Error', error) })
+          movesenseDispatch(connectedDevice(serial, name, address));
         },
         (serial) => {
           // Dev Disconnected Handler
@@ -32,7 +32,8 @@ const MovesenseProvider = ({children}) => {
 
   return (
     <MovesenseContext.Provider value={{
-      movesense, movesenseDispatch}}>
+      movesense, movesenseDispatch,
+      recorders, recordersDispatch}}>
       {children}
     </MovesenseContext.Provider>
   )

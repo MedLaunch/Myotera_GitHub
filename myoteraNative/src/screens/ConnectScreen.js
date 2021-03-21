@@ -7,7 +7,7 @@ import { addBLE } from '../reducers/movesense/actions';
 import MDS from 'react-native-mds';
 
 export default function ConnectScreen({navigation}) {
-  const { movesense, movesenseDispatch} = useContext(MovesenseContext);
+  const { movesense, movesenseDispatch } = useContext(MovesenseContext);
   const [searchText, setSearchText] = useState('');
   const [filteredDevices, setFilteredDevices] = useState([]);
 
@@ -48,7 +48,7 @@ export default function ConnectScreen({navigation}) {
 
   useEffect(() => {
     // Filter devices with search bar
-    setFilteredDevices(movesense.devices.filter((item) => item.name.toLowerCase().includes(searchText.trim().toLowerCase())))
+    setFilteredDevices(Object.values(movesense.devices).filter((item) => item.name.toLowerCase().includes(searchText.trim().toLowerCase())))
   }, [movesense, searchText])
   const updateSearch = (text) => {
     setSearchText(text);

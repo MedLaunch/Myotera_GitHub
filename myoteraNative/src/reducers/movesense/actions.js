@@ -8,10 +8,12 @@ export const addBLE = (name, address) => ({
   }
 });
 
-export const connectedDevice = (serial) => ({
+export const connectedDevice = (serial, name, address) => ({
   type: CONNECTED_DEVICE,
   payload: {
-    serial
+    serial,
+    name,
+    address
   }
 });
 
