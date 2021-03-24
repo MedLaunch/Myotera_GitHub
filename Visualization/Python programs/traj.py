@@ -262,7 +262,7 @@ def main():
 
     cal_magn = calibrate_magn(magn)
 
-    ready_data = remove_gravity(data_filt, euler) 
+    ready_data = remove_gravity(data_filt, euler) #data_filt #
 
     x,y,z = accel_to_pos(ready_data)
     

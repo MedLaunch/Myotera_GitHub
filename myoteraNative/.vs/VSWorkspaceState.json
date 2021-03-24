@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\context",
+    "\\src\\reducers",
+    "\\src\\screens"
+  ],
+  "SelectedNode": "\\src\\screens\\RecordingScreen.js",
+  "PreviewInSolutionExplorer": false
+}

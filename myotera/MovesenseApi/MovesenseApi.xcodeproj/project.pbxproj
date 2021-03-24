@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A23A02ED25E7851F00C3D414 /* MDS.h in Headers */ = {isa = PBXBuildFile; fileRef = A23A02EC25E7851F00C3D414 /* MDS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A23A02F325E7853300C3D414 /* libmds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A23A02F225E7853300C3D414 /* libmds.a */; };
+		A23A031425E7867C00C3D414 /* Movesense.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A031325E7867B00C3D414 /* Movesense.swift */; };
+		C12F1C4E22B23711009FC1F8 /* MovesenseBleControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12F1C4B22B23710009FC1F8 /* MovesenseBleControllerMock.swift */; };
+		C12F1C5022B246E6009FC1F8 /* MovesenseApiConcrete.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12F1C4F22B246E6009FC1F8 /* MovesenseApiConcrete.swift */; };
+		C12F1C5222B24793009FC1F8 /* MovesenseTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12F1C5122B24793009FC1F8 /* MovesenseTypes.swift */; };
+		C136A60222AFE47B00163139 /* MovesenseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5F422AFE47A00163139 /* MovesenseResource.swift */; };
+		C136A60322AFE47B00163139 /* MovesenseBleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5F522AFE47A00163139 /* MovesenseBleController.swift */; };
+		C136A60422AFE47B00163139 /* MovesenseCodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5F622AFE47A00163139 /* MovesenseCodingKeys.swift */; };
+		C136A60522AFE47B00163139 /* MovesenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5F722AFE47A00163139 /* MovesenseController.swift */; };
+		C136A60622AFE47B00163139 /* MovesenseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5F822AFE47A00163139 /* MovesenseOperation.swift */; };
+		C136A60722AFE47B00163139 /* MovesenseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5F922AFE47A00163139 /* MovesenseEvent.swift */; };
+		C136A60822AFE47B00163139 /* MovesenseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5FA22AFE47A00163139 /* MovesenseResponse.swift */; };
+		C136A60922AFE47B00163139 /* MovesenseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5FB22AFE47A00163139 /* MovesenseApi.swift */; };
+		C136A60A22AFE47B00163139 /* MovesenseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5FC22AFE47A00163139 /* MovesenseRequest.swift */; };
+		C136A60B22AFE47B00163139 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5FD22AFE47A00163139 /* Observer.swift */; };
+		C136A60C22AFE47B00163139 /* MovesenseMethodParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5FE22AFE47A00163139 /* MovesenseMethodParameter.swift */; };
+		C136A60D22AFE47B00163139 /* MovesenseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A5FF22AFE47B00163139 /* MovesenseConnection.swift */; };
+		C136A60E22AFE47B00163139 /* MovesenseDeviceConcrete.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A60022AFE47B00163139 /* MovesenseDeviceConcrete.swift */; };
+		C136A60F22AFE47B00163139 /* MovesenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A60122AFE47B00163139 /* MovesenseModel.swift */; };
+		C136A61D22AFE7E100163139 /* Collection+subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136A61C22AFE7E100163139 /* Collection+subscript.swift */; };
+		C15D579A22AFD8DC00DDCFF2 /* MovesenseApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15D579922AFD8DC00DDCFF2 /* MovesenseApiTests.swift */; };
+		C15D579C22AFD8DC00DDCFF2 /* MovesenseApi.h in Headers */ = {isa = PBXBuildFile; fileRef = C15D578E22AFD8DC00DDCFF2 /* MovesenseApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C171913122B7BF30001851A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C15D578222AFD8DC00DDCFF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C15D578A22AFD8DC00DDCFF2;
+			remoteInfo = MovesenseApi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A23A02EC25E7851F00C3D414 /* MDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDS.h; path = ../Pods/Movesense/IOS/Movesense/include/MDS.h; sourceTree = "<group>"; };
+		A23A02F225E7853300C3D414 /* libmds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmds.a; path = "../Pods/Movesense/IOS/Movesense/Release-iphoneos/libmds.a"; sourceTree = "<group>"; };
+		A23A031325E7867B00C3D414 /* Movesense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movesense.swift; path = ../Pods/Movesense/IOS/Movesense/swift/Movesense.swift; sourceTree = "<group>"; };
+		C12F1C4B22B23710009FC1F8 /* MovesenseBleControllerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseBleControllerMock.swift; sourceTree = "<group>"; };
+		C12F1C4F22B246E6009FC1F8 /* MovesenseApiConcrete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesenseApiConcrete.swift; sourceTree = "<group>"; };
+		C12F1C5122B24793009FC1F8 /* MovesenseTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesenseTypes.swift; sourceTree = "<group>"; };
+		C136A5F422AFE47A00163139 /* MovesenseResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseResource.swift; sourceTree = "<group>"; };
+		C136A5F522AFE47A00163139 /* MovesenseBleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseBleController.swift; sourceTree = "<group>"; };
+		C136A5F622AFE47A00163139 /* MovesenseCodingKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseCodingKeys.swift; sourceTree = "<group>"; };
+		C136A5F722AFE47A00163139 /* MovesenseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseController.swift; sourceTree = "<group>"; };
+		C136A5F822AFE47A00163139 /* MovesenseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseOperation.swift; sourceTree = "<group>"; };
+		C136A5F922AFE47A00163139 /* MovesenseEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseEvent.swift; sourceTree = "<group>"; };
+		C136A5FA22AFE47A00163139 /* MovesenseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseResponse.swift; sourceTree = "<group>"; };
+		C136A5FB22AFE47A00163139 /* MovesenseApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseApi.swift; sourceTree = "<group>"; };
+		C136A5FC22AFE47A00163139 /* MovesenseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseRequest.swift; sourceTree = "<group>"; };
+		C136A5FD22AFE47A00163139 /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		C136A5FE22AFE47A00163139 /* MovesenseMethodParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseMethodParameter.swift; sourceTree = "<group>"; };
+		C136A5FF22AFE47B00163139 /* MovesenseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseConnection.swift; sourceTree = "<group>"; };
+		C136A60022AFE47B00163139 /* MovesenseDeviceConcrete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseDeviceConcrete.swift; sourceTree = "<group>"; };
+		C136A60122AFE47B00163139 /* MovesenseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesenseModel.swift; sourceTree = "<group>"; };
+		C136A61C22AFE7E100163139 /* Collection+subscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+subscript.swift"; sourceTree = "<group>"; };
+		C15D578B22AFD8DC00DDCFF2 /* MovesenseApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MovesenseApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C15D578E22AFD8DC00DDCFF2 /* MovesenseApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovesenseApi.h; sourceTree = "<group>"; };
+		C15D578F22AFD8DC00DDCFF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C15D579422AFD8DC00DDCFF2 /* MovesenseApiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovesenseApiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C15D579922AFD8DC00DDCFF2 /* MovesenseApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesenseApiTests.swift; sourceTree = "<group>"; };
+		C15D579B22AFD8DC00DDCFF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C171911522B28C18001851A1 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C15D578822AFD8DC00DDCFF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A23A02F325E7853300C3D414 /* libmds.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15D579122AFD8DC00DDCFF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B1D04D8B75FD1AA75AC30E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A23A031325E7867B00C3D414 /* Movesense.swift */,
+				A23A02EC25E7851F00C3D414 /* MDS.h */,
+				A23A02F225E7853300C3D414 /* libmds.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C136A61E22AFE7EB00163139 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C136A61C22AFE7E100163139 /* Collection+subscript.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		C15D578122AFD8DC00DDCFF2 = {
+			isa = PBXGroup;
+			children = (
+				C15D578D22AFD8DC00DDCFF2 /* MovesenseApi */,
+				C15D579822AFD8DC00DDCFF2 /* MovesenseApiTests */,
+				C15D578C22AFD8DC00DDCFF2 /* Products */,
+				4B1D04D8B75FD1AA75AC30E0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C15D578C22AFD8DC00DDCFF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C15D578B22AFD8DC00DDCFF2 /* MovesenseApi.framework */,
+				C15D579422AFD8DC00DDCFF2 /* MovesenseApiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C15D578D22AFD8DC00DDCFF2 /* MovesenseApi */ = {
+			isa = PBXGroup;
+			children = (
+				C136A61E22AFE7EB00163139 /* extensions */,
+				C136A5FB22AFE47A00163139 /* MovesenseApi.swift */,
+				C12F1C5122B24793009FC1F8 /* MovesenseTypes.swift */,
+				C12F1C4F22B246E6009FC1F8 /* MovesenseApiConcrete.swift */,
+				C136A5F522AFE47A00163139 /* MovesenseBleController.swift */,
+				C136A5FF22AFE47B00163139 /* MovesenseConnection.swift */,
+				C136A5F722AFE47A00163139 /* MovesenseController.swift */,
+				C136A60022AFE47B00163139 /* MovesenseDeviceConcrete.swift */,
+				C136A5F922AFE47A00163139 /* MovesenseEvent.swift */,
+				C136A5FE22AFE47A00163139 /* MovesenseMethodParameter.swift */,
+				C136A60122AFE47B00163139 /* MovesenseModel.swift */,
+				C136A5F622AFE47A00163139 /* MovesenseCodingKeys.swift */,
+				C136A5FD22AFE47A00163139 /* Observer.swift */,
+				C136A5F822AFE47A00163139 /* MovesenseOperation.swift */,
+				C136A5FC22AFE47A00163139 /* MovesenseRequest.swift */,
+				C136A5F422AFE47A00163139 /* MovesenseResource.swift */,
+				C136A5FA22AFE47A00163139 /* MovesenseResponse.swift */,
+				C15D578E22AFD8DC00DDCFF2 /* MovesenseApi.h */,
+				C15D578F22AFD8DC00DDCFF2 /* Info.plist */,
+				C171911522B28C18001851A1 /* module.modulemap */,
+			);
+			path = MovesenseApi;
+			sourceTree = "<group>";
+		};
+		C15D579822AFD8DC00DDCFF2 /* MovesenseApiTests */ = {
+			isa = PBXGroup;
+			children = (
+				C12F1C4B22B23710009FC1F8 /* MovesenseBleControllerMock.swift */,
+				C15D579922AFD8DC00DDCFF2 /* MovesenseApiTests.swift */,
+				C15D579B22AFD8DC00DDCFF2 /* Info.plist */,
+			);
+			path = MovesenseApiTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C15D578622AFD8DC00DDCFF2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15D579C22AFD8DC00DDCFF2 /* MovesenseApi.h in Headers */,
+				A23A02ED25E7851F00C3D414 /* MDS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C15D578A22AFD8DC00DDCFF2 /* MovesenseApi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C15D579F22AFD8DC00DDCFF2 /* Build configuration list for PBXNativeTarget "MovesenseApi" */;
+			buildPhases = (
+				C15D578622AFD8DC00DDCFF2 /* Headers */,
+				C15D578722AFD8DC00DDCFF2 /* Sources */,
+				C15D578822AFD8DC00DDCFF2 /* Frameworks */,
+				C15D578922AFD8DC00DDCFF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MovesenseApi;
+			productName = MovesenseApi;
+			productReference = C15D578B22AFD8DC00DDCFF2 /* MovesenseApi.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C15D579322AFD8DC00DDCFF2 /* MovesenseApiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C15D57A222AFD8DC00DDCFF2 /* Build configuration list for PBXNativeTarget "MovesenseApiTests" */;
+			buildPhases = (
+				C15D579022AFD8DC00DDCFF2 /* Sources */,
+				C15D579122AFD8DC00DDCFF2 /* Frameworks */,
+				C15D579222AFD8DC00DDCFF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C171913222B7BF30001851A1 /* PBXTargetDependency */,
+			);
+			name = MovesenseApiTests;
+			productName = MovesenseApiTests;
+			productReference = C15D579422AFD8DC00DDCFF2 /* MovesenseApiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C15D578222AFD8DC00DDCFF2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1240;
+				ORGANIZATIONNAME = Movesense;
+				TargetAttributes = {
+					C15D578A22AFD8DC00DDCFF2 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
+					C15D579322AFD8DC00DDCFF2 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = C15D578522AFD8DC00DDCFF2 /* Build configuration list for PBXProject "MovesenseApi" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C15D578122AFD8DC00DDCFF2;
+			productRefGroup = C15D578C22AFD8DC00DDCFF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C15D578A22AFD8DC00DDCFF2 /* MovesenseApi */,
+				C15D579322AFD8DC00DDCFF2 /* MovesenseApiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C15D578922AFD8DC00DDCFF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15D579222AFD8DC00DDCFF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C15D578722AFD8DC00DDCFF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A23A031425E7867C00C3D414 /* Movesense.swift in Sources */,
+				C136A60222AFE47B00163139 /* MovesenseResource.swift in Sources */,
+				C136A60F22AFE47B00163139 /* MovesenseModel.swift in Sources */,
+				C136A60C22AFE47B00163139 /* MovesenseMethodParameter.swift in Sources */,
+				C136A60522AFE47B00163139 /* MovesenseController.swift in Sources */,
+				C136A60322AFE47B00163139 /* MovesenseBleController.swift in Sources */,
+				C136A60622AFE47B00163139 /* MovesenseOperation.swift in Sources */,
+				C12F1C5222B24793009FC1F8 /* MovesenseTypes.swift in Sources */,
+				C136A60D22AFE47B00163139 /* MovesenseConnection.swift in Sources */,
+				C12F1C5022B246E6009FC1F8 /* MovesenseApiConcrete.swift in Sources */,
+				C136A60922AFE47B00163139 /* MovesenseApi.swift in Sources */,
+				C136A61D22AFE7E100163139 /* Collection+subscript.swift in Sources */,
+				C136A60B22AFE47B00163139 /* Observer.swift in Sources */,
+				C136A60A22AFE47B00163139 /* MovesenseRequest.swift in Sources */,
+				C136A60722AFE47B00163139 /* MovesenseEvent.swift in Sources */,
+				C136A60E22AFE47B00163139 /* MovesenseDeviceConcrete.swift in Sources */,
+				C136A60422AFE47B00163139 /* MovesenseCodingKeys.swift in Sources */,
+				C136A60822AFE47B00163139 /* MovesenseResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15D579022AFD8DC00DDCFF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C12F1C4E22B23711009FC1F8 /* MovesenseBleControllerMock.swift in Sources */,
+				C15D579A22AFD8DC00DDCFF2 /* MovesenseApiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C171913222B7BF30001851A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C15D578A22AFD8DC00DDCFF2 /* MovesenseApi */;
+			targetProxy = C171913122B7BF30001851A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C15D579D22AFD8DC00DDCFF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LIBRARY_SEARCH_PATHS = "${SRCROOT}/../Pods/Movesense/iOS/Movesense/Release-iphoneos/";
+				MODULEMAP_FILE = MovesenseApi/module.modulemap;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"z\"",
+					"-l\"stdc++\"",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/../Pods/Movesense/iOS/Movesense/include/";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C15D579E22AFD8DC00DDCFF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LIBRARY_SEARCH_PATHS = "${SRCROOT}/../Pods/Movesense/iOS/Movesense/Release-iphoneos/";
+				MODULEMAP_FILE = MovesenseApi/module.modulemap;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"z\"",
+					"-l\"stdc++\"",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/../Pods/Movesense/iOS/Movesense/include/";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C15D57A022AFD8DC00DDCFF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MovesenseApi/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.movesense.MovesenseApi;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		C15D57A122AFD8DC00DDCFF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MovesenseApi/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.movesense.MovesenseApi;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Release;
+		};
+		C15D57A322AFD8DC00DDCFF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MovesenseApiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.movesense.MovesenseApiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C15D57A422AFD8DC00DDCFF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MovesenseApiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.movesense.MovesenseApiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C15D578522AFD8DC00DDCFF2 /* Build configuration list for PBXProject "MovesenseApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C15D579D22AFD8DC00DDCFF2 /* Debug */,
+				C15D579E22AFD8DC00DDCFF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C15D579F22AFD8DC00DDCFF2 /* Build configuration list for PBXNativeTarget "MovesenseApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C15D57A022AFD8DC00DDCFF2 /* Debug */,
+				C15D57A122AFD8DC00DDCFF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C15D57A222AFD8DC00DDCFF2 /* Build configuration list for PBXNativeTarget "MovesenseApiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C15D57A322AFD8DC00DDCFF2 /* Debug */,
+				C15D57A422AFD8DC00DDCFF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C15D578222AFD8DC00DDCFF2 /* Project object */;
+}
