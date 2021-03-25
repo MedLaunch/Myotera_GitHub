@@ -5,82 +5,81 @@ import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native';
 
 export default function HomeScreen() {
   return (
-      <View style={styles.container}>
-          <Text style={styles.greetText}>
-              Hi Patrick!
-          </Text>
+    <View style={styles.container}>
+        <Text style={styles.greetText}>
+            Hi Patrick!
+        </Text>
 
-          <Image
-              style={styles.myoteraLogoContainer}
-              source={require("../../myotera_logo.png")}
-          />
+        <Image
+            style={styles.myoteraLogoContainer}
+            source={require("../../myotera_logo.png")}
+        />
 
-          <Text style={styles.grayText}>
-              Looks like you're making great progress!
-          </Text>
+        <Text style={styles.grayText}>
+            Looks like you're making great progress!
+        </Text>
 
-          <Text style={styles.smallWhiteWalk}>
-              Recent Walk
-          </Text>
+        <Text style={styles.smallWhiteWalk}>
+            Recent Walk
+        </Text>
 
-          <Text style={styles.smallWhiteMovement}>
-              Recent Movement
-          </Text>
+        <Text style={styles.smallWhiteMovement}>
+            Recent Movement
+        </Text>
 
-          <View style={styles.topBoxStyle}/>
+        <View style={styles.topBoxStyle}/>
 
-          <View style={styles.bottomBoxStyle}/>
+        <View style={styles.bottomBoxStyle}/>
 
-          <View style={styles.lavenderButton1}/>
+        <View style={styles.lavenderButton1}/>
 
-          <View style={styles.lavenderButton2}/>
+        <View style={styles.lavenderButton2}/>
 
+        
+        
+        <Button
+            onPress={Alert.alert('Works')}
+            style={styles.lavenderButton3}
+            title = "Test"
+        />
 
+    
 
-          
-          <Button
-              onPress={Alert.alert('Works')}
-              style={styles.lavenderButton3}
-              title = "Test"
-          />
+        <Text style={styles.leftArmStyle}>
+            Left Arm
+        </Text>
 
+        <Text style={styles.rightArmStyle}>
+            Right Arm
+        </Text>
 
+        <Text style={styles.dateStyle}>
+            DayOfWeek Month/Day/Year
+        </Text>
 
-          <Text style={styles.leftArmStyle}>
-              Left Arm
-          </Text>
+        <Text style={styles.dateNTimeStyle}>
+            __ min on DayOfWeek Month/Day/Year, hour:minutes am/pm
+        </Text>
 
-          <Text style={styles.rightArmStyle}>
-              Right Arm
-          </Text>
+        <View style={styles.rightOrbCompStyle}/>
 
-          <Text style={styles.dateStyle}>
-              DayOfWeek Month/Day/Year
-          </Text>
+        <View style={styles.rightOrbEmptyStyle}/>
 
-          <Text style={styles.dateNTimeStyle}>
-              __ min on DayOfWeek Month/Day/Year, hour:minutes am/pm
-          </Text>
+        <View style={styles.leftOrbCompStyle}/>
 
-          <View style={styles.rightOrbCompStyle}/>
+        <View style={styles.leftOrbEmptyStyle}/>
 
-          <View style={styles.rightOrbEmptyStyle}/>
+        <Text style={styles.leftPerStyle}>
+            __%
+        </Text>
 
-          <View style={styles.leftOrbCompStyle}/>
+        <Text style={styles.rightPerStyle}>
+            __%
+        </Text>
 
-          <View style={styles.leftOrbEmptyStyle}/>
-
-          <Text style={styles.leftPerStyle}>
-              __%
-          </Text>
-
-          <Text style={styles.rightPerStyle}>
-              __%
-          </Text>
-
-          <Text style={styles.perSimilarityStyle}>
-              __% Similarity
-          </Text>
+        <Text style={styles.perSimilarityStyle}>
+            __% Similarity
+        </Text>
 
     </View>
 
