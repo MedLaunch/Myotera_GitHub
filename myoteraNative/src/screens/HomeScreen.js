@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 
 // resizeMode fixes our issue kinda: https://reactnative.dev/docs/image
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
         <Text style={styles.greetText}>
@@ -31,19 +31,17 @@ export default function HomeScreen() {
 
         <View style={styles.bottomBoxStyle}/>
 
-        <View style={styles.lavenderButton1}/>
+        <Pressable
+            onPress={()=>navigation.navigate("Connect")}
+            style={styles.connectSensorButton}>
+            <Text>Connect Sensors</Text>
+        </Pressable>
 
-        <View style={styles.lavenderButton2}/>
-
-        
-        
-        <Button
-            onPress={Alert.alert('Works')}
-            style={styles.lavenderButton3}
-            title = "Test"
-        />
-
-    
+        <Pressable
+            onPress={()=>navigation.navigate("Recording")}
+            style={styles.lavenderButton3}>
+            <Text style={styles.lavenderButton3Text}>+</Text>
+        </Pressable>
 
         <Text style={styles.leftArmStyle}>
             Left Arm
@@ -86,6 +84,7 @@ export default function HomeScreen() {
   );
 }
 
+//this.props.navigation.navigate('Recording Screen')
 /*
 
           <Text style={styles.seeMoreTop}>
@@ -167,9 +166,30 @@ const styles = StyleSheet.create({
         height: "56px",
         left: "154px",
         top: "675px",
-        background: "#9394FC",
+        textAlign: "center",
+        backgroundColor: "#9394FC",
         borderRadius: "28px",
-        boxShadow: "0px 4px 10px 5px rgba(147, 148, 252, 0.4)"
+        boxShadow: "0px 4px 10px 5px rgba(147, 148, 252, 0.4)",
+    },
+    lavenderButton3Text: {
+        height: "100%",
+        color: "white",
+        fontSize: "2rem",
+        lineHeight: "3rem",
+    },
+    connectSensorButton: {
+        display: "flex",
+        alignContent: "center",
+        justifyContent: "center",
+        position: "absolute",
+        width: "auto",
+        padding: "10px",
+        borderRadius: "5px",
+        height: "27.4px",
+        left: "200px",
+        top: "30px",
+        textAlignVertical: "center",
+        backgroundColor: "#9394FC"
     },
     grayText: {
         position: "absolute",

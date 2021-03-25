@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import React from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function SensorError() {
     return (

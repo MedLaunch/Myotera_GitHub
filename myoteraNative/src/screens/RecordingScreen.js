@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 
-export default function RecordingScreen() {
+export default function RecordingScreen({navigation}) {
     return (
         <View style={styles.container}>
             <Text style={styles.recordingText}>
@@ -12,30 +12,15 @@ export default function RecordingScreen() {
 
             <View style={styles.ellipse8}></View>
 
+            <Pressable
+                onPress={()=>navigation.navigate("Home")}
+                style={styles.backButton}>
+                <Text style={styles.backButtonText}>Back</Text>
+            </Pressable>
         </View>
-        
     );
 }
-/*
-  <View style={styles.recording}></View>
-  
-recording: {
-    position: "absolute",
-        width: "375px",
-            height: "812px",
-                background: "#FFFFFF"
-},
-    rect1: {
-        position: "absolute",
-        width: "375px",
-        height: "812px",
-        left: "0px",
-        top: "0px",
-        background: "#201F24"
-    },
 
-            <View style={styles.rect1}></View>
-*/
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -54,6 +39,13 @@ const styles = StyleSheet.create({
         lineHeight: "32px",
         textAlign: "center",
         color: "#FFFFFF"
+    },
+    backButton: {
+        left: "20px",
+        top: "10px",
+    },
+    backButtonText: {
+        color: "white"
     },
     ellipse7: {
         position: "absolute",
