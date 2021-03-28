@@ -40,8 +40,8 @@ function [percent_active] = arm_movement_time(where,what,trial,sample_rate)
     
     %% Calculate total time active
     sample_time = 1/sample_rate;
-    total_time = sample_time * max(size(acc_data));
+    total_time = sample_time * size(acc_data);
     total_time_activity = active_counter * sample_time;
-    percent_active = total_time_activity / total_time;
+    percent_active = total_time_activity ./ total_time;
 end
 
