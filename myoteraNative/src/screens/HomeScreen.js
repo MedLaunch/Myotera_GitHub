@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#1f1b27'
     },
     greetText: {
-        position: "absolute",
+        position: "relative",
         width: "320px",
         height: "41px",
         left: "27px",
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
         color: "#FFFFFF"
     },
     smallWhiteWalk: {
-        position: "absolute",
+        position: "relative",
         width: "326px",
         height: "38px",
         left: "27px",
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
         color: "#FFFFFF"
     },
     smallWhiteMovement: {
-        position: "absolute",
+        position: "relative",
         width: "326px",
         height: "38px",
         left: "27px",
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         color: "#FFFFFF"
     },
     lavenderButton1: {
-        position: "absolute",
+        position: "relative",
         width: "27.4px",
         height: "0px",
         left: "167.5px",
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
         transform: "rotate(180deg)"
     },
     lavenderButton2: {
-        position: "absolute",
+        position: "relative",
         width: "27.4px",
         height: "0px",
         left: "167.5px",
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
         transform: "rotate(90deg)"
     },
     lavenderButton3: {
-        position: "absolute",
+        position: "relative",
         width: "56px",
         height: "56px",
         left: "154px",
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
         display: "flex",
         alignContent: "center",
         justifyContent: "center",
-        position: "absolute",
+        position: "relative",
         width: "auto",
         padding: "10px",
         borderRadius: "5px",
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#9394FC"
     },
     grayText: {
-        position: "absolute",
+        position: "relative",
         width: "326px",
         height: "25px",
         left: "27px",
@@ -205,14 +205,14 @@ const styles = StyleSheet.create({
         color: "#B5B3B3"
     },
     myoteraLogoContainer: {
-        position: "absolute",
+        position: "relative",
         width: "88px",
         height: "80px",
         left: "17px",
         top: "39px",
     },
     topBoxStyle: {
-        position: "absolute",
+        position: "relative",
         width: "326px",
         height: "221px",
         left: "27px",
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
         borderRadius: "10px"
     },
     bottomBoxStyle: {
-        position: "absolute",
+        position: "relative",
         width: "326px",
         height: "128px",
         left: "27px",
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
         borderRadius: "10px"
     },
     leftArmStyle: {
-        position: "absolute",
+        position: "relative",
         width: "94px",
         height: "27px",
         left: "51px",
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
         color: "#FFFFFF"
     },
     rightArmStyle: {
-        position: "absolute",
+        position: "relative",
         width: "94px",
         height: "27px",
         left: "223px",
@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
         color: "#FFFFFF"
     },
     seeMoreTop: {
-        position: "absolute",
+        position: "relative",
         width: "94px",
         height: "27px",
         left: "247px",
@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
         color: "#9394FC"
     },
     seeMoreBottom: {
-        position: "absolute",
+        position: "relative",
         width: "94px",
         height: "27px",
         left: "247px",
@@ -292,7 +292,7 @@ const styles = StyleSheet.create({
         color: "#9394FC"
     },
     dateStyle: {
-        position: "absolute",
+        position: "relative",
         width: "206px",
         height: "25px",
         left: "40px",
@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
         color: "#B5B3B3"
     },
     dateNTimeStyle: {
-        position: "absolute",
+        position: "relative",
         width: "206px",
         height: "25px",
         left: "41px",
@@ -318,7 +318,7 @@ const styles = StyleSheet.create({
         color: "#B5B3B3"
     },
     leftOrbCompStyle: {
-        position: "absolute",
+        position: "relative",
         width: "90px",
         height: "90px",
         left: "57px",
@@ -328,7 +328,7 @@ const styles = StyleSheet.create({
         borderRadius: "45px"
     },
     leftOrbEmptyStyle: {
-        position: "absolute",
+        position: "relative",
         width: "92px",
         height: "92px",
         left: "56px",
@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
         borderRadius: "46px"
     },
     leftPerStyle: {
-        position: "absolute",
+        position: "relative",
         width: "77px",
         height: "29px",
         left: "66px",
@@ -352,7 +352,7 @@ const styles = StyleSheet.create({
         color: "#FFFFFF"
     },
     rightOrbCompStyle: {
-        position: "absolute",
+        position: "relative",
         width: "90px",
         height: "90px",
         left: "226px",
@@ -362,7 +362,7 @@ const styles = StyleSheet.create({
         borderRadius: "46px"
     },
     rightOrbEmptyStyle: {
-        position: "absolute",
+        position: "relative",
         width: "92px",
         height: "92px",
         left: "225px",
@@ -372,7 +372,7 @@ const styles = StyleSheet.create({
         borderRadius: "46px"
     },
     rightPerStyle: {
-        position: "absolute",
+        position: "relative",
         width: "77px",
         height: "29px",
         left: "235px",
@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
         color: "#FFFFFF"
     },
     perSimilarityStyle: {
-        position: "absolute",
+        position: "relative",
         width: "283px",
         height: "38px",
         left: "46px",
