@@ -1,5 +1,5 @@
 import React, {useContext, useState, useEffect} from 'react';
-import { StyleSheet, FlatList, Text, View, Pressable } from 'react-native';
+import { StyleSheet, FlatList, Text, SafeAreaView, Pressable } from 'react-native';
 import { MovesenseContext } from '../context/MovesenseProvider';
 import ConnectListItem from '../components/ConnectListItem';
 import { addBLE } from '../reducers/movesense/actions';
@@ -55,7 +55,7 @@ export default function ConnectScreen({navigation}) {
   const ItemSeparator = () => <View style={styles.itemSeparator} />
   const ListEmpty = () => <ConnectListItem />
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Pressable
         onPress={()=>navigation.navigate("Home")}
         style={styles.backButton}>
@@ -71,7 +71,7 @@ export default function ConnectScreen({navigation}) {
         keyExtractor={item => item.address}
         ItemSeparatorComponent={ItemSeparator}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -86,12 +86,10 @@ const styles = StyleSheet.create({
     width: "100%"
   },
   backButtonText: {
-      color: "white"
+    color: "white"
   },
   itemSeparator: {
     height: 2,
     backgroundColor: "rgba(0,0,0,0.5)",
-    // marginLeft: 10,
-    // marginRight: 10,
   }
 });

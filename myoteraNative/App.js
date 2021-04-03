@@ -17,8 +17,8 @@ export default function App() {
           screenOptions={{headerShown:false}}>
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Connect" component={ConnectScreen} />
-          <Stack.Screen name="Recording" component={RecordingScreen} />
-          <Stack.Screen name="Error" component={ErrorScreen} />
+          {/* <Stack.Screen name="Recording" component={RecordingScreen} />
+          <Stack.Screen name="Error" component={ErrorScreen} /> */}
         </Stack.Navigator>
       </NavigationContainer>
     </MovesenseProvider>
