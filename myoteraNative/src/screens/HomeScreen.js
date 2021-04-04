@@ -23,7 +23,7 @@ export default function HomeScreen({navigation}) {
             {/* Body */}
             <View style={styles.body}>
                 {/* Recent Walk */}
-                <View>
+                <View style={styles.recentWalk}>
                     {/* Box Header */}
                     <View style={styles.boxHeader}>
                         <Text style={styles.boxHeaderText}>
@@ -31,7 +31,7 @@ export default function HomeScreen({navigation}) {
                         </Text>
                     </View>
                     {/* Recent Walk Body */}
-                    <View style={styles.recentBody}>
+                    <View style={{...styles.recentBody, height: "75%"}}>
                         {/* Arm Graphs */}
                         <View style={styles.armGraphs}>
                             {/* Left Arm */}
@@ -60,16 +60,16 @@ export default function HomeScreen({navigation}) {
                             </Text>
                         </View>
                     </View>
-                </View>
+                </View>{/* Recent Walk */}
                 {/* Recent Movement */}
-                <View>
+                <View style={styles.recentMovement}>
                     <View style={styles.boxHeader}>
                         <Text style={styles.boxHeaderText}>
                             Recent Movement
                         </Text>
                     </View>
-                    {/* Recent Walk Body */}
-                    <View style={styles.recentBody}>
+                    {/* Recent Movement Body */}
+                    <View style={{...styles.recentBody, height: "50%"}}>
                         {/* Similarity */}
                         <Text style={styles.simText}>
                             52% Similarity
@@ -81,7 +81,7 @@ export default function HomeScreen({navigation}) {
                             </Text>
                         </View>
                     </View>
-                </View>
+                </View>{/* Recent Movement */}
                 {/* Start Recording */}
                 <View style={styles.record}>
                     <Pressable
@@ -90,10 +90,9 @@ export default function HomeScreen({navigation}) {
                         <Text style={styles.recordPlus}>+</Text>
                     </Pressable>
                 </View>
-            </View>
-        </View>
+            </View>{/* Body */}
+        </View>{/* Inner Container */}
     </SafeAreaView>
-
   );
 }
 
@@ -126,11 +125,14 @@ const styles = StyleSheet.create({
     body: {
         flex: 8,
     },
+    recentWalk: {
+        flex: 1.5,
+    },
+    recentMovement: {
+        flex: 1,
+    },
     record: {
         alignItems: "center"
-    },
-    boxHeader: {
-        
     },
     boxHeaderText: {
         fontWeight: "bold",
@@ -169,11 +171,11 @@ const styles = StyleSheet.create({
     armGraphs: {
         flexDirection: "row",
     },
-    recentMovementBody: {
-
-    },
     recentMovementFooter: {
 
+    },
+    boxHeader: {
+        marginBottom: 15,
     },
     recentBody: {
         backgroundColor: "#262648",
