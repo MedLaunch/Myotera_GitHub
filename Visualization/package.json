@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jquery-csv": "^1.0.11",
+    "querystring": "^0.2.1"
+  }
+}
