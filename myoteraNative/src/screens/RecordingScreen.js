@@ -1,61 +1,61 @@
 import React from 'react';
-import React, {useContext, useEffect} from 'react';
+import React, { useContext, useEffect } from 'react';
 import { MovesenseContext } from '../context/MovesenseProvider';
 import { newData } from '../reducers/recorders/actions';
 import MDS from 'react-native-mds';
 import { StyleSheet, Text, SafeAreaView, View, Pressable } from 'react-native';
 
-export default function RecordingScreen({navigation}) {
-      const { movesense, recordersDispatch } = useContext(MovesenseContext);
+export default function RecordingScreen({ navigation }) {
+    const { movesense, recordersDispatch } = useContext(MovesenseContext);
 
-      useEffect(() => {
+    useEffect(() => {
         let subkey = null
         const navigated = navigation.addListener('focus', () => {
-          console.log('Navigated to Recording Page!');
+            console.log('Navigated to Recording Page!');
 
-          try {
-            const address = movesense.connectedDevices[0]
-            const serial = movesense.devices[address].serial
-            console.log(serial)
-            subkey = MDS.subscribe(serial, "/Meas/IMU9/52", {}, (response) => {
-                        responseDict = JSON.parse(response)
-                        recordersDispatch(newData(address, responseDict.Body))
-                    }, (error) => {
-                        console.log("Errors:")
-                        console.log(error)
-                    })
-          } catch (err) {
-            if (err instanceof ReferenceError) {
-              console.log("Can't scan on web!");
-            } else {
-              console.log(err);
+            try {
+                const address = movesense.connectedDevices[0]
+                const serial = movesense.devices[address].serial
+                console.log(serial)
+                subkey = MDS.subscribe(serial, "/Meas/IMU9/52", {}, (response) => {
+                    responseDict = JSON.parse(response)
+                    recordersDispatch(newData(address, responseDict.Body))
+                }, (error) => {
+                    console.log("Errors:")
+                    console.log(error)
+                })
+            } catch (err) {
+                if (err instanceof ReferenceError) {
+                    console.log("Can't scan on web!");
+                } else {
+                    console.log(err);
+                }
             }
-          }
         });
         const blurred = navigation.addListener('blur', () => {
-          console.log('Left Recording Page!');
-          try {
-            console.log(subkey)
-            MDS.unsubscribe(subkey);
-          } catch (err) {
-            if (err instanceof TypeError) {
-              console.log("Can't scan on web!");
-            } else {
-              console.log(err);
+            console.log('Left Recording Page!');
+            try {
+                console.log(subkey)
+                MDS.unsubscribe(subkey);
+            } catch (err) {
+                if (err instanceof TypeError) {
+                    console.log("Can't scan on web!");
+                } else {
+                    console.log(err);
+                }
             }
-          }
         });
         // Clean up the event listeners on unmount
         return () => {
-          navigated();
-          blurred();
+            navigated();
+            blurred();
         };
-      },[])
-  
+    }, [])
+
     return (
         <SafeAreaView style={styles.container}>
             <Pressable
-                onPress={()=>navigation.navigate("Home")}
+                onPress={() => navigation.navigate("Home")}
                 style={styles.backButton}>
                 <Text style={styles.backButtonText}>Back</Text>
             </Pressable>
@@ -122,5 +122,5 @@ const styles = StyleSheet.create({
         backgroundColor: "#8A1B1B",
         borderRadius: 23
     }
-      
+
 });

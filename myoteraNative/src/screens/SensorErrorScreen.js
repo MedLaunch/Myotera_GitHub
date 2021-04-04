@@ -16,16 +16,15 @@ export default function SensorError() {
 
             <Image
                 style={styles.back_arrow}
-                // source={require("../../back_arrow.PNG")}
+            // source={require("../../back_arrow.PNG")}
             />
 
             <Image
                 style={styles.triangle_error}
-                // source={require("../../error_triangle.PNG")}
+            // source={require("../../error_triangle.PNG")}
             />
 
         </SafeAreaView>
-        
     );
 }
 
