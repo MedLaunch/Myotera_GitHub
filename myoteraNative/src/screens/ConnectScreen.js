@@ -1,6 +1,5 @@
 import React, {useContext, useState, useEffect} from 'react';
-import { StyleSheet, FlatList, Text, View } from 'react-native';
-import { SearchBar } from 'react-native-elements';
+import { StyleSheet, FlatList, Text, SafeAreaView, Pressable } from 'react-native';
 import { MovesenseContext } from '../context/MovesenseProvider';
 import ConnectListItem from '../components/ConnectListItem';
 import { addBLE } from '../reducers/movesense/actions';
@@ -56,13 +55,13 @@ export default function ConnectScreen({navigation}) {
   const ItemSeparator = () => <View style={styles.itemSeparator} />
   const ListEmpty = () => <ConnectListItem />
   return (
-    <View style={styles.container}>
-      <Text>Connect!</Text>
-      <SearchBar
-        placeholder="Type Here..."
-        onChangeText={updateSearch}
-        value={searchText}
-      />
+    <SafeAreaView style={styles.container}>
+      <Pressable
+        onPress={()=>navigation.navigate("Home")}
+        style={styles.backButton}>
+        <Text style={styles.backButtonText}>Back</Text>
+      </Pressable>
+      <Text style={styles.connectText}>Connect!</Text>
       <FlatList
         data={filteredDevices}
         renderItem={({item}) => (
@@ -72,20 +71,30 @@ export default function ConnectScreen({navigation}) {
         keyExtractor={item => item.address}
         ItemSeparatorComponent={ItemSeparator}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    width: "100%",
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: '#1f1b27',
+    alignItems: "center"
+  },
+  backButton: {
+    width: "100%",
+    padding: 20,
+  },
+  backButtonText: {
+    color: "#FFFFFF",
+    fontWeight: "bold",
+  },
+  connectText: {
+    color: "#FFFFFF",
   },
   itemSeparator: {
     height: 2,
     backgroundColor: "rgba(0,0,0,0.5)",
-    // marginLeft: 10,
-    // marginRight: 10,
   }
 });
