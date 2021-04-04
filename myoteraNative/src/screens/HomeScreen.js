@@ -10,10 +10,10 @@ export default function HomeScreen({navigation}) {
             {/* Header */}
             <View style={styles.header}>
                 <View style={styles.headerGreeting}>
-                    {/* Image("myoteraLogo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 68.0, height: 60.0) */}
+                    <Image 
+                        style={styles.myoteraLogo}
+                        source={require("./../../assets/myotera_logo.png")}
+                    />
                     <Text style={styles.greetText}>
                         Hi Patrick!
                     </Text>
@@ -135,11 +135,15 @@ const styles = StyleSheet.create({
         lineHeight: 14,
         color: "#B5B3B3"
     },
+    myoteraLogo: {
+        width: "35%",
+        flex: 0.7,
+    },
     connectSensorButton: {
         width: "auto",
         padding: 5,
         borderRadius: 5,
-        height: "40%",
+        height: "20%",
         textAlignVertical: "center",
         backgroundColor: "#9394FC"
     },
@@ -148,7 +152,7 @@ const styles = StyleSheet.create({
         color: "#FFFFFF",
     },
     body: {
-        flex: 8,
+        flex: 4,
     },
     recentWalk: {
         flex: 1.5,
