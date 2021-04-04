@@ -1,0 +1,3 @@
+export const START_RECORDING = "START_RECORDING";
+export const STOP_RECORDING = "STOP_RECORDING";
+export const NEW_DATA = "NEW_DATA";
