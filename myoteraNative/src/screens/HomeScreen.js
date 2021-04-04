@@ -82,6 +82,14 @@ export default function HomeScreen({navigation}) {
                         </View>
                     </View>
                 </View>
+                {/* Start Recording */}
+                <View style={styles.record}>
+                    <Pressable
+                        onPress={()=>navigation.navigate("Recording")}
+                        style={styles.recordButton}>
+                        <Text style={styles.recordPlus}>+</Text>
+                    </Pressable>
+                </View>
             </View>
         </View>
     </SafeAreaView>
@@ -117,6 +125,9 @@ const styles = StyleSheet.create({
     },
     body: {
         flex: 8,
+    },
+    record: {
+        alignItems: "center"
     },
     boxHeader: {
         
@@ -199,17 +210,29 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "#FFFFFF"
     },
+    recordButton: {
+        width: 56,
+        height: 56,
+        backgroundColor: "#9394FC",
+        borderRadius: 28,
+        shadowOffset: {
+            width: 0,
+            height: 4
+        },
+        shadowRadius: 10,
+        shadowColor: "rgb(147, 148, 252)",
+        shadowOpacity: 0.4
+    },
+    recordPlus: {
+        textAlign: "center",
+        height: "100%",
+        color: "white",
+        fontSize: 32, // equivalent to 2rem
+        lineHeight: 48, // equivalent to 3rem
+    },
 
     
-    /* 
-        Text("See more")
-            .foregroundColor(Color("appPurpleColor"))
-            .font(.subheadline)
-            
-        Text("See more")
-            .foregroundColor(Color("appPurpleColor"))
-            .font(.subheadline)
-            
+/*
 <Text style={styles.greetText}>
 Hi Patrick!
 </Text>
