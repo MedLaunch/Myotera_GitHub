@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View, Image } from 'react-native';
 
 export default function SensorError() {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.back}>
                 Back
             </Text>
@@ -24,7 +24,7 @@ export default function SensorError() {
                 // source={require("../../error_triangle.PNG")}
             />
 
-        </View>
+        </SafeAreaView>
         
     );
 }
