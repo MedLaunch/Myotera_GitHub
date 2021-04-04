@@ -9,72 +9,63 @@ export default function HomeScreen({navigation}) {
         <View style={styles.innerContainer}>
             {/* Header */}
             <View style={styles.header}>
+                {/* Image("myoteraLogo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 68.0, height: 60.0) */}
                 <Text style={styles.greetText}>
                     Hi Patrick!
                 </Text>
                 <Text style={styles.subGreetText}>
                     Looks like you're making great progress
                 </Text>
-                {/* Image("myoteraLogo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 68.0, height: 60.0)
-                Text("Hi Patrick!")
-                    .foregroundColor(Color("mainTextColor"))
-                    .font(.title)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                <Text style={styles.subGreetText}>
-                    Looks like you're making great progress
-                </Text>
-                    .font(.subheadline)
-                    .foregroundColor(Color("secondaryTextColor"))
-                    .frame(maxWidth: .infinity, alignment: .leading) */}
             </View>
             {/* Body */}
             <View style={styles.body}>
-                {/* // Recent Walk
+                {/* Recent Walk */}
                 <View style={styles.recentWalk}>
+                    {/* Box Header */}
                     <View style={styles.boxHeader}>
-                        <Text>
-                            "Recent Walk")
+                        <Text style={styles.boxHeaderText}>
+                            Recent Walk
                         </Text>
                     </View>
-                    // Recent Walk Body
+                    {/* Recent Walk Body */}
                     <View style={styles.recentWalkBody}>
-                        // Arm Graphs
+                        {/* Arm Graphs */}
                         <View style={styles.armGraphs}>
-                            // Left Arm
+                            {/* Left Arm */}
                             <View style={styles.leftArm}>
                                 <Text style={styles.armText}>
                                     Left Arm
                                 </Text>
-                                    .foregroundColor(Color("mainTextColor"))
+                                    {/* .foregroundColor(Color("mainTextColor"))
                                     .font(.subheadline)
                                     .multilineTextAlignment(.leading)
                                 ProgressBar(progress: $leftProgressValue)
-                                    .frame(width: 90.0, height: 90.0)
+                                    .frame(width: 90.0, height: 90.0) */}
                             </View>
-                            // Right Arm
+                            {/* Right Arm */}
                             <View style={styles.rightArm}>
                                 <Text style={styles.armText}>
                                     Right Arm
                                 </Text>
-                                    .foregroundColor(Color("mainTextColor"))
+                                    {/* .foregroundColor(Color("mainTextColor"))
                                     .font(.subheadline)
                                     .multilineTextAlignment(.leading)
                                 ProgressBar(progress: $rightProgressValue)
-                                    .frame(width: 90.0, height: 90.0)
+                                    .frame(width: 90.0, height: 90.0) */}
                             </View>
                         </View>
-                    </View>
-                    // Footer
-                    <View style={styles.recentWalkFooter}>
-                        <Text style={styles.dateDetails}>
-                            40 min on Monday 4/11, 2:15 pm
-                        </Text>
+                        {/* Footer */}
+                        <View style={styles.recentWalkFooter}>
+                            <Text style={styles.dateDetails}>
+                                40 min on Monday 4/11, 2:15 pm
+                            </Text>
+                        </View>
                     </View>
                 </View>
-                // Recent Movement
+                {/* // Recent Movement
                 <View style={styles.recentMovement}>
                     <View style={styles.boxHeader}>
                         <Text>
@@ -115,7 +106,7 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     header: {
-
+        flex: 1,
     },
     greetText: {
         fontWeight: "bold",
@@ -130,14 +121,16 @@ const styles = StyleSheet.create({
         color: "#B5B3B3"
     },
     body: {
-        flexDirection: "row",
-        padding: 20
+        flex: 8,
     },
     boxHeader: {
+        
+    },
+    boxHeaderText: {
         fontWeight: "bold",
         fontSize: 18,
         lineHeight: 21,
-        color: "#FFFFFF"
+        color: "#FFFFFF",
     },
     armText: {
         fontWeight: "normal",
@@ -168,7 +161,7 @@ const styles = StyleSheet.create({
         color: "#B5B3B3"
     },
     armGraphs: {
-
+        flexDirection: "row",
     },
     recentMovementBody: {
 
@@ -176,16 +169,28 @@ const styles = StyleSheet.create({
     recentMovementFooter: {
 
     },
-    recentWalkBody: {
+    recentWalk: {
 
+    },
+    recentWalkBody: {
+        backgroundColor: "#262648",
+        borderWidth: 1,
+        borderStyle: "solid",
+        borderColor: "#9394FC",
+        shadowOffset: {
+            width: 0,
+            height: 3
+        },
+        shadowRadius: 20,
+        shadowColor: "rgb(0, 0, 0)",
+        shadowOpacity: 0.65,
+        borderRadius: 10,
+        padding: 20,
     },
     recentWalkFooter: {
 
     },
     recentMovement: {
-
-    },
-    recentWalk: {
 
     },
 
