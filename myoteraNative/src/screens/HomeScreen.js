@@ -137,13 +137,14 @@ const styles = StyleSheet.create({
     },
     connectSensorButton: {
         width: "auto",
-        padding: 7,
+        padding: 5,
         borderRadius: 5,
         height: "40%",
         textAlignVertical: "center",
         backgroundColor: "#9394FC"
     },
     connectSensorText: {
+        fontWeight: "bold",
         color: "#FFFFFF",
     },
     body: {

@@ -61,7 +61,7 @@ export default function ConnectScreen({navigation}) {
         style={styles.backButton}>
         <Text style={styles.backButtonText}>Back</Text>
       </Pressable>
-      <Text style={styles.backButtonText}>Connect!</Text>
+      <Text style={styles.connectText}>Connect!</Text>
       <FlatList
         data={filteredDevices}
         renderItem={({item}) => (
@@ -83,10 +83,15 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   backButton: {
-    width: "100%"
+    width: "100%",
+    padding: 20,
   },
   backButtonText: {
-    color: "white"
+    color: "#FFFFFF",
+    fontWeight: "bold",
+  },
+  connectText: {
+    color: "#FFFFFF",
   },
   itemSeparator: {
     height: 2,
