@@ -12,6 +12,9 @@ export default function HomeScreen({navigation}) {
                 <Text style={styles.greetText}>
                     Hi Patrick!
                 </Text>
+                <Text style={styles.subGreetText}>
+                    Looks like you're making great progress
+                </Text>
                 {/* Image("myoteraLogo")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -20,26 +23,21 @@ export default function HomeScreen({navigation}) {
                     .foregroundColor(Color("mainTextColor"))
                     .font(.title)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text("Looks like you're making great progress")
+                <Text style={styles.subGreetText}>
+                    Looks like you're making great progress
+                </Text>
                     .font(.subheadline)
                     .foregroundColor(Color("secondaryTextColor"))
                     .frame(maxWidth: .infinity, alignment: .leading) */}
             </View>
             {/* Body */}
             <View style={styles.body}>
-                <View style={styles.left}>
-                    <Text style={styles.greetText}>Left</Text>
-                </View>
-                <View style={styles.right}>
-                    <Text style={styles.greetText}>Right</Text>
-                </View>
                 {/* // Recent Walk
                 <View style={styles.recentWalk}>
-                    <View style={styles.recentWalkHeader}>
-                        Text("Recent Walk")
-                            .foregroundColor(Color("mainTextColor"))
-                            .font(.title)
-                            .multilineTextAlignment(.leading)
+                    <View style={styles.boxHeader}>
+                        <Text>
+                            "Recent Walk")
+                        </Text>
                     </View>
                     // Recent Walk Body
                     <View style={styles.recentWalkBody}>
@@ -47,7 +45,9 @@ export default function HomeScreen({navigation}) {
                         <View style={styles.armGraphs}>
                             // Left Arm
                             <View style={styles.leftArm}>
-                                Text("Left Arm")
+                                <Text style={styles.armText}>
+                                    Left Arm
+                                </Text>
                                     .foregroundColor(Color("mainTextColor"))
                                     .font(.subheadline)
                                     .multilineTextAlignment(.leading)
@@ -56,7 +56,9 @@ export default function HomeScreen({navigation}) {
                             </View>
                             // Right Arm
                             <View style={styles.rightArm}>
-                                Text("Right Arm")
+                                <Text style={styles.armText}>
+                                    Right Arm
+                                </Text>
                                     .foregroundColor(Color("mainTextColor"))
                                     .font(.subheadline)
                                     .multilineTextAlignment(.leading)
@@ -67,112 +69,34 @@ export default function HomeScreen({navigation}) {
                     </View>
                     // Footer
                     <View style={styles.recentWalkFooter}>
-                        Text("40 min on Monday 2/15, 4:25 pm")
-                            .foregroundColor(Color("secondaryTextColor"))
-                            .font(.subheadline)
-                        Text("See more")
-                            .foregroundColor(Color("appPurpleColor"))
-                            .font(.subheadline)
+                        <Text style={styles.dateDetails}>
+                            40 min on Monday 4/11, 2:15 pm
+                        </Text>
                     </View>
                 </View>
                 // Recent Movement
                 <View style={styles.recentMovement}>
-                    <View style={styles.recentMovementHeader}>
-                        Text("Recent Movement")
-                            .foregroundColor(Color("mainTextColor"))
-                            .font(.title)
-                            .multilineTextAlignment(.leading)
+                    <View style={styles.boxHeader}>
+                        <Text>
+                            Recent Movement
+                        </Text>
                     </View>
                     // Recent Walk Body
                     <View style={styles.recentMovementBody}>
                         // Similarity
-                        Text("76% Similarity")
+                        <Text style={styles.simText}
+                            52% Similarity
+                        </Text>
                     </View>
                     // Footer
                     <View style={styles.recentMovementFooter}>
-                        Text("Monday 2/15")
-                            .foregroundColor(Color("secondaryTextColor"))
-                            .font(.subheadline)
+                        <Text style={styles.dateSimple}>
+                            Monday 2/15
+                        </Text>
                         Spacer()
-                        Text("See more")
-                            .foregroundColor(Color("appPurpleColor"))
-                            .font(.subheadline)
                     </View>
                 </View> */}
             </View>
-        
-            {/* <Text style={styles.greetText}>
-                Hi Patrick!
-            </Text>
-
-            <Image
-                style={styles.myoteraLogoContainer}
-                // source={require("../../assets/myotera_logo.png")}
-            />
-
-            <Text style={styles.grayText}>
-                Looks like you're making great progress!
-            </Text>
-
-            <Text style={styles.smallWhiteWalk}>
-                Recent Walk
-            </Text>
-
-            <Text style={styles.smallWhiteMovement}>
-                Recent Movement
-            </Text>
-
-            <View style={styles.topBoxStyle}/>
-
-            <View style={styles.bottomBoxStyle}/>
-
-            <Pressable
-                onPress={()=>navigation.navigate("Connect")}
-                style={styles.connectSensorButton}>
-                <Text>Connect Sensors</Text>
-            </Pressable>
-
-            <Pressable
-                onPress={()=>navigation.navigate("Recording")}
-                style={styles.lavenderButton3}>
-                <Text style={styles.lavenderButton3Text}>+</Text>
-            </Pressable>
-
-            <Text style={styles.leftArmStyle}>
-                Left Arm
-            </Text>
-
-            <Text style={styles.rightArmStyle}>
-                Right Arm
-            </Text>
-
-            <Text style={styles.dateStyle}>
-                DayOfWeek Month/Day/Year
-            </Text>
-
-            <Text style={styles.dateNTimeStyle}>
-                __ min on DayOfWeek Month/Day/Year, hour:minutes am/pm
-            </Text>
-
-            <View style={styles.rightOrbCompStyle}/>
-
-            <View tyle={styles.rightOrbEmStyle}/>
-
-            <View style={styles.leftOrbCompStyle}/>
-
-            <View tyle={styles.leftOrbEmStyle}/>
-
-            <Text style={styles.leftPerStyle}>
-                __%
-            </Text>
-
-            <Text style={styles.rightPerStyle}>
-                __%
-            </Text>
-
-            <Text style={styles.perSimilarityStyle}>
-                __% Similarity
-            </Text> */}
         </View>
     </SafeAreaView>
 
@@ -199,20 +123,156 @@ const styles = StyleSheet.create({
         lineHeight: 32,
         color: "#FFFFFF"
     },
+    subGreetText: {
+        fontWeight: "normal",
+        fontSize: 12,
+        lineHeight: 14,
+        color: "#B5B3B3"
+    },
     body: {
         flexDirection: "row",
-        padding: 20,
+        padding: 20
     },
-    left: {
+    boxHeader: {
+        fontWeight: "bold",
+        fontSize: 18,
+        lineHeight: 21,
+        color: "#FFFFFF"
+    },
+    armText: {
+        fontWeight: "normal",
+        fontSize: 16,
+        lineHeight: 18,
+        color: "#FFFFFF"
+    },
+    leftArm: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center"
     },
-    right: {
+    rightArm: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center"
     },
+    dateDetails: {
+        fontWeight: "normal",
+        fontSize: 12,
+        lineHeight: 14,
+        color: "#B5B3B3"
+    },
+    dateSimple: {
+        fontWeight: "normal",
+        fontSize: 12,
+        lineHeight: 14,
+        color: "#B5B3B3"
+    },
+    armGraphs: {
+
+    },
+    recentMovementBody: {
+
+    },
+    recentMovementFooter: {
+
+    },
+    recentWalkBody: {
+
+    },
+    recentWalkFooter: {
+
+    },
+    recentMovement: {
+
+    },
+    recentWalk: {
+
+    },
+
+
+    
+    /* 
+        Text("See more")
+            .foregroundColor(Color("appPurpleColor"))
+            .font(.subheadline)
+            
+        Text("See more")
+            .foregroundColor(Color("appPurpleColor"))
+            .font(.subheadline)
+            
+<Text style={styles.greetText}>
+Hi Patrick!
+</Text>
+
+<Image
+style={styles.myoteraLogoContainer}
+// source={require("../../assets/myotera_logo.png")}
+/>
+
+<Text style={styles.grayText}>
+Looks like you're making great progress!
+</Text>
+
+<Text style={styles.smallWhiteWalk}>
+Recent Walk
+</Text>
+
+<Text style={styles.smallWhiteMovement}>
+Recent Movement
+</Text>
+
+<View style={styles.topBoxStyle}/>
+
+<View style={styles.bottomBoxStyle}/>
+
+<Pressable
+onPress={()=>navigation.navigate("Connect")}
+style={styles.connectSensorButton}>
+<Text>Connect Sensors</Text>
+</Pressable>
+
+<Pressable
+onPress={()=>navigation.navigate("Recording")}
+style={styles.lavenderButton3}>
+<Text style={styles.lavenderButton3Text}>+</Text>
+</Pressable>
+
+<Text style={styles.leftArmStyle}>
+Left Arm
+</Text>
+
+<Text style={styles.rightArmStyle}>
+Right Arm
+</Text>
+
+<Text style={styles.dateStyle}>
+DayOfWeek Month/Day/Year
+</Text>
+
+<Text style={styles.dateNTimeStyle}>
+__ min on DayOfWeek Month/Day/Year, hour:minutes am/pm
+</Text>
+
+<View style={styles.rightOrbCompStyle}/>
+
+<View style={styles.rightOrbEmStyle}/>
+
+<View style={styles.leftOrbCompStyle}/>
+
+<View style={styles.leftOrbEmStyle}/>
+
+<Text style={styles.leftPerStyle}>
+__%
+</Text>
+
+<Text style={styles.rightPerStyle}>
+__%
+</Text>
+
+<Text style={styles.perSimilarityStyle}>
+__% Similarity
+</Text> */
+
     // greetText: {
     //     position: "absolute",
     //     width: 320,
