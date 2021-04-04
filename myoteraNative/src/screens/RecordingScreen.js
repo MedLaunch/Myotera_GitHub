@@ -1,4 +1,3 @@
-import React from 'react';
 import React, { useContext, useEffect } from 'react';
 import { MovesenseContext } from '../context/MovesenseProvider';
 import { newData } from '../reducers/recorders/actions';
