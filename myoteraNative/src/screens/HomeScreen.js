@@ -23,7 +23,7 @@ export default function HomeScreen({navigation}) {
             {/* Body */}
             <View style={styles.body}>
                 {/* Recent Walk */}
-                <View style={styles.recentWalk}>
+                <View>
                     {/* Box Header */}
                     <View style={styles.boxHeader}>
                         <Text style={styles.boxHeaderText}>
@@ -31,7 +31,7 @@ export default function HomeScreen({navigation}) {
                         </Text>
                     </View>
                     {/* Recent Walk Body */}
-                    <View style={styles.recentWalkBody}>
+                    <View style={styles.recentBody}>
                         {/* Arm Graphs */}
                         <View style={styles.armGraphs}>
                             {/* Left Arm */}
@@ -39,22 +39,18 @@ export default function HomeScreen({navigation}) {
                                 <Text style={styles.armText}>
                                     Left Arm
                                 </Text>
-                                    {/* .foregroundColor(Color("mainTextColor"))
-                                    .font(.subheadline)
-                                    .multilineTextAlignment(.leading)
-                                ProgressBar(progress: $leftProgressValue)
-                                    .frame(width: 90.0, height: 90.0) */}
+                                <View style={styles.orb}>
+
+                                </View>
                             </View>
                             {/* Right Arm */}
                             <View style={styles.rightArm}>
                                 <Text style={styles.armText}>
                                     Right Arm
                                 </Text>
-                                    {/* .foregroundColor(Color("mainTextColor"))
-                                    .font(.subheadline)
-                                    .multilineTextAlignment(.leading)
-                                ProgressBar(progress: $rightProgressValue)
-                                    .frame(width: 90.0, height: 90.0) */}
+                                <View style={styles.orb}>
+
+                                </View>
                             </View>
                         </View>
                         {/* Footer */}
@@ -65,28 +61,27 @@ export default function HomeScreen({navigation}) {
                         </View>
                     </View>
                 </View>
-                {/* // Recent Movement
-                <View style={styles.recentMovement}>
+                {/* Recent Movement */}
+                <View>
                     <View style={styles.boxHeader}>
-                        <Text>
+                        <Text style={styles.boxHeaderText}>
                             Recent Movement
                         </Text>
                     </View>
-                    // Recent Walk Body
-                    <View style={styles.recentMovementBody}>
-                        // Similarity
-                        <Text style={styles.simText}
+                    {/* Recent Walk Body */}
+                    <View style={styles.recentBody}>
+                        {/* Similarity */}
+                        <Text style={styles.simText}>
                             52% Similarity
                         </Text>
+                        {/* Footer */}
+                        <View style={styles.recentMovementFooter}>
+                            <Text style={styles.dateSimple}>
+                                Monday 2/15
+                            </Text>
+                        </View>
                     </View>
-                    // Footer
-                    <View style={styles.recentMovementFooter}>
-                        <Text style={styles.dateSimple}>
-                            Monday 2/15
-                        </Text>
-                        Spacer()
-                    </View>
-                </View> */}
+                </View>
             </View>
         </View>
     </SafeAreaView>
@@ -169,10 +164,7 @@ const styles = StyleSheet.create({
     recentMovementFooter: {
 
     },
-    recentWalk: {
-
-    },
-    recentWalkBody: {
+    recentBody: {
         backgroundColor: "#262648",
         borderWidth: 1,
         borderStyle: "solid",
@@ -190,10 +182,23 @@ const styles = StyleSheet.create({
     recentWalkFooter: {
 
     },
-    recentMovement: {
-
+    orb: {
+        width: 92,
+        height: 92,
+        borderWidth: 3,
+        borderStyle: "solid",
+        borderColor: "#4D4A4A",
+        borderRadius: 46,
     },
-
+    simText: {
+        fontFamily: "Helvetica",
+        fontStyle: "normal",
+        fontWeight: "bold",
+        fontSize: 28,
+        lineHeight: 32,
+        textAlign: "center",
+        color: "#FFFFFF"
+    },
 
     
     /* 
