@@ -1,402 +1,605 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View, Image, Pressable } from 'react-native';
 
 // resizeMode fixes our issue kinda: https://reactnative.dev/docs/image
 
 export default function HomeScreen({navigation}) {
   return (
-    <View style={styles.container}>
-        <Text style={styles.greetText}>
-            Hi Patrick!
-        </Text>
-
-        <Image
-            style={styles.myoteraLogoContainer}
-            source={require("../../myotera_logo.png")}
-        />
-
-        <Text style={styles.grayText}>
-            Looks like you're making great progress!
-        </Text>
-
-        <Text style={styles.smallWhiteWalk}>
-            Recent Walk
-        </Text>
-
-        <Text style={styles.smallWhiteMovement}>
-            Recent Movement
-        </Text>
-
-        <View style={styles.topBoxStyle}/>
-
-        <View style={styles.bottomBoxStyle}/>
-
-        <Pressable
-            onPress={()=>navigation.navigate("Connect")}
-            style={styles.connectSensorButton}>
-            <Text>Connect Sensors</Text>
-        </Pressable>
-
-        <Pressable
-            onPress={()=>navigation.navigate("Recording")}
-            style={styles.lavenderButton3}>
-            <Text style={styles.lavenderButton3Text}>+</Text>
-        </Pressable>
-
-        <Text style={styles.leftArmStyle}>
-            Left Arm
-        </Text>
-
-        <Text style={styles.rightArmStyle}>
-            Right Arm
-        </Text>
-
-        <Text style={styles.dateStyle}>
-            DayOfWeek Month/Day/Year
-        </Text>
-
-        <Text style={styles.dateNTimeStyle}>
-            __ min on DayOfWeek Month/Day/Year, hour:minutes am/pm
-        </Text>
-
-        <View style={styles.rightOrbCompStyle}/>
-
-        <View style={styles.rightOrbEmptyStyle}/>
-
-        <View style={styles.leftOrbCompStyle}/>
-
-        <View style={styles.leftOrbEmptyStyle}/>
-
-        <Text style={styles.leftPerStyle}>
-            __%
-        </Text>
-
-        <Text style={styles.rightPerStyle}>
-            __%
-        </Text>
-
-        <Text style={styles.perSimilarityStyle}>
-            __% Similarity
-        </Text>
-
-    </View>
+    <SafeAreaView style={styles.container}>
+        <View style={styles.innerContainer}>
+            {/* Header */}
+            <View style={styles.header}>
+                <Text style={styles.greetText}>
+                    Hi Patrick!
+                </Text>
+                <Text style={styles.subGreetText}>
+                    Looks like you're making great progress
+                </Text>
+                {/* Image("myoteraLogo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 68.0, height: 60.0)
+                Text("Hi Patrick!")
+                    .foregroundColor(Color("mainTextColor"))
+                    .font(.title)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                <Text style={styles.subGreetText}>
+                    Looks like you're making great progress
+                </Text>
+                    .font(.subheadline)
+                    .foregroundColor(Color("secondaryTextColor"))
+                    .frame(maxWidth: .infinity, alignment: .leading) */}
+            </View>
+            {/* Body */}
+            <View style={styles.body}>
+                {/* // Recent Walk
+                <View style={styles.recentWalk}>
+                    <View style={styles.boxHeader}>
+                        <Text>
+                            "Recent Walk")
+                        </Text>
+                    </View>
+                    // Recent Walk Body
+                    <View style={styles.recentWalkBody}>
+                        // Arm Graphs
+                        <View style={styles.armGraphs}>
+                            // Left Arm
+                            <View style={styles.leftArm}>
+                                <Text style={styles.armText}>
+                                    Left Arm
+                                </Text>
+                                    .foregroundColor(Color("mainTextColor"))
+                                    .font(.subheadline)
+                                    .multilineTextAlignment(.leading)
+                                ProgressBar(progress: $leftProgressValue)
+                                    .frame(width: 90.0, height: 90.0)
+                            </View>
+                            // Right Arm
+                            <View style={styles.rightArm}>
+                                <Text style={styles.armText}>
+                                    Right Arm
+                                </Text>
+                                    .foregroundColor(Color("mainTextColor"))
+                                    .font(.subheadline)
+                                    .multilineTextAlignment(.leading)
+                                ProgressBar(progress: $rightProgressValue)
+                                    .frame(width: 90.0, height: 90.0)
+                            </View>
+                        </View>
+                    </View>
+                    // Footer
+                    <View style={styles.recentWalkFooter}>
+                        <Text style={styles.dateDetails}>
+                            40 min on Monday 4/11, 2:15 pm
+                        </Text>
+                    </View>
+                </View>
+                // Recent Movement
+                <View style={styles.recentMovement}>
+                    <View style={styles.boxHeader}>
+                        <Text>
+                            Recent Movement
+                        </Text>
+                    </View>
+                    // Recent Walk Body
+                    <View style={styles.recentMovementBody}>
+                        // Similarity
+                        <Text style={styles.simText}
+                            52% Similarity
+                        </Text>
+                    </View>
+                    // Footer
+                    <View style={styles.recentMovementFooter}>
+                        <Text style={styles.dateSimple}>
+                            Monday 2/15
+                        </Text>
+                        Spacer()
+                    </View>
+                </View> */}
+            </View>
+        </View>
+    </SafeAreaView>
 
   );
 }
 
-//this.props.navigation.navigate('Recording Screen')
-/*
-
-          <Text style={styles.seeMoreTop}>
-              See more
-          </Text>
-
-          <Text style={styles.seeMoreBottom}>
-              See more
-          </Text>
-
-*/
-
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#1f1b27'
+        backgroundColor: '#1f1b27',
+        fontFamily: "Helvetica",
+        fontStyle: "normal",
+    },
+    innerContainer: {
+        flex: 1,
+        padding: 20,
+    },
+    header: {
+
     },
     greetText: {
-        position: "absolute",
-        width: "320px",
-        height: "41px",
-        left: "27px",
-        top: "118px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: "28px",
-        lineHeight: "32px",
+        fontSize: 28,
+        lineHeight: 32,
         color: "#FFFFFF"
     },
-    smallWhiteWalk: {
-        position: "absolute",
-        width: "326px",
-        height: "38px",
-        left: "27px",
-        top: "210px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
-        fontWeight: "bold",
-        fontSize: "18px",
-        lineHeight: "21px",
-        color: "#FFFFFF"
-    },
-    smallWhiteMovement: {
-        position: "absolute",
-        width: "326px",
-        height: "38px",
-        left: "27px",
-        top: "499px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
-        fontWeight: "bold",
-        fontSize: "18px",
-        lineHeight: "21px",
-        color: "#FFFFFF"
-    },
-    lavenderButton1: {
-        position: "absolute",
-        width: "27.4px",
-        height: "0px",
-        left: "167.5px",
-        top: "700px",
-        border: "3px solid #FFFFFF",
-        transform: "rotate(180deg)"
-    },
-    lavenderButton2: {
-        position: "absolute",
-        width: "27.4px",
-        height: "0px",
-        left: "167.5px",
-        top: "700px",
-        border: "3px solid #FFFFFF",
-        transform: "rotate(90deg)"
-    },
-    lavenderButton3: {
-        position: "absolute",
-        width: "56px",
-        height: "56px",
-        left: "154px",
-        top: "675px",
-        textAlign: "center",
-        backgroundColor: "#9394FC",
-        borderRadius: "28px",
-        boxShadow: "0px 4px 10px 5px rgba(147, 148, 252, 0.4)",
-    },
-    lavenderButton3Text: {
-        height: "100%",
-        color: "white",
-        fontSize: "2rem",
-        lineHeight: "3rem",
-    },
-    connectSensorButton: {
-        display: "flex",
-        alignContent: "center",
-        justifyContent: "center",
-        position: "absolute",
-        width: "auto",
-        padding: "10px",
-        borderRadius: "5px",
-        height: "27.4px",
-        left: "200px",
-        top: "30px",
-        textAlignVertical: "center",
-        backgroundColor: "#9394FC"
-    },
-    grayText: {
-        position: "absolute",
-        width: "326px",
-        height: "25px",
-        left: "27px",
-        top: "157px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
+    subGreetText: {
         fontWeight: "normal",
-        fontSize: "12px",
-        lineHeight: "14px",
+        fontSize: 12,
+        lineHeight: 14,
         color: "#B5B3B3"
     },
-    myoteraLogoContainer: {
-        position: "absolute",
-        width: "88px",
-        height: "80px",
-        left: "17px",
-        top: "39px",
+    body: {
+        flexDirection: "row",
+        padding: 20
     },
-    topBoxStyle: {
-        position: "absolute",
-        width: "326px",
-        height: "221px",
-        left: "27px",
-        top: "248px",
-        background: "#262648",
-        border: "1px solid #9394FC",
-        boxSizing: "border-box",
-        boxShadow: "0px 3px 20px 4px rgba(0, 0, 0, 0.65)",
-        borderRadius: "10px"
-    },
-    bottomBoxStyle: {
-        position: "absolute",
-        width: "326px",
-        height: "128px",
-        left: "27px",
-        top: "537px",
-        background: "#262648",
-        border: "1px solid #9394FC",
-        boxSizing: "border-box",
-        boxShadow: "0px 3px 20px 4px rgba(0, 0, 0, 0.65)",
-        borderRadius: "10px"
-    },
-    leftArmStyle: {
-        position: "absolute",
-        width: "94px",
-        height: "27px",
-        left: "51px",
-        top: "272px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
-        fontWeight: "normal",
-        fontSize: "16px",
-        lineHeight: "18px",
-        textAlign: "center",
+    boxHeader: {
+        fontWeight: "bold",
+        fontSize: 18,
+        lineHeight: 21,
         color: "#FFFFFF"
     },
-    rightArmStyle: {
-        position: "absolute",
-        width: "94px",
-        height: "27px",
-        left: "223px",
-        top: "273px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
+    armText: {
         fontWeight: "normal",
-        fontSize: "16px",
-        lineHeight: "18px",
-        textAlign: "center",
+        fontSize: 16,
+        lineHeight: 18,
         color: "#FFFFFF"
     },
-    seeMoreTop: {
-        position: "absolute",
-        width: "94px",
-        height: "27px",
-        left: "247px",
-        top: "436px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
-        fontWeight: "bold",
-        fontSize: "16px",
-        lineHeight: "18px",
-        textAlign: "center",
-        color: "#9394FC"
+    leftArm: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center"
     },
-    seeMoreBottom: {
-        position: "absolute",
-        width: "94px",
-        height: "27px",
-        left: "247px",
-        top: "635px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
-        fontWeight: "bold",
-        fontSize: "16px",
-        lineHeight: "18px",
-        textAlign: "center",
-        color: "#9394FC"
+    rightArm: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center"
     },
-    dateStyle: {
-        position: "absolute",
-        width: "206px",
-        height: "25px",
-        left: "40px",
-        top: "637px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
+    dateDetails: {
         fontWeight: "normal",
-        fontSize: "12px",
-        lineHeight: "14px",
+        fontSize: 12,
+        lineHeight: 14,
         color: "#B5B3B3"
     },
-    dateNTimeStyle: {
-        position: "absolute",
-        width: "206px",
-        height: "25px",
-        left: "41px",
-        top: "438px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
+    dateSimple: {
         fontWeight: "normal",
-        fontSize: "12px",
-        lineHeight: "14px",
+        fontSize: 12,
+        lineHeight: 14,
         color: "#B5B3B3"
     },
-    leftOrbCompStyle: {
-        position: "absolute",
-        width: "90px",
-        height: "90px",
-        left: "57px",
-        top: "307px",
-        border: "3px solid #9394FC",
-        boxSizing: "border-box",
-        borderRadius: "45px"
+    armGraphs: {
+
     },
-    leftOrbEmptyStyle: {
-        position: "absolute",
-        width: "92px",
-        height: "92px",
-        left: "56px",
-        top: "306px",
-        border: "3px solid #4D4A4A",
-        boxSizing: "border-box",
-        borderRadius: "46px"
+    recentMovementBody: {
+
     },
-    leftPerStyle: {
-        position: "absolute",
-        width: "77px",
-        height: "29px",
-        left: "66px",
-        top: "335px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
-        fontWeight: "bold",
-        fontSize: "28px",
-        lineHeight: "32px",
-        textAlign: "center",
-        color: "#FFFFFF"
+    recentMovementFooter: {
+
     },
-    rightOrbCompStyle: {
-        position: "absolute",
-        width: "90px",
-        height: "90px",
-        left: "226px",
-        top: "307px",
-        border: "3px solid #9394FC",
-        boxSizing: "border-box",
-        borderRadius: "46px"
+    recentWalkBody: {
+
     },
-    rightOrbEmptyStyle: {
-        position: "absolute",
-        width: "92px",
-        height: "92px",
-        left: "225px",
-        top: "306px",
-        border: "3px solid #4D4A4A",
-        boxSizing: "border-box",
-        borderRadius: "46px"
+    recentWalkFooter: {
+
     },
-    rightPerStyle: {
-        position: "absolute",
-        width: "77px",
-        height: "29px",
-        left: "235px",
-        top: "335px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
-        fontWeight: "bold",
-        fontSize: "28px",
-        lineHeight: "32px",
-        textAlign: "center",
-        color: "#FFFFFF"
+    recentMovement: {
+
     },
-    perSimilarityStyle: {
-        position: "absolute",
-        width: "283px",
-        height: "38px",
-        left: "46px",
-        top: "573px",
-        fontFamily: "Helvetica",
-        fontStyle: "normal",
-        fontWeight: "bold",
-        fontSize: "28px",
-        lineHeight: "32px",
-        textAlign: "center",
-        color: "#FFFFFF"
-    }
+    recentWalk: {
+
+    },
+
+
+    
+    /* 
+        Text("See more")
+            .foregroundColor(Color("appPurpleColor"))
+            .font(.subheadline)
+            
+        Text("See more")
+            .foregroundColor(Color("appPurpleColor"))
+            .font(.subheadline)
+            
+<Text style={styles.greetText}>
+Hi Patrick!
+</Text>
+
+<Image
+style={styles.myoteraLogoContainer}
+// source={require("../../assets/myotera_logo.png")}
+/>
+
+<Text style={styles.grayText}>
+Looks like you're making great progress!
+</Text>
+
+<Text style={styles.smallWhiteWalk}>
+Recent Walk
+</Text>
+
+<Text style={styles.smallWhiteMovement}>
+Recent Movement
+</Text>
+
+<View style={styles.topBoxStyle}/>
+
+<View style={styles.bottomBoxStyle}/>
+
+<Pressable
+onPress={()=>navigation.navigate("Connect")}
+style={styles.connectSensorButton}>
+<Text>Connect Sensors</Text>
+</Pressable>
+
+<Pressable
+onPress={()=>navigation.navigate("Recording")}
+style={styles.lavenderButton3}>
+<Text style={styles.lavenderButton3Text}>+</Text>
+</Pressable>
+
+<Text style={styles.leftArmStyle}>
+Left Arm
+</Text>
+
+<Text style={styles.rightArmStyle}>
+Right Arm
+</Text>
+
+<Text style={styles.dateStyle}>
+DayOfWeek Month/Day/Year
+</Text>
+
+<Text style={styles.dateNTimeStyle}>
+__ min on DayOfWeek Month/Day/Year, hour:minutes am/pm
+</Text>
+
+<View style={styles.rightOrbCompStyle}/>
+
+<View style={styles.rightOrbEmStyle}/>
+
+<View style={styles.leftOrbCompStyle}/>
+
+<View style={styles.leftOrbEmStyle}/>
+
+<Text style={styles.leftPerStyle}>
+__%
+</Text>
+
+<Text style={styles.rightPerStyle}>
+__%
+</Text>
+
+<Text style={styles.perSimilarityStyle}>
+__% Similarity
+</Text> */
+
+    // greetText: {
+    //     position: "absolute",
+    //     width: 320,
+    //     height: 41,
+    //     left: 27,
+    //     top: 118,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "bold",
+    //     fontSize: 28,
+    //     lineHeight: 32,
+    //     color: "#FFFFFF"
+    // },
+    // smallWhiteWalk: {
+    //     position: "absolute",
+    //     width: 326,
+    //     height: 38,
+    //     left: 27,
+    //     top: 210,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "bold",
+    //     fontSize: 18,
+    //     lineHeight: 21,
+    //     color: "#FFFFFF"
+    // },
+    // smallWhiteMovement: {
+    //     position: "absolute",
+    //     width: 326,
+    //     height: 38,
+    //     left: 27,
+    //     top: 499,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "bold",
+    //     fontSize: 18,
+    //     lineHeight: 21,
+    //     color: "#FFFFFF"
+    // },
+    // lavenderButton1: {
+    //     position: "absolute",
+    //     width: 27.4,
+    //     height: 0,
+    //     left: 167.5,
+    //     top: 700,
+    //     borderWidth: 3,
+    //     borderStyle: "solid",
+    //     borderColor: "#FFFFFF",
+    //     transform: [{rotate: "180deg"}]
+    // },
+    // lavenderButton2: {
+    //     position: "absolute",
+    //     width: 27.4,
+    //     height: 0,
+    //     left: 167.5,
+    //     top: 700,
+    //     borderWidth: 3,
+    //     borderStyle: "solid",
+    //     borderColor: "#FFFFFF",
+    //     transform: [{rotate: "90deg"}]
+    // },
+    // lavenderButton3: {
+    //     position: "absolute",
+    //     width: 56,
+    //     height: 56,
+    //     left: 154,
+    //     top: 675,
+    //     textAlign: "center",
+    //     backgroundColor: "#9394FC",
+    //     borderRadius: 28,
+    //     shadowOffset: {
+    //         width: 0,
+    //         height: 4
+    //     },
+    //     shadowRadius: 10,
+    //     shadowColor: "rgb(147, 148, 252)",
+    //     shadowOpacity: 0.4
+    // },
+    // lavenderButton3Text: {
+    //     height: "100%",
+    //     color: "white",
+    //     fontSize: 32, // equivalent to 2rem
+    //     lineHeight: 48, // equivalent to 3rem
+    // },
+    // connectSensorButton: {
+    //     display: "flex",
+    //     alignContent: "center",
+    //     justifyContent: "center",
+    //     position: "absolute",
+    //     width: "auto",
+    //     padding: 10,
+    //     borderRadius: 5,
+    //     height: 27.4,
+    //     left: 200,
+    //     top: 30,
+    //     textAlignVertical: "center",
+    //     backgroundColor: "#9394FC"
+    // },
+    // grayText: {
+    //     position: "absolute",
+    //     width: 326,
+    //     height: 25,
+    //     left: 27,
+    //     top: 157,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "normal",
+    //     fontSize: 12,
+    //     lineHeight: 14,
+    //     color: "#B5B3B3"
+    // },
+    // myoteraLogoContainer: {
+    //     position: "absolute",
+    //     width: 88,
+    //     height: 80,
+    //     left: 17,
+    //     top: 39,
+    // },
+    // topBoxStyle: {
+    //     position: "absolute",
+    //     width: 326,
+    //     height: 221,
+    //     left: 27,
+    //     top: 248,
+    //     // TODO: TEST THIS
+    //     //width: windowWidth*0.8693,
+    //     //height: windowHeight*0.27217,
+    //     //left: windowWidth*0.072,
+    //     //top: windowHeight*0.3054,
+    //     backgroundColor: "#262648",
+    //     borderWidth: 1,
+    //     borderStyle: "solid",
+    //     borderColor: "#9394FC",
+    //     shadowOffset: {
+    //         width: 0,
+    //         height: 3
+    //     },
+    //     shadowRadius: 20,
+    //     shadowColor: "rgb(0, 0, 0)",
+    //     shadowOpacity: 0.65,
+    //     borderRadius: 10
+    // },
+    // bottomBoxStyle: {
+    //     position: "absolute",
+    //     width: 326,
+    //     height: 128,
+    //     left: 27,
+    //     top: 537,
+    //     backgroundColor: "#262648",
+    //     borderWidth: 1,
+    //     borderStyle: "solid",
+    //     borderColor: "#9394FC",
+    //     shadowOffset: {
+    //         width: 0,
+    //         height: 3
+    //     },
+    //     shadowRadius: 20,
+    //     shadowColor: "rgb(0, 0, 0)",
+    //     shadowOpacity: 0.65,
+    //     borderRadius: 10
+    // },
+    // leftArmStyle: {
+    //     position: "absolute",
+    //     width: 94,
+    //     height: 27,
+    //     left: 51,
+    //     top: 272,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "normal",
+    //     fontSize: 16,
+    //     lineHeight: 18,
+    //     textAlign: "center",
+    //     color: "#FFFFFF"
+    // },
+    // rightArmStyle: {
+    //     position: "absolute",
+    //     width: 94,
+    //     height: 27,
+    //     left: 223,
+    //     top: 273,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "normal",
+    //     fontSize: 16,
+    //     lineHeight: 18,
+    //     textAlign: "center",
+    //     color: "#FFFFFF"
+    // },
+    // seeMoreTop: {
+    //     position: "absolute",
+    //     width: 94,
+    //     height: 27,
+    //     left: 247,
+    //     top: 436,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "bold",
+    //     fontSize: 16,
+    //     lineHeight: 18,
+    //     textAlign: "center",
+    //     color: "#9394FC"
+    // },
+    // seeMoreBottom: {
+    //     position: "absolute",
+    //     width: 94,
+    //     height: 27,
+    //     left: 247,
+    //     top: 635,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "bold",
+    //     fontSize: 16,
+    //     lineHeight: 18,
+    //     textAlign: "center",
+    //     color: "#9394FC"
+    // },
+    // dateStyle: {
+    //     position: "absolute",
+    //     width: 206,
+    //     height: 25,
+    //     left: 40,
+    //     top: 637,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "normal",
+    //     fontSize: 12,
+    //     lineHeight: 14,
+    //     color: "#B5B3B3"
+    // },
+    // dateNTimeStyle: {
+    //     position: "absolute",
+    //     width: 206,
+    //     height: 25,
+    //     left: 41,
+    //     top: 438,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "normal",
+    //     fontSize: 12,
+    //     lineHeight: 14,
+    //     color: "#B5B3B3"
+    // },
+    // leftOrbCompStyle: {
+    //     position: "absolute",
+    //     width: 90,
+    //     height: 90,
+    //     left: 57,
+    //     top: 307,
+    //     borderWidth: 3,
+    //     borderStyle: "solid",
+    //     borderColor: "#9394FC",
+    //     borderRadius: 45
+    // },
+    // eftOrbEmStyle: {
+    //     position: "absolute",
+    //     width: 92,
+    //     height: 92,
+    //     left: 56,
+    //     top: 306,
+    //     borderWidth: 3,
+    //     borderStyle: "solid",
+    //     borderColor: "#4D4A4A",
+    //     borderRadius: 46
+    // },
+    // leftPerStyle: {
+    //     position: "absolute",
+    //     width: 77,
+    //     height: 29,
+    //     left: 66,
+    //     top: 335,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "bold",
+    //     fontSize: 28,
+    //     lineHeight: 32,
+    //     textAlign: "center",
+    //     color: "#FFFFFF"
+    // },
+    // rightOrbCompStyle: {
+    //     position: "absolute",
+    //     width: 90,
+    //     height: 90,
+    //     left: 226,
+    //     top: 307,
+    //     borderWidth: 3,
+    //     borderStyle: "solid",
+    //     borderColor: "#9394FC",
+    //     borderRadius: 46
+    // },
+    // ightOrbEmStyle: {
+    //     position: "absolute",
+    //     width: 92,
+    //     height: 92,
+    //     left: 225,
+    //     top: 306,
+    //     borderWidth: 3,
+    //     borderStyle: "solid",
+    //     borderColor: "#4D4A4A",
+    //     borderRadius: 46
+    // },
+    // rightPerStyle: {
+    //     position: "absolute",
+    //     width: 77,
+    //     height: 29,
+    //     left: 235,
+    //     top: 335,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "bold",
+    //     fontSize: 28,
+    //     lineHeight: 32,
+    //     textAlign: "center",
+    //     color: "#FFFFFF"
+    // },
+    // perSimilarityStyle: {
+    //     position: "absolute",
+    //     width: 283,
+    //     height: 38,
+    //     left: 46,
+    //     top: 573,
+    //     fontFamily: "Helvetica",
+    //     fontStyle: "normal",
+    //     fontWeight: "bold",
+    //     fontSize: 28,
+    //     lineHeight: 32,
+    //     textAlign: "center",
+    //     color: "#FFFFFF"
+    // }
 });

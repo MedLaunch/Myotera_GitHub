@@ -16,12 +16,12 @@ export default function SensorError() {
 
             <Image
                 style={styles.back_arrow}
-                source={require("../../back_arrow.PNG")}
+                // source={require("../../back_arrow.PNG")}
             />
 
             <Image
                 style={styles.triangle_error}
-                source={require("../../error_triangle.PNG")}
+                // source={require("../../error_triangle.PNG")}
             />
 
         </View>
@@ -36,54 +36,56 @@ const styles = StyleSheet.create({
     },
     back_arrow: {
         position: "absolute",
-        width: "30px",
-        height: "60px",
-        top: "38px",
-        left: "20px"
+        width: 30,
+        height: 60,
+        top: 38,
+        left: 20
     },
     triangle_error: {
         position: "absolute",
-        width: "119px",
-        height: "119px",
-        top: "345px",
-        left: "125px"
+        width: 119,
+        height: 119,
+        top: 345,
+        left: 125
     },
     back: {
         position: "absolute",
-        width: "282px",
-        height: "41px",
-        left: "59px",
-        top: "55px",
+        width: 282,
+        height: 41,
+        left: 59,
+        top: 55,
         fontFamily: "Helvetica",
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: "18px",
-        lineHeight: "21px",
+        fontSize: 18,
+        lineHeight: 21,
         color: "#9394FC",
         justifyContent: 'center',
         alignItems: 'center'
     },
     vec2: {
         position: "absolute",
-        width: "127px",
-        height: "124px",
-        left: "123px",
-        top: "344px",
-        background: "#9394FC",
-        border: "1px solid #000000",
-        borderRadius: "10px"
+        width: 127,
+        height: 124,
+        left: 123,
+        top: 344,
+        backgroundColor: "#9394FC",
+        borderWidth: 1,
+        borderStyle: "solid",
+        borderColor: "#000000",
+        borderRadius: 10
     },
     notEnoughSensors: {
         position: "absolute",
-        width: "320px",
-        height: "83px",
-        left: "27px",
-        top: "189px",
+        width: 320,
+        height: 83,
+        left: 27,
+        top: 189,
         fontFamily: "Helvetica",
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: "28px",
-        lineHeight: "32px",
+        fontSize: 28,
+        lineHeight: 32,
         textAlign: "center",
         color: "#FFFFFF",
         justifyContent: 'center',

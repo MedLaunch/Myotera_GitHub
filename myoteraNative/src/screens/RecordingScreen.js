@@ -28,44 +28,49 @@ const styles = StyleSheet.create({
     },
     recordingText: {
         position: "absolute",
-        width: "320px",
-        height: "41px",
-        left: "27px",
-        top: "118px",
+        width: 320,
+        height: 41,
+        left: 27,
+        top: 118,
         fontFamily: "Helvetica",
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: "28px",
-        lineHeight: "32px",
+        fontSize: 28,
+        lineHeight: 32,
         textAlign: "center",
         color: "#FFFFFF"
     },
     backButton: {
-        left: "20px",
-        top: "10px",
+        left: 20,
+        top: 10,
     },
     backButtonText: {
         color: "white"
     },
     ellipse7: {
         position: "absolute",
-        width: "56px",
-        height: "56px",
-        left: "158.5px",
-        top: "700px",
+        width: 56,
+        height: 56,
+        left: 158.5,
+        top: 700,
         backgroundColor: "#9394FC",
-        boxSizing: "border-box",
-        boxShadow: "0px 4px 10px 5px rgba(147, 148, 252, 0.4)",
-        borderRadius: "28px"
+        shadowOffset: {
+            width: 0,
+            height: 4
+        },
+        shadowRadius: 10,
+        shadowColor: "rgb(147, 148, 252)",
+        shadowOpacity: 0.4,
+        borderRadius: 28
     },
     ellipse8: {
         position: "absolute",
-        width: "46px",
-        height: "46px",
-        left: "164px",
-        top: "705px",
+        width: 46,
+        height: 46,
+        left: 164,
+        top: 705,
         backgroundColor: "#8A1B1B",
-        borderRadius: "23px"
+        borderRadius: 23
     }
       
 });
