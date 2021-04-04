@@ -1,23 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View, Pressable } from 'react-native';
 
 export default function RecordingScreen({navigation}) {
     return (
-        <View style={styles.container}>
-            <Text style={styles.recordingText}>
-                Recording...
-            </Text>
-
-            <View style={styles.ellipse7}></View>
-
-            <View style={styles.ellipse8}></View>
-
+        <SafeAreaView style={styles.container}>
             <Pressable
                 onPress={()=>navigation.navigate("Home")}
                 style={styles.backButton}>
                 <Text style={styles.backButtonText}>Back</Text>
             </Pressable>
-        </View>
+
+            <Text style={styles.recordingText}>
+                Recording...
+            </Text>
+
+            <View style={styles.ellipse7}></View>
+            <View style={styles.ellipse8}></View>
+        </SafeAreaView>
     );
 }
 
@@ -45,7 +44,8 @@ const styles = StyleSheet.create({
         top: 10,
     },
     backButtonText: {
-        color: "white"
+        color: "#FFFFFF",
+        fontWeight: "bold",
     },
     ellipse7: {
         position: "absolute",
