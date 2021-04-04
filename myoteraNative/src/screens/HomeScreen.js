@@ -3,106 +3,106 @@ import { StyleSheet, Text, SafeAreaView, View, Image, Pressable } from 'react-na
 
 // resizeMode fixes our issue kinda: https://reactnative.dev/docs/image
 
-export default function HomeScreen({navigation}) {
-  return (
-    <SafeAreaView style={styles.container}>
-        <View style={styles.innerContainer}>
-            {/* Header */}
-            <View style={styles.header}>
-                <View style={styles.headerGreeting}>
-                    <Image 
-                        style={styles.myoteraLogo}
-                        source={require("./../../assets/myotera_logo.png")}
-                    />
-                    <Text style={styles.greetText}>
-                        Hi Patrick!
+export default function HomeScreen({ navigation }) {
+    return (
+        <SafeAreaView style={styles.container}>
+            <View style={styles.innerContainer}>
+                {/* Header */}
+                <View style={styles.header}>
+                    <View style={styles.headerGreeting}>
+                        <Image
+                            style={styles.myoteraLogo}
+                            source={require("./../../assets/myotera_logo.png")}
+                        />
+                        <Text style={styles.greetText}>
+                            Hi Patrick!
                     </Text>
-                    <Text style={styles.subGreetText}>
-                        Looks like you're making great progress
+                        <Text style={styles.subGreetText}>
+                            Looks like you're making great progress
                     </Text>
-                </View>
-                <Pressable
-                    onPress={()=>navigation.navigate("Connect")}
-                    style={styles.connectSensorButton}>
-                    <Text style={styles.connectSensorText}>
-                        Connect Sensors
-                    </Text>
-                </Pressable>
-            </View>
-            {/* Body */}
-            <View style={styles.body}>
-                {/* Recent Walk */}
-                <View style={styles.recentWalk}>
-                    {/* Box Header */}
-                    <View style={styles.boxHeader}>
-                        <Text style={styles.boxHeaderText}>
-                            Recent Walk
-                        </Text>
                     </View>
-                    {/* Recent Walk Body */}
-                    <View style={{...styles.recentBody, height: "75%"}}>
-                        {/* Arm Graphs */}
-                        <View style={styles.armGraphs}>
-                            {/* Left Arm */}
-                            <View style={styles.leftArm}>
-                                <Text style={styles.armText}>
-                                    Left Arm
-                                </Text>
-                                <View style={styles.orb}>
-
-                                </View>
-                            </View>
-                            {/* Right Arm */}
-                            <View style={styles.rightArm}>
-                                <Text style={styles.armText}>
-                                    Right Arm
-                                </Text>
-                                <View style={styles.orb}>
-
-                                </View>
-                            </View>
-                        </View>
-                        {/* Footer */}
-                        <View style={styles.recentFooter}>
-                            <Text style={styles.dateDetails}>
-                                40 min on Monday 4/11, 2:15 pm
-                            </Text>
-                        </View>
-                    </View>
-                </View>{/* Recent Walk */}
-                {/* Recent Movement */}
-                <View style={styles.recentMovement}>
-                    <View style={styles.boxHeader}>
-                        <Text style={styles.boxHeaderText}>
-                            Recent Movement
-                        </Text>
-                    </View>
-                    {/* Recent Movement Body */}
-                    <View style={{...styles.recentBody, height: "50%"}}>
-                        {/* Similarity */}
-                        <Text style={styles.simText}>
-                            52% Similarity
-                        </Text>
-                        {/* Footer */}
-                        <View style={styles.recentFooter}>
-                            <Text style={styles.dateSimple}>
-                                Monday 2/15
-                            </Text>
-                        </View>
-                    </View>
-                </View>{/* Recent Movement */}
-                {/* Start Recording */}
-                <View style={styles.record}>
                     <Pressable
-                        onPress={()=>navigation.navigate("Recording")}
-                        style={styles.recordButton}>
-                        <Text style={styles.recordPlus}>+</Text>
+                        onPress={() => navigation.navigate("Connect")}
+                        style={styles.connectSensorButton}>
+                        <Text style={styles.connectSensorText}>
+                            Connect Sensors
+                    </Text>
                     </Pressable>
                 </View>
-            </View>{/* Body */}
-        </View>{/* Inner Container */}
-    </SafeAreaView>
-  );
+                {/* Body */}
+                <View style={styles.body}>
+                    {/* Recent Walk */}
+                    <View style={styles.recentWalk}>
+                        {/* Box Header */}
+                        <View style={styles.boxHeader}>
+                            <Text style={styles.boxHeaderText}>
+                                Recent Walk
+                        </Text>
+                        </View>
+                        {/* Recent Walk Body */}
+                        <View style={{ ...styles.recentBody, height: "75%" }}>
+                            {/* Arm Graphs */}
+                            <View style={styles.armGraphs}>
+                                {/* Left Arm */}
+                                <View style={styles.leftArm}>
+                                    <Text style={styles.armText}>
+                                        Left Arm
+                                </Text>
+                                    <View style={styles.orb}>
+
+                                    </View>
+                                </View>
+                                {/* Right Arm */}
+                                <View style={styles.rightArm}>
+                                    <Text style={styles.armText}>
+                                        Right Arm
+                                </Text>
+                                    <View style={styles.orb}>
+
+                                    </View>
+                                </View>
+                            </View>
+                            {/* Footer */}
+                            <View style={styles.recentFooter}>
+                                <Text style={styles.dateDetails}>
+                                    40 min on Monday 4/11, 2:15 pm
+                            </Text>
+                            </View>
+                        </View>
+                    </View>{/* Recent Walk */}
+                    {/* Recent Movement */}
+                    <View style={styles.recentMovement}>
+                        <View style={styles.boxHeader}>
+                            <Text style={styles.boxHeaderText}>
+                                Recent Movement
+                        </Text>
+                        </View>
+                        {/* Recent Movement Body */}
+                        <View style={{ ...styles.recentBody, height: "50%" }}>
+                            {/* Similarity */}
+                            <Text style={styles.simText}>
+                                52% Similarity
+                        </Text>
+                            {/* Footer */}
+                            <View style={styles.recentFooter}>
+                                <Text style={styles.dateSimple}>
+                                    Monday 2/15
+                            </Text>
+                            </View>
+                        </View>
+                    </View>{/* Recent Movement */}
+                    {/* Start Recording */}
+                    <View style={styles.record}>
+                        <Pressable
+                            onPress={() => navigation.navigate("Recording")}
+                            style={styles.recordButton}>
+                            <Text style={styles.recordPlus}>+</Text>
+                        </Pressable>
+                    </View>
+                </View>{/* Body */}
+            </View>{/* Inner Container */}
+        </SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     headerGreeting: {
-        
+
     },
     greetText: {
         fontWeight: "bold",
