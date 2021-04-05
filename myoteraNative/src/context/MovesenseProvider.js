@@ -1,12 +1,12 @@
-import React, {createContext, useEffect, useReducer} from 'react';
-import movesenseReducer, {INITIAL_MOVESENSE_STATE} from '../reducers/movesense/reducer';
-import recordersReducer, {INITIAL_RECORDING_STATE} from '../reducers/recorders/reducer';
-import {connectedDevice, disconnectedDevice} from '../reducers/movesense/actions';
+import React, { createContext, useEffect, useReducer } from 'react';
+import movesenseReducer, { INITIAL_MOVESENSE_STATE } from '../reducers/movesense/reducer';
+import recordersReducer, { INITIAL_RECORDING_STATE } from '../reducers/recorders/reducer';
+import { connectedDevice, disconnectedDevice } from '../reducers/movesense/actions';
 import MDS from 'react-native-mds';
 
 export const MovesenseContext = createContext();
 
-const MovesenseProvider = ({children}) => {
+const MovesenseProvider = ({ children }) => {
   const [movesense, movesenseDispatch] = useReducer(movesenseReducer, INITIAL_MOVESENSE_STATE);
   const [recorders, recordersDispatch] = useReducer(recordersReducer, INITIAL_RECORDING_STATE);
   useEffect(() => {
@@ -33,7 +33,8 @@ const MovesenseProvider = ({children}) => {
   return (
     <MovesenseContext.Provider value={{
       movesense, movesenseDispatch,
-      recorders, recordersDispatch}}>
+      recorders, recordersDispatch
+    }}>
       {children}
     </MovesenseContext.Provider>
   )
