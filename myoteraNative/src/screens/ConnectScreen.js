@@ -49,9 +49,6 @@ export default function ConnectScreen({ navigation }) {
     // Filter devices with search bar
     setFilteredDevices(Object.values(movesense.devices).filter((item) => item.name?.toLowerCase().includes(searchText.trim().toLowerCase())))
   }, [movesense, searchText])
-  const updateSearch = (text) => {
-    setSearchText(text);
-  };
   const ItemSeparator = () => <View style={styles.itemSeparator} />
   const ListEmpty = () => <ConnectListItem />
   return (
