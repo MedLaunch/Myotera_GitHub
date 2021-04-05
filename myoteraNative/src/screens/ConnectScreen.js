@@ -1,11 +1,11 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { StyleSheet, FlatList, Text, SafeAreaView, Pressable } from 'react-native';
 import { MovesenseContext } from '../context/MovesenseProvider';
 import ConnectListItem from '../components/ConnectListItem';
 import { addBLE } from '../reducers/movesense/actions';
 import MDS from 'react-native-mds';
 
-export default function ConnectScreen({navigation}) {
+export default function ConnectScreen({ navigation }) {
   const { movesense, movesenseDispatch } = useContext(MovesenseContext);
   const [searchText, setSearchText] = useState('');
   const [filteredDevices, setFilteredDevices] = useState([]);
@@ -43,11 +43,11 @@ export default function ConnectScreen({navigation}) {
       navigated();
       blurred();
     };
-  },[])
+  }, [])
 
   useEffect(() => {
     // Filter devices with search bar
-    setFilteredDevices(Object.values(movesense.devices).filter((item) => item.name.toLowerCase().includes(searchText.trim().toLowerCase())))
+    setFilteredDevices(Object.values(movesense.devices).filter((item) => item.name?.toLowerCase().includes(searchText.trim().toLowerCase())))
   }, [movesense, searchText])
   const updateSearch = (text) => {
     setSearchText(text);
@@ -57,14 +57,14 @@ export default function ConnectScreen({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <Pressable
-        onPress={()=>navigation.navigate("Home")}
+        onPress={() => navigation.navigate("Home")}
         style={styles.backButton}>
         <Text style={styles.backButtonText}>Back</Text>
       </Pressable>
       <Text style={styles.connectText}>Connect!</Text>
       <FlatList
         data={filteredDevices}
-        renderItem={({item}) => (
+        renderItem={({ item }) => (
           <ConnectListItem item={item} />
         )}
         ListEmptyComponent={ListEmpty}
