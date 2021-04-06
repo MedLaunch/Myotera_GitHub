@@ -16,17 +16,17 @@ export default function HomeScreen({ navigation }) {
                         />
                         <Text style={styles.greetText}>
                             Hi Patrick!
-                    </Text>
+                        </Text>
                         <Text style={styles.subGreetText}>
                             Looks like you're making great progress
-                    </Text>
+                        </Text>
                     </View>
                     <Pressable
                         onPress={() => navigation.navigate("Connect")}
                         style={styles.connectSensorButton}>
                         <Text style={styles.connectSensorText}>
                             Connect Sensors
-                    </Text>
+                        </Text>
                     </Pressable>
                 </View>
                 {/* Body */}
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     headerGreeting: {
-
+        flex: 1.7,
     },
     greetText: {
         fontWeight: "bold",
@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
         flex: 0.7,
     },
     connectSensorButton: {
+        flex: 1,
         width: "auto",
         padding: 5,
         borderRadius: 5,

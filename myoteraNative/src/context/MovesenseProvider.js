@@ -13,6 +13,8 @@ const MovesenseProvider = ({ children }) => {
     try {
       MDS.setHandlers(
         (serial, name, address) => {
+          console.log("MADE IT TO SET HANDLERS CONNECT")
+          console.log("Properties: ", serial, name, address)
           // Dev Connected Handler
           movesenseDispatch(connectedDevice(serial, name, address));
         },
